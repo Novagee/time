@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>FBEB058B-CBE3-453D-AA31-9980A2EF833B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Time Imprint</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>B1DD45D1621ED26A2BD328C230E03364A7BA27F4</key>
+		<string>https://bitbucket.org/timeimprint/iosapp.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Time Imprint/Time Imprint.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>B1DD45D1621ED26A2BD328C230E03364A7BA27F4</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://bitbucket.org/timeimprint/iosapp.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B1DD45D1621ED26A2BD328C230E03364A7BA27F4</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B1DD45D1621ED26A2BD328C230E03364A7BA27F4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>iosapp</string>
+		</dict>
+	</array>
+</dict>
+</plist>
