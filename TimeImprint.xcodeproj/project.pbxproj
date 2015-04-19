@@ -34,6 +34,15 @@
 		1991305A1AD4EA910060AE40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 199130581AD4EA910060AE40 /* Main.storyboard */; };
 		1991305C1AD4EA910060AE40 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1991305B1AD4EA910060AE40 /* Images.xcassets */; };
 		1991305F1AD4EA910060AE40 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1991305D1AD4EA910060AE40 /* LaunchScreen.xib */; };
+		81FA5B651AE39D0700073E05 /* MyTimeLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FA5B641AE39D0700073E05 /* MyTimeLineViewController.m */; };
+		81FA5B671AE3A32900073E05 /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = 81FA5B661AE3A32900073E05 /* camera.png */; };
+		81FA5B6A1AE3A45300073E05 /* CALayer+StoryBoardExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FA5B691AE3A45300073E05 /* CALayer+StoryBoardExtention.m */; };
+		81FA5B6C1AE3E00E00073E05 /* camera_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 81FA5B6B1AE3E00E00073E05 /* camera_2.png */; };
+		81FA5B7E1AE41D6500073E05 /* OwnTimeLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FA5B7C1AE41D6500073E05 /* OwnTimeLineCell.m */; };
+		81FA5B7F1AE41D6500073E05 /* OwnTimeLineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81FA5B7D1AE41D6500073E05 /* OwnTimeLineCell.xib */; };
+		81FA5B831AE41D7B00073E05 /* PublicTimeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FA5B811AE41D7B00073E05 /* PublicTimeCell.m */; };
+		81FA5B841AE41D7B00073E05 /* PublicTimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81FA5B821AE41D7B00073E05 /* PublicTimeCell.xib */; };
+		81FA5B861AE4234D00073E05 /* videoShot.png in Resources */ = {isa = PBXBuildFile; fileRef = 81FA5B851AE4234D00073E05 /* videoShot.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +83,19 @@
 		1991305E1AD4EA910060AE40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		199130691AD4EA910060AE40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1991306A1AD4EA910060AE40 /* Time_ImprintTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Time_ImprintTests.m; sourceTree = "<group>"; };
+		81FA5B631AE39D0700073E05 /* MyTimeLineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTimeLineViewController.h; sourceTree = "<group>"; };
+		81FA5B641AE39D0700073E05 /* MyTimeLineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTimeLineViewController.m; sourceTree = "<group>"; };
+		81FA5B661AE3A32900073E05 /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		81FA5B681AE3A45300073E05 /* CALayer+StoryBoardExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+StoryBoardExtention.h"; sourceTree = "<group>"; };
+		81FA5B691AE3A45300073E05 /* CALayer+StoryBoardExtention.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+StoryBoardExtention.m"; sourceTree = "<group>"; };
+		81FA5B6B1AE3E00E00073E05 /* camera_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera_2.png; sourceTree = "<group>"; };
+		81FA5B7B1AE41D6500073E05 /* OwnTimeLineCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OwnTimeLineCell.h; sourceTree = "<group>"; };
+		81FA5B7C1AE41D6500073E05 /* OwnTimeLineCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OwnTimeLineCell.m; sourceTree = "<group>"; };
+		81FA5B7D1AE41D6500073E05 /* OwnTimeLineCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OwnTimeLineCell.xib; sourceTree = "<group>"; };
+		81FA5B801AE41D7B00073E05 /* PublicTimeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicTimeCell.h; sourceTree = "<group>"; };
+		81FA5B811AE41D7B00073E05 /* PublicTimeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicTimeCell.m; sourceTree = "<group>"; };
+		81FA5B821AE41D7B00073E05 /* PublicTimeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PublicTimeCell.xib; sourceTree = "<group>"; };
+		81FA5B851AE4234D00073E05 /* videoShot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = videoShot.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +199,7 @@
 				199130521AD4EA900060AE40 /* AppDelegate.h */,
 				199130531AD4EA900060AE40 /* AppDelegate.m */,
 				199130581AD4EA910060AE40 /* Main.storyboard */,
+				81FA5B6D1AE4160600073E05 /* MyTimeLine */,
 				196309781ADF137500058851 /* Browse */,
 				1991305B1AD4EA910060AE40 /* Images.xcassets */,
 				1991305D1AD4EA910060AE40 /* LaunchScreen.xib */,
@@ -211,6 +234,34 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		81FA5B6D1AE4160600073E05 /* MyTimeLine */ = {
+			isa = PBXGroup;
+			children = (
+				81FA5B6B1AE3E00E00073E05 /* camera_2.png */,
+				81FA5B661AE3A32900073E05 /* camera.png */,
+				81FA5B851AE4234D00073E05 /* videoShot.png */,
+				81FA5B681AE3A45300073E05 /* CALayer+StoryBoardExtention.h */,
+				81FA5B691AE3A45300073E05 /* CALayer+StoryBoardExtention.m */,
+				81FA5B631AE39D0700073E05 /* MyTimeLineViewController.h */,
+				81FA5B641AE39D0700073E05 /* MyTimeLineViewController.m */,
+				81FA5B7A1AE416CB00073E05 /* Cells */,
+			);
+			name = MyTimeLine;
+			sourceTree = "<group>";
+		};
+		81FA5B7A1AE416CB00073E05 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				81FA5B7B1AE41D6500073E05 /* OwnTimeLineCell.h */,
+				81FA5B7C1AE41D6500073E05 /* OwnTimeLineCell.m */,
+				81FA5B7D1AE41D6500073E05 /* OwnTimeLineCell.xib */,
+				81FA5B801AE41D7B00073E05 /* PublicTimeCell.h */,
+				81FA5B811AE41D7B00073E05 /* PublicTimeCell.m */,
+				81FA5B821AE41D7B00073E05 /* PublicTimeCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -242,7 +293,7 @@
 				TargetAttributes = {
 					1991304A1AD4EA900060AE40 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = GNRZXDF52C;
+						DevelopmentTeam = 5A88JF7M74;
 					};
 				};
 			};
@@ -270,12 +321,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				195CA3F01ADCF5A4005EC48F /* NotoSansCJKsc-Thin.otf in Resources */,
+				81FA5B671AE3A32900073E05 /* camera.png in Resources */,
 				196309901ADF23B000058851 /* gui_expand@1x.png in Resources */,
 				196309991ADF23B000058851 /* gui_shrink@1x.png in Resources */,
 				196309931ADF23B000058851 /* gui_pause@1x.png in Resources */,
+				81FA5B7F1AE41D6500073E05 /* OwnTimeLineCell.xib in Resources */,
+				81FA5B861AE4234D00073E05 /* videoShot.png in Resources */,
 				196309981ADF23B000058851 /* gui_play@3x.png in Resources */,
 				1991305A1AD4EA910060AE40 /* Main.storyboard in Resources */,
 				195CA3EC1ADCF5A4005EC48F /* NotoSansCJKsc-DemiLight.otf in Resources */,
+				81FA5B841AE41D7B00073E05 /* PublicTimeCell.xib in Resources */,
+				81FA5B6C1AE3E00E00073E05 /* camera_2.png in Resources */,
 				196309911ADF23B000058851 /* gui_expand@2x.png in Resources */,
 				196309971ADF23B000058851 /* gui_play@2x.png in Resources */,
 				1991305F1AD4EA910060AE40 /* LaunchScreen.xib in Resources */,
@@ -300,10 +356,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1963098E1ADF23B000058851 /* GUISlider.m in Sources */,
+				81FA5B651AE39D0700073E05 /* MyTimeLineViewController.m in Sources */,
 				1963098D1ADF23B000058851 /* GUIPlayerView.m in Sources */,
+				81FA5B831AE41D7B00073E05 /* PublicTimeCell.m in Sources */,
 				199130541AD4EA900060AE40 /* AppDelegate.m in Sources */,
+				81FA5B6A1AE3A45300073E05 /* CALayer+StoryBoardExtention.m in Sources */,
 				195CA3D71ADB9A32005EC48F /* BrowseViewController.m in Sources */,
 				199130511AD4EA900060AE40 /* main.m in Sources */,
+				81FA5B7E1AE41D6500073E05 /* OwnTimeLineCell.m in Sources */,
 				1963099F1ADF478900058851 /* NotificationViewController.m in Sources */,
 				1963098F1ADF23B000058851 /* UIView+UpdateAutoLayoutConstraints.m in Sources */,
 			);
@@ -412,10 +472,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/TimeImprint/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = TimeImprint;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -424,10 +486,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "$(SRCROOT)/TimeImprint/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = TimeImprint;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
