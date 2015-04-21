@@ -30,7 +30,12 @@ typedef NS_ENUM(NSInteger, kMainViewType) {
 @property (weak, nonatomic) IBOutlet UIView *meMainView;
 @property (assign, nonatomic) kMainViewType *mainViewType;
 
+#pragma Self Size Cell
+
+@property (strong, nonatomic) OwnTimeLineCell *ownTimeLineCell;
+
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
 
 @property (strong, nonatomic) UIImagePickerController *imagePickerController;
 
@@ -119,6 +124,10 @@ typedef NS_ENUM(NSInteger, kMainViewType) {
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     
+    if (buttonIndex == 2) {
+        return ;
+    }
+    
     _imagePickerController.sourceType = buttonIndex == 0?
     UIImagePickerControllerSourceTypeCamera : UIImagePickerControllerSourceTypePhotoLibrary;
     
@@ -165,7 +174,7 @@ typedef NS_ENUM(NSInteger, kMainViewType) {
 
 #pragma mark - Table View Data Source
 
-- (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 4;
 }
 
@@ -175,15 +184,27 @@ typedef NS_ENUM(NSInteger, kMainViewType) {
     
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 380.0f;
-}
-
 - (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     OwnTimeLineCell *cell = [self.tableView dequeueReusableCellWithIdentifier:[OwnTimeLineCell reuseIdentifier] forIndexPath:indexPath];
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    // I can figure out why the cell height is incorrect when I invoke the "systemLayoutSizeFittingSize"
+    // So here I use the screen's width to configure the cell's height
+    // when the App run in different device, aka iPhone 6 or iPhone 6 plus
+    //
+    return 380.0f * self.view.bounds.size.width/320.0f;
+    
+}
+
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return UITableViewAutomaticDimension;
+    
 }
 
 #pragma mark - Control's Actions
