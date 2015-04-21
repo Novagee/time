@@ -106,16 +106,8 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o0L-Ch-WcZ" userLabel="Sub Shot View">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o0L-Ch-WcZ" userLabel="Sub Shot View" customClass="UIScrollView">
                                 <rect key="frame" x="0.0" y="240" width="320" height="100"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="This is a scroll view" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ccD-Ap-f4S">
-                                        <rect key="frame" x="86" y="40" width="148" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
                                 <color key="backgroundColor" red="0.62428977272727271" green="0.62428977272727271" blue="0.62428977272727271" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="o0L-Ch-WcZ" secondAttribute="height" multiplier="16:5" id="R18-bG-KD2"/>
@@ -161,6 +153,8 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="imagesScrollView" destination="o0L-Ch-WcZ" id="3oF-dd-s0B"/>
+                <outlet property="optionButton" destination="cFB-wn-Nb8" id="YHg-wX-6vo"/>
                 <outlet property="postDateLabel" destination="iWD-52-xt6" id="dOS-ob-65g"/>
                 <outlet property="postLocationLabel" destination="bHe-Ky-yru" id="FiG-nG-sBt"/>
                 <outlet property="postTitleLabel" destination="i5R-Dd-s9R" id="6tF-W4-XIE"/>
