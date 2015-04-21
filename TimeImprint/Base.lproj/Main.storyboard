@@ -541,13 +541,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EUz-M6-3sC">
-                                        <rect key="frame" x="532" y="27" width="60" height="30"/>
+                                        <rect key="frame" x="560" y="27" width="30" height="24"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="60" id="GbO-4p-n0f"/>
-                                            <constraint firstAttribute="height" constant="30" id="ksv-5t-coe"/>
+                                            <constraint firstAttribute="width" constant="30" id="GbO-4p-n0f"/>
+                                            <constraint firstAttribute="height" constant="24" id="ksv-5t-coe"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
-                                        <state key="normal" title="TimeLine">
+                                        <state key="normal" image="me_timeMachine_24">
                                             <color key="titleColor" red="1" green="0.33983159588332434" blue="0.31174843308469979" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -575,7 +575,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="EUz-M6-3sC" secondAttribute="trailing" constant="8" id="0IJ-RS-TwR"/>
+                                    <constraint firstAttribute="trailing" secondItem="EUz-M6-3sC" secondAttribute="trailing" constant="10" id="0IJ-RS-TwR"/>
                                     <constraint firstAttribute="centerY" secondItem="8uH-1N-PKC" secondAttribute="centerY" constant="-9" id="OL2-ua-4ro"/>
                                     <constraint firstAttribute="centerX" secondItem="8uH-1N-PKC" secondAttribute="centerX" id="pMh-nb-dR2"/>
                                     <constraint firstAttribute="height" constant="64" id="wu4-AC-40d"/>
@@ -891,6 +891,7 @@
         <image name="follow_18" width="28" height="18"/>
         <image name="liked" width="30" height="24"/>
         <image name="me" width="26" height="24"/>
+        <image name="me_timeMachine_24" width="30" height="24"/>
         <image name="notification" width="30" height="24"/>
         <image name="play_16" width="15" height="18"/>
         <image name="qa" width="42" height="42"/>
