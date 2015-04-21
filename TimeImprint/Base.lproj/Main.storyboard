@@ -528,7 +528,7 @@
         <!--Me View Controller-->
         <scene sceneID="g4n-Ox-CeH">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="px8-iB-MGF" userLabel="Me View Controller" customClass="MyTimeLineViewController" sceneMemberID="viewController">
+                <viewController id="px8-iB-MGF" userLabel="Me View Controller" customClass="MyTimeLineViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nn9-x7-RcA"/>
                         <viewControllerLayoutGuide type="bottom" id="zuT-CR-JK8"/>
@@ -589,10 +589,10 @@
                                 </connections>
                             </containerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g0S-Jc-oiS" userLabel="Main View">
-                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="486"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="380" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Zny-Lr-9rV">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="64" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Zny-Lr-9rV">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="486"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <view key="tableHeaderView" contentMode="scaleToFill" id="zv5-x5-iCj" userLabel="Header View">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
@@ -742,7 +742,7 @@
                                             </variation>
                                         </view>
                                         <prototypes>
-                                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OwnTimeLineCell" rowHeight="61" id="okf-4H-zgR" customClass="OwnTimeLineCell">
+                                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="OwnTimeLineCell" id="okf-4H-zgR" customClass="OwnTimeLineCell">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="okf-4H-zgR" id="cON-3F-UPJ">
@@ -769,7 +769,7 @@
                             <constraint firstItem="g0S-Jc-oiS" firstAttribute="leading" secondItem="ScO-U0-W0Q" secondAttribute="leading" id="2YQ-nZ-F1x"/>
                             <constraint firstItem="IEf-ug-GdX" firstAttribute="top" secondItem="ScO-U0-W0Q" secondAttribute="top" id="DSr-Rd-5jg"/>
                             <constraint firstAttribute="trailing" secondItem="IEf-ug-GdX" secondAttribute="trailing" id="KCh-82-i90"/>
-                            <constraint firstAttribute="bottom" secondItem="g0S-Jc-oiS" secondAttribute="bottom" id="QRc-m5-tt9"/>
+                            <constraint firstAttribute="bottom" secondItem="g0S-Jc-oiS" secondAttribute="bottom" constant="50" id="QRc-m5-tt9"/>
                             <constraint firstAttribute="trailing" secondItem="g0S-Jc-oiS" secondAttribute="trailing" id="RtO-qh-8Xe"/>
                             <constraint firstItem="g0S-Jc-oiS" firstAttribute="top" secondItem="ScO-U0-W0Q" secondAttribute="top" constant="64" id="btm-43-Ycx"/>
                             <constraint firstItem="IEf-ug-GdX" firstAttribute="leading" secondItem="ScO-U0-W0Q" secondAttribute="leading" id="shC-Jn-cyF"/>
@@ -840,7 +840,7 @@
         <!--我的-->
         <scene sceneID="gMZ-nz-L5Y">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="ZNe-KG-bZa" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="ZNe-KG-bZa" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="我的" image="me" id="twR-VM-fPF"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Trg-Fx-AJk">
@@ -848,6 +848,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="WMj-HB-yhI">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="px8-iB-MGF" kind="relationship" relationship="rootViewController" id="cmB-GQ-sLc"/>
                     </connections>
