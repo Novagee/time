@@ -541,7 +541,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EUz-M6-3sC">
-                                        <rect key="frame" x="560" y="27" width="30" height="24"/>
+                                        <rect key="frame" x="560" y="30" width="30" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="GbO-4p-n0f"/>
                                             <constraint firstAttribute="height" constant="24" id="ksv-5t-coe"/>
@@ -579,7 +579,7 @@
                                     <constraint firstAttribute="centerY" secondItem="8uH-1N-PKC" secondAttribute="centerY" constant="-9" id="OL2-ua-4ro"/>
                                     <constraint firstAttribute="centerX" secondItem="8uH-1N-PKC" secondAttribute="centerX" id="pMh-nb-dR2"/>
                                     <constraint firstAttribute="height" constant="64" id="wu4-AC-40d"/>
-                                    <constraint firstItem="EUz-M6-3sC" firstAttribute="top" secondItem="IEf-ug-GdX" secondAttribute="top" constant="27" id="zXX-R1-IrF"/>
+                                    <constraint firstItem="EUz-M6-3sC" firstAttribute="top" secondItem="IEf-ug-GdX" secondAttribute="top" constant="30" id="zXX-R1-IrF"/>
                                 </constraints>
                             </view>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uoc-hg-5Bb" userLabel="At Me Main View">
