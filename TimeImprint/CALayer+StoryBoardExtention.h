@@ -12,5 +12,6 @@
 @interface CALayer (StoryBoardExtention)
 
 @property (strong, nonatomic) UIColor *layerBorderColor;
+@property (strong, nonatomic) UIColor *layerShadowColor;
 
 @end

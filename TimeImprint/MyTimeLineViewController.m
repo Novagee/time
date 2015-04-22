@@ -7,7 +7,8 @@
 //
 
 #import "MyTimeLineViewController.h"
-#import "CALayer+StoryBoardExtention.h"
+#import "SettingViewController.h"
+#import "TimeMechineViewController.h"
 
 #import "OwnTimeLineCell.h"
 
@@ -15,46 +16,32 @@ typedef NS_ENUM(NSInteger, kImagePickerTarget) {
     
     kImagePickerTargetAvatar = 0,
     kImagePickerTargetBackground = 1
-};
-
-typedef NS_ENUM(NSInteger, kMainViewType) {
-    
-    kMainViewTypeMe = 0,
-    kMainViewTypeAtMe = 1
     
 };
 
-@interface MyTimeLineViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, UITableViewDelegate, UITableViewDataSource>
 
-@property (weak, nonatomic) IBOutlet UIView *atMeMainView;
+@interface MyTimeLineViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UIView *meMainView;
-@property (assign, nonatomic) kMainViewType *mainViewType;
+
+@property (weak, nonatomic) IBOutlet UIView *navigationBarBottom;
+@property (weak, nonatomic) IBOutlet UIImageView *tinyAvatar;
 
 #pragma Self Size Cell
 
-@property (strong, nonatomic) OwnTimeLineCell *ownTimeLineCell;
-
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
-
 @property (strong, nonatomic) UIImagePickerController *imagePickerController;
 
 #pragma mark - Table View Header
 
-@property (weak, nonatomic) IBOutlet UIButton *switchBackgroundButton;
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundImageView;
-
-@property (weak, nonatomic) IBOutlet UIButton *switchAvatarButton;
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *avatarImageViewCenterConstrain;
-
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
-@property (weak, nonatomic) IBOutlet UILabel *followingLabel;
-@property (weak, nonatomic) IBOutlet UILabel *fansLabel;
 
-@property (weak, nonatomic) IBOutlet UIButton *editButton;
 @property (assign, nonatomic) kImagePickerTarget imagePickerTarget;
-@property (assign, nonatomic, getter=isEditingProfile) BOOL editingProfile;
+
+@property (weak, nonatomic) IBOutlet UILabel *followingLabel;
+@property (weak, nonatomic) IBOutlet UILabel *followerLabel;
 
 @end
 
@@ -75,51 +62,6 @@ typedef NS_ENUM(NSInteger, kMainViewType) {
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Configure Editing Status
-
-- (void)setEditingProfile:(BOOL)editingProfile {
-    
-    if (editingProfile) {
-        
-        _switchAvatarButton.hidden = NO;
-        _switchBackgroundButton.hidden = NO;
-        [UIView animateWithDuration:0.3f animations:^{
-            _switchAvatarButton.alpha = 1.0f;
-            _switchBackgroundButton.alpha = 1.0f;
-        
-            _avatarImageViewCenterConstrain.constant = 30;
-            [self.view layoutIfNeeded];
-            
-        }];
-        
-        _userNameTextField.userInteractionEnabled = YES;
-        
-        [_editButton setTitle:@"完成" forState:UIControlStateNormal];
-        
-    }
-    else {
-        
-        _switchAvatarButton.hidden = YES;
-        _switchBackgroundButton.hidden = YES;
-        _userNameTextField.userInteractionEnabled = NO;
-        
-        [UIView animateWithDuration:0.3f animations:^{
-            _switchAvatarButton.alpha = 0.0f;
-            _switchBackgroundButton.alpha = 0.0f;
-        
-            _avatarImageViewCenterConstrain.constant = 0;
-            [self.view layoutIfNeeded];
-            
-        }];
-        
-        [_editButton setTitle:@"编辑" forState:UIControlStateNormal];
-        
-    }
-    
-    _editingProfile = editingProfile;
-    
-}
-
 #pragma mark - Action Sheet Stuff
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
@@ -128,8 +70,7 @@ typedef NS_ENUM(NSInteger, kMainViewType) {
         return ;
     }
     
-    _imagePickerController.sourceType = buttonIndex == 0?
-    UIImagePickerControllerSourceTypeCamera : UIImagePickerControllerSourceTypePhotoLibrary;
+    _imagePickerTarget = buttonIndex;
     
     [self presentViewController:self.imagePickerController animated:YES completion:nil];
     
@@ -137,7 +78,7 @@ typedef NS_ENUM(NSInteger, kMainViewType) {
 
 - (void)showImagePickerSheet {
     
-    UIActionSheet *imagePickerSheet = [[UIActionSheet alloc]initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"拍照", @"相册", nil];
+    UIActionSheet *imagePickerSheet = [[UIActionSheet alloc]initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"更改头像", @"更改背景", nil];
     [imagePickerSheet showInView:self.view];
     
 }
@@ -148,6 +89,7 @@ typedef NS_ENUM(NSInteger, kMainViewType) {
     
     _imagePickerController = [[UIImagePickerController alloc]init];
     _imagePickerController.delegate = self;
+    _imagePickerController.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
     
 }
 
@@ -157,6 +99,7 @@ typedef NS_ENUM(NSInteger, kMainViewType) {
     
     if (self.imagePickerTarget == kImagePickerTargetAvatar) {
         _avatarImageView.image = image;
+        _tinyAvatar.image = image;
     }
     else {
         _backgroundImageView.image = image;
@@ -169,6 +112,21 @@ typedef NS_ENUM(NSInteger, kMainViewType) {
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     
     [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+#pragma mark - NavigationBar Animation
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    CGFloat basicRate = (scrollView.contentOffset.y/42.0f < 1.0f? scrollView.contentOffset.y/42.0f : 1.0f);
+    
+    _tinyAvatar.hidden = !(scrollView.contentOffset.y >= 41.5f);
+    _navigationBarBottom.alpha = basicRate;
+    
+    CGFloat scaleRate = (1.0f - (0.5f * basicRate)) > 1.0f? 1.0f : 1.0f - (0.5f * basicRate);
+    _avatarImageView.transform = CGAffineTransformMakeScale(scaleRate, scaleRate);
+    _avatarImageView.hidden = (scaleRate == 0.5f);
     
 }
 
@@ -197,7 +155,7 @@ typedef NS_ENUM(NSInteger, kMainViewType) {
     // So here I use the screen's width to configure the cell's height
     // when the App run in different device, aka iPhone 6 or iPhone 6 plus
     //
-    return 380.0f * self.view.bounds.size.width/320.0f;
+    return 296.0f * self.view.bounds.size.width/320.0f;
     
 }
 
@@ -209,38 +167,31 @@ typedef NS_ENUM(NSInteger, kMainViewType) {
 
 #pragma mark - Control's Actions
 
-- (IBAction)editButtonTouchUpInside:(id)sender {
+- (IBAction)settingButtonTouchUpInside:(id)sender {
     
-    self.editingProfile = !_editingProfile;
+    UINavigationController *settingNavigationController = [self.storyboard instantiateViewControllerWithIdentifier:@"settingNavigationView"];
+    [self presentViewController:settingNavigationController animated:YES completion:nil];
+    
+}
+- (IBAction)timeMechineButtonTouchUpInside:(id)sender {
+    
+    TimeMechineViewController *timeMechineViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"timeMechineView"];
+    [self.navigationController pushViewController:timeMechineViewController animated:YES];
     
 }
 
-- (IBAction)switchAvatarButtonTouchUpInside:(id)sender {
+- (IBAction)followerButtonTouchUpInside:(id)sender {
     
-    _imagePickerTarget = kImagePickerTargetAvatar;
+}
+
+- (IBAction)followingButtonTouchUpInside:(id)sender {
+    
+}
+
+- (IBAction)changeAvatarOrBackgroundButtonTouchUpInside:(id)sender {
     
     [self showImagePickerSheet];
     
-}
-
-- (IBAction)switchBackgroundButtonTouchUpInside:(id)sender {
-    
-    _imagePickerTarget = kImagePickerTargetBackground;
-    
-    [self showImagePickerSheet];
-    
-}
-
-- (IBAction)segmentSwitched:(UISegmentedControl *)sender {
-    
-    if (sender.selectedSegmentIndex == kMainViewTypeAtMe) {
-        _atMeMainView.hidden = NO;
-        _meMainView.hidden = YES;
-    }
-    else {
-        _atMeMainView.hidden = YES;
-        _meMainView.hidden = NO;
-    }
 }
 
 /*

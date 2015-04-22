@@ -20,4 +20,16 @@
     return self.layerBorderColor;
 }
 
+- (void)setLayerShadowColor:(UIColor *)layerShadowColor {
+    
+    self.shadowColor = layerShadowColor.CGColor;
+    
+}
+
+- (UIColor *)layerShadowColor {
+    
+    return self.layerShadowColor;
+    
+}
+
 @end

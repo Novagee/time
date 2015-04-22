@@ -1,0 +1,10 @@
+PODS:
+  - FPPopover (1.4.1)
+
+DEPENDENCIES:
+  - FPPopover (~> 1.4)
+
+SPEC CHECKSUMS:
+  FPPopover: aaf34a88cad4113867c5f1d0a4f9b2f1c06e2352
+
+COCOAPODS: 0.35.0
