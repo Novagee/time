@@ -147,7 +147,7 @@
                                             <constraint firstAttribute="width" constant="30" id="kcb-x7-mJt"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hWZ-0s-nfq" userLabel="Button Bottom">
+                                    <button opaque="NO" tag="1002" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hWZ-0s-nfq" userLabel="Button Bottom">
                                         <rect key="frame" x="0.0" y="0.0" width="64" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="64" id="H7Z-93-8mf"/>
@@ -194,14 +194,14 @@
                                             </mask>
                                         </variation>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="liked" translatesAutoresizingMaskIntoConstraints="NO" id="ZFo-va-fe3" userLabel="Image">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="like" translatesAutoresizingMaskIntoConstraints="NO" id="ZFo-va-fe3" userLabel="Image">
                                         <rect key="frame" x="0.0" y="0.0" width="30" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="mUe-zV-aLL"/>
                                             <constraint firstAttribute="height" constant="24" id="mtJ-lg-Eyr"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHd-ZZ-w5A" userLabel="Button Bottom">
+                                    <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RHd-ZZ-w5A" userLabel="Button Bottom">
                                         <rect key="frame" x="0.0" y="0.0" width="64" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="6wH-EM-mwZ"/>
@@ -211,6 +211,9 @@
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="likeButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="4u6-If-54i"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -267,6 +270,9 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="commentButtonLabel" destination="PD5-cZ-acc" id="1eC-9Q-ApB"/>
+                <outlet property="likeButtonImageView" destination="ZFo-va-fe3" id="9AI-vc-YdW"/>
+                <outlet property="likeButtonLabel" destination="hhu-Ke-w14" id="63U-WQ-syb"/>
                 <outlet property="optionButton" destination="cFB-wn-Nb8" id="YHg-wX-6vo"/>
                 <outlet property="postLocationLabel" destination="bHe-Ky-yru" id="FiG-nG-sBt"/>
                 <outlet property="postTitleLabel" destination="i5R-Dd-s9R" id="6tF-W4-XIE"/>
@@ -277,7 +283,7 @@
     <resources>
         <image name="comment" width="30" height="24"/>
         <image name="feed_but_Play" width="48" height="48"/>
-        <image name="liked" width="30" height="24"/>
+        <image name="like" width="30" height="24"/>
         <image name="spring" width="375" height="211"/>
         <image name="story_options_24" width="30" height="24"/>
     </resources>

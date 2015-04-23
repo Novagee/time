@@ -10,6 +10,9 @@
 #import "SettingViewController.h"
 #import "TimeMechineViewController.h"
 
+#import "FollowingViewController.h"
+#import "FollowerViewController.h"
+
 #import "OwnTimeLineCell.h"
 
 typedef NS_ENUM(NSInteger, kImagePickerTarget) {
@@ -18,7 +21,6 @@ typedef NS_ENUM(NSInteger, kImagePickerTarget) {
     kImagePickerTargetBackground = 1
     
 };
-
 
 @interface MyTimeLineViewController ()<UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate>
 
@@ -142,9 +144,14 @@ typedef NS_ENUM(NSInteger, kImagePickerTarget) {
     
 }
 
-- (UITableViewCell *) tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     OwnTimeLineCell *cell = [self.tableView dequeueReusableCellWithIdentifier:[OwnTimeLineCell reuseIdentifier] forIndexPath:indexPath];
+        
+    // Handle comments button
+    //
+    UIButton *comments = (UIButton *)[cell viewWithTag:1002];
+    [comments addTarget:self action:@selector(commentsButtonTappedWithCell:) forControlEvents:UIControlEventTouchUpInside];
     
     return cell;
 }
@@ -165,6 +172,20 @@ typedef NS_ENUM(NSInteger, kImagePickerTarget) {
     
 }
 
+#pragma mark - Actions of Cell
+
+- (void)likeButtonTappedWithCell:(OwnTimeLineCell *)cell {
+    
+    cell.liked = !cell.liked;
+    
+}
+
+- (void)commentsButtonTappedWithCell:(OwnTimeLineCell *)cell {
+    
+    
+    
+}
+
 #pragma mark - Control's Actions
 
 - (IBAction)settingButtonTouchUpInside:(id)sender {
@@ -182,9 +203,15 @@ typedef NS_ENUM(NSInteger, kImagePickerTarget) {
 
 - (IBAction)followerButtonTouchUpInside:(id)sender {
     
+    FollowerViewController *followerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"followerView"];
+    [self presentViewController:followerViewController animated:YES completion:nil];
+    
 }
 
 - (IBAction)followingButtonTouchUpInside:(id)sender {
+    
+    FollowingViewController *followingViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"followingView"];
+    [self presentViewController:followingViewController animated:YES completion:nil];
     
 }
 
