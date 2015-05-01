@@ -10,31 +10,31 @@
 	<string>TimeImprint</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>BEDBC54385847F06641F58D2B42CAC70785A4556</key>
-		<string>https://github.com/Novagee/time</string>
+		<key>B1DD45D1621ED26A2BD328C230E03364A7BA27F4</key>
+		<string>https://bitbucket.org/timeimprint/iosapp.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>TimeImprint.xcworkspace</string>
+	<string>TimeImprint/TimeImprint.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>BEDBC54385847F06641F58D2B42CAC70785A4556</key>
-		<string>..</string>
+		<key>B1DD45D1621ED26A2BD328C230E03364A7BA27F4</key>
+		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/Novagee/time</string>
+	<string>https://bitbucket.org/timeimprint/iosapp.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>BEDBC54385847F06641F58D2B42CAC70785A4556</string>
+	<string>B1DD45D1621ED26A2BD328C230E03364A7BA27F4</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>BEDBC54385847F06641F58D2B42CAC70785A4556</string>
+			<string>B1DD45D1621ED26A2BD328C230E03364A7BA27F4</string>
 			<key>IDESourceControlWCCName</key>
-			<string>time</string>
+			<string>iosapp</string>
 		</dict>
 	</array>
 </dict>

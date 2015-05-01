@@ -13,8 +13,6 @@
 #import "FollowingViewController.h"
 #import "FollowerViewController.h"
 
-#import "DCImagePickerController.h"
-
 #import "OwnTimeLineCell.h"
 
 typedef NS_ENUM(NSInteger, kImagePickerTarget) {
@@ -76,11 +74,8 @@ typedef NS_ENUM(NSInteger, kImagePickerTarget) {
     
     _imagePickerTarget = buttonIndex;
     
-//    [self presentViewController:self.imagePickerController animated:YES completion:nil];
+    [self presentViewController:self.imagePickerController animated:YES completion:nil];
     
-    DCImagePickerController *dcImagePickerController = [[DCImagePickerController alloc]init];
-    
-    [self presentViewController:dcImagePickerController animated:YES completion:nil];
 }
 
 - (void)showImagePickerSheet {
