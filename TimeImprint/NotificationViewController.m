@@ -7,6 +7,7 @@
 //
 
 #import "NotificationViewController.h"
+#import "UtilityViewController.h"
 
 @interface NotificationViewController ()
 
@@ -20,6 +21,7 @@
     self.notificationTableView.dataSource = self;
     self.notificationTableView.delegate = self;
     
+    // hide back bar title
     [[UIBarButtonItem appearance] setBackButtonTitlePositionAdjustment:UIOffsetMake(0, -60)
                                                          forBarMetrics:UIBarMetricsDefault];
 }
@@ -62,7 +64,7 @@
         
         // set up button
         UIButton *followBtn = (UIButton *)[cell viewWithTag:101];
-        [self setupButton:followBtn];
+        [UtilityViewController setupButton:followBtn];
     }else if(indexPath.row == 1){
         cell = [tableView dequeueReusableCellWithIdentifier:likeIden];
     }else{
@@ -70,13 +72,6 @@
     }
     
     return cell;
-}
-
-- (void) setupButton: (UIButton *) btn
-{
-    btn.layer.borderColor = [UIColor redColor].CGColor;
-    btn.layer.borderWidth = 1.0;
-    btn.layer.cornerRadius = 10;
 }
 
 @end

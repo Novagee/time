@@ -10,6 +10,8 @@
 
 @interface OwnTimeLineCell : UITableViewCell
 
+@property(assign, nonatomic) BOOL liked;
+
 + (NSString *)reuseIdentifier;
 
 @end

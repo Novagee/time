@@ -1,10 +1,13 @@
 PODS:
   - FPPopover (1.4.1)
+  - JDFPeekaboo (0.2)
 
 DEPENDENCIES:
   - FPPopover (~> 1.4)
+  - JDFPeekaboo
 
 SPEC CHECKSUMS:
   FPPopover: aaf34a88cad4113867c5f1d0a4f9b2f1c06e2352
+  JDFPeekaboo: 3447593f899d32c2013422f9bdc23d9d92c75da0
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.34.4

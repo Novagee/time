@@ -41,12 +41,17 @@
 		81D3D4DD1AE8180E008F3766 /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D3D4DC1AE8180E008F3766 /* ChangePasswordViewController.m */; };
 		81D3D4E01AE830D4008F3766 /* SuggestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D3D4DF1AE830D4008F3766 /* SuggestionViewController.m */; };
 		81D3D4E41AE836BF008F3766 /* TimeMechineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D3D4E31AE836BF008F3766 /* TimeMechineViewController.m */; };
+		81D3D4E81AE90DB4008F3766 /* FollowingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D3D4E71AE90DB4008F3766 /* FollowingViewController.m */; };
+		81D3D4EB1AE90DC2008F3766 /* FollowerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D3D4EA1AE90DC2008F3766 /* FollowerViewController.m */; };
+		81D3D4EF1AE90F6D008F3766 /* FollowingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D3D4EE1AE90F6D008F3766 /* FollowingCell.m */; };
+		81D3D4F11AE912AA008F3766 /* FollowingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81D3D4F01AE912AA008F3766 /* FollowingCell.xib */; };
 		81FA5B651AE39D0700073E05 /* MyTimeLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FA5B641AE39D0700073E05 /* MyTimeLineViewController.m */; };
 		81FA5B6A1AE3A45300073E05 /* CALayer+StoryBoardExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FA5B691AE3A45300073E05 /* CALayer+StoryBoardExtention.m */; };
 		81FA5B7E1AE41D6500073E05 /* OwnTimeLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FA5B7C1AE41D6500073E05 /* OwnTimeLineCell.m */; };
 		81FA5B7F1AE41D6500073E05 /* OwnTimeLineCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81FA5B7D1AE41D6500073E05 /* OwnTimeLineCell.xib */; };
 		81FA5B831AE41D7B00073E05 /* PublicTimeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FA5B811AE41D7B00073E05 /* PublicTimeCell.m */; };
 		81FA5B841AE41D7B00073E05 /* PublicTimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81FA5B821AE41D7B00073E05 /* PublicTimeCell.xib */; };
+		9AAAE4B31AF1A30700D8452C /* UtilityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AAAE4B21AF1A30700D8452C /* UtilityViewController.m */; };
 		B0867327DFFF06F819591260 /* libPods-TimeImprint.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB6E933EFC2BE211799AFFC /* libPods-TimeImprint.a */; };
 		B65BF4761AE6512F00F755D4 /* ArticleEditingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B65BF4751AE6512F00F755D4 /* ArticleEditingViewController.m */; };
 /* End PBXBuildFile section */
@@ -104,6 +109,13 @@
 		81D3D4DF1AE830D4008F3766 /* SuggestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuggestionViewController.m; sourceTree = "<group>"; };
 		81D3D4E21AE836BF008F3766 /* TimeMechineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeMechineViewController.h; sourceTree = "<group>"; };
 		81D3D4E31AE836BF008F3766 /* TimeMechineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeMechineViewController.m; sourceTree = "<group>"; };
+		81D3D4E61AE90DB4008F3766 /* FollowingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowingViewController.h; sourceTree = "<group>"; };
+		81D3D4E71AE90DB4008F3766 /* FollowingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowingViewController.m; sourceTree = "<group>"; };
+		81D3D4E91AE90DC2008F3766 /* FollowerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowerViewController.h; sourceTree = "<group>"; };
+		81D3D4EA1AE90DC2008F3766 /* FollowerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowerViewController.m; sourceTree = "<group>"; };
+		81D3D4ED1AE90F6D008F3766 /* FollowingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowingCell.h; sourceTree = "<group>"; };
+		81D3D4EE1AE90F6D008F3766 /* FollowingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowingCell.m; sourceTree = "<group>"; };
+		81D3D4F01AE912AA008F3766 /* FollowingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowingCell.xib; sourceTree = "<group>"; };
 		81FA5B631AE39D0700073E05 /* MyTimeLineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTimeLineViewController.h; sourceTree = "<group>"; };
 		81FA5B641AE39D0700073E05 /* MyTimeLineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTimeLineViewController.m; sourceTree = "<group>"; };
 		81FA5B681AE3A45300073E05 /* CALayer+StoryBoardExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+StoryBoardExtention.h"; sourceTree = "<group>"; };
@@ -114,6 +126,8 @@
 		81FA5B801AE41D7B00073E05 /* PublicTimeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicTimeCell.h; sourceTree = "<group>"; };
 		81FA5B811AE41D7B00073E05 /* PublicTimeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicTimeCell.m; sourceTree = "<group>"; };
 		81FA5B821AE41D7B00073E05 /* PublicTimeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PublicTimeCell.xib; sourceTree = "<group>"; };
+		9AAAE4B11AF1A30700D8452C /* UtilityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilityViewController.h; sourceTree = "<group>"; };
+		9AAAE4B21AF1A30700D8452C /* UtilityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilityViewController.m; sourceTree = "<group>"; };
 		B65BF4741AE6512F00F755D4 /* ArticleEditingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleEditingViewController.h; sourceTree = "<group>"; };
 		B65BF4751AE6512F00F755D4 /* ArticleEditingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleEditingViewController.m; sourceTree = "<group>"; };
 		DEB6E933EFC2BE211799AFFC /* libPods-TimeImprint.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TimeImprint.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +160,8 @@
 		196309781ADF137500058851 /* Browse */ = {
 			isa = PBXGroup;
 			children = (
+				9AAAE4B11AF1A30700D8452C /* UtilityViewController.h */,
+				9AAAE4B21AF1A30700D8452C /* UtilityViewController.m */,
 				195CA3D51ADB9A32005EC48F /* BrowseViewController.h */,
 				195CA3D61ADB9A32005EC48F /* BrowseViewController.m */,
 				1963099D1ADF478900058851 /* NotificationViewController.h */,
@@ -219,6 +235,7 @@
 		1991304D1AD4EA900060AE40 /* TimeImprint */ = {
 			isa = PBXGroup;
 			children = (
+				81D3D4E51AE90D9E008F3766 /* Following */,
 				81D3D4E11AE83690008F3766 /* Time Mechine */,
 				81D3D4CD1AE7FCA5008F3766 /* Setting */,
 				81D3D4CC1AE7FA40008F3766 /* Catagory */,
@@ -294,6 +311,28 @@
 				81D3D4E31AE836BF008F3766 /* TimeMechineViewController.m */,
 			);
 			name = "Time Mechine";
+			sourceTree = "<group>";
+		};
+		81D3D4E51AE90D9E008F3766 /* Following */ = {
+			isa = PBXGroup;
+			children = (
+				81D3D4EC1AE90F48008F3766 /* Cell */,
+				81D3D4E61AE90DB4008F3766 /* FollowingViewController.h */,
+				81D3D4E71AE90DB4008F3766 /* FollowingViewController.m */,
+				81D3D4E91AE90DC2008F3766 /* FollowerViewController.h */,
+				81D3D4EA1AE90DC2008F3766 /* FollowerViewController.m */,
+			);
+			name = Following;
+			sourceTree = "<group>";
+		};
+		81D3D4EC1AE90F48008F3766 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				81D3D4ED1AE90F6D008F3766 /* FollowingCell.h */,
+				81D3D4EE1AE90F6D008F3766 /* FollowingCell.m */,
+				81D3D4F01AE912AA008F3766 /* FollowingCell.xib */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		81FA5B6D1AE4160600073E05 /* MyTimeLine */ = {
@@ -402,6 +441,7 @@
 				195CA3F01ADCF5A4005EC48F /* NotoSansCJKsc-Thin.otf in Resources */,
 				196309901ADF23B000058851 /* gui_expand@1x.png in Resources */,
 				196309991ADF23B000058851 /* gui_shrink@1x.png in Resources */,
+				81D3D4F11AE912AA008F3766 /* FollowingCell.xib in Resources */,
 				196309931ADF23B000058851 /* gui_pause@1x.png in Resources */,
 				81FA5B7F1AE41D6500073E05 /* OwnTimeLineCell.xib in Resources */,
 				196309981ADF23B000058851 /* gui_play@3x.png in Resources */,
@@ -469,6 +509,8 @@
 				81D3D4DD1AE8180E008F3766 /* ChangePasswordViewController.m in Sources */,
 				81FA5B651AE39D0700073E05 /* MyTimeLineViewController.m in Sources */,
 				81D3D4D01AE7FCC0008F3766 /* SettingViewController.m in Sources */,
+				81D3D4EB1AE90DC2008F3766 /* FollowerViewController.m in Sources */,
+				81D3D4E81AE90DB4008F3766 /* FollowingViewController.m in Sources */,
 				1963098D1ADF23B000058851 /* GUIPlayerView.m in Sources */,
 				81FA5B831AE41D7B00073E05 /* PublicTimeCell.m in Sources */,
 				B65BF4761AE6512F00F755D4 /* ArticleEditingViewController.m in Sources */,
@@ -476,12 +518,14 @@
 				199130541AD4EA900060AE40 /* AppDelegate.m in Sources */,
 				81D3D4D71AE817F0008F3766 /* ChangeNameViewController.m in Sources */,
 				81FA5B6A1AE3A45300073E05 /* CALayer+StoryBoardExtention.m in Sources */,
+				9AAAE4B31AF1A30700D8452C /* UtilityViewController.m in Sources */,
 				195CA3D71ADB9A32005EC48F /* BrowseViewController.m in Sources */,
 				199130511AD4EA900060AE40 /* main.m in Sources */,
 				81FA5B7E1AE41D6500073E05 /* OwnTimeLineCell.m in Sources */,
 				1963099F1ADF478900058851 /* NotificationViewController.m in Sources */,
 				1963098F1ADF23B000058851 /* UIView+UpdateAutoLayoutConstraints.m in Sources */,
 				81D3D4E01AE830D4008F3766 /* SuggestionViewController.m in Sources */,
+				81D3D4EF1AE90F6D008F3766 /* FollowingCell.m in Sources */,
 				81D3D4DA1AE81803008F3766 /* ChangeAccountViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
