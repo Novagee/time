@@ -34,6 +34,12 @@
 		1991305A1AD4EA910060AE40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 199130581AD4EA910060AE40 /* Main.storyboard */; };
 		1991305C1AD4EA910060AE40 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1991305B1AD4EA910060AE40 /* Images.xcassets */; };
 		1991305F1AD4EA910060AE40 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1991305D1AD4EA910060AE40 /* LaunchScreen.xib */; };
+		815ECD061AEAD7C800E93736 /* DCAssetsContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 815ECCFC1AEAD7C800E93736 /* DCAssetsContentViewController.m */; };
+		815ECD071AEAD7C800E93736 /* DCImagePicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 815ECCFD1AEAD7C800E93736 /* DCImagePicker.storyboard */; };
+		815ECD081AEAD7C800E93736 /* DCImagePickerCameraCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 815ECCFF1AEAD7C800E93736 /* DCImagePickerCameraCell.m */; };
+		815ECD091AEAD7C800E93736 /* DCImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 815ECD011AEAD7C800E93736 /* DCImagePickerController.m */; };
+		815ECD0A1AEAD7C800E93736 /* DCImagePickerImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 815ECD031AEAD7C800E93736 /* DCImagePickerImageCell.m */; };
+		815ECD0B1AEAD7C800E93736 /* DCImagePickerPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 815ECD051AEAD7C800E93736 /* DCImagePickerPhotoViewController.m */; };
 		81D3D4D01AE7FCC0008F3766 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D3D4CF1AE7FCC0008F3766 /* SettingViewController.m */; };
 		81D3D4D41AE8056D008F3766 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 81D3D4D31AE8056D008F3766 /* background.jpg */; };
 		81D3D4D71AE817F0008F3766 /* ChangeNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D3D4D61AE817F0008F3766 /* ChangeNameViewController.m */; };
@@ -96,6 +102,17 @@
 		1991306A1AD4EA910060AE40 /* Time_ImprintTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Time_ImprintTests.m; sourceTree = "<group>"; };
 		388C666FA82B58266E977A8D /* Pods-TimeImprint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeImprint.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimeImprint/Pods-TimeImprint.release.xcconfig"; sourceTree = "<group>"; };
 		7864AEC4C8041D429C0F59B8 /* Pods-TimeImprint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeImprint.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimeImprint/Pods-TimeImprint.debug.xcconfig"; sourceTree = "<group>"; };
+		815ECCFB1AEAD7C800E93736 /* DCAssetsContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCAssetsContentViewController.h; sourceTree = "<group>"; };
+		815ECCFC1AEAD7C800E93736 /* DCAssetsContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCAssetsContentViewController.m; sourceTree = "<group>"; };
+		815ECCFD1AEAD7C800E93736 /* DCImagePicker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DCImagePicker.storyboard; sourceTree = "<group>"; };
+		815ECCFE1AEAD7C800E93736 /* DCImagePickerCameraCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCImagePickerCameraCell.h; sourceTree = "<group>"; };
+		815ECCFF1AEAD7C800E93736 /* DCImagePickerCameraCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCImagePickerCameraCell.m; sourceTree = "<group>"; };
+		815ECD001AEAD7C800E93736 /* DCImagePickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCImagePickerController.h; sourceTree = "<group>"; };
+		815ECD011AEAD7C800E93736 /* DCImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCImagePickerController.m; sourceTree = "<group>"; };
+		815ECD021AEAD7C800E93736 /* DCImagePickerImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCImagePickerImageCell.h; sourceTree = "<group>"; };
+		815ECD031AEAD7C800E93736 /* DCImagePickerImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCImagePickerImageCell.m; sourceTree = "<group>"; };
+		815ECD041AEAD7C800E93736 /* DCImagePickerPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCImagePickerPhotoViewController.h; sourceTree = "<group>"; };
+		815ECD051AEAD7C800E93736 /* DCImagePickerPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCImagePickerPhotoViewController.m; sourceTree = "<group>"; };
 		81D3D4CE1AE7FCC0008F3766 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		81D3D4CF1AE7FCC0008F3766 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		81D3D4D31AE8056D008F3766 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
@@ -235,6 +252,10 @@
 		1991304D1AD4EA900060AE40 /* TimeImprint */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
+=======
+				815ECCFA1AEAD7B900E93736 /* DCImagePicker */,
+>>>>>>> a6a48e158566eb79e80218a31b5e3778c95cea3b
 				81D3D4E51AE90D9E008F3766 /* Following */,
 				81D3D4E11AE83690008F3766 /* Time Mechine */,
 				81D3D4CD1AE7FCA5008F3766 /* Setting */,
@@ -276,6 +297,24 @@
 				199130691AD4EA910060AE40 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		815ECCFA1AEAD7B900E93736 /* DCImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				815ECCFB1AEAD7C800E93736 /* DCAssetsContentViewController.h */,
+				815ECCFC1AEAD7C800E93736 /* DCAssetsContentViewController.m */,
+				815ECCFD1AEAD7C800E93736 /* DCImagePicker.storyboard */,
+				815ECCFE1AEAD7C800E93736 /* DCImagePickerCameraCell.h */,
+				815ECCFF1AEAD7C800E93736 /* DCImagePickerCameraCell.m */,
+				815ECD001AEAD7C800E93736 /* DCImagePickerController.h */,
+				815ECD011AEAD7C800E93736 /* DCImagePickerController.m */,
+				815ECD021AEAD7C800E93736 /* DCImagePickerImageCell.h */,
+				815ECD031AEAD7C800E93736 /* DCImagePickerImageCell.m */,
+				815ECD041AEAD7C800E93736 /* DCImagePickerPhotoViewController.h */,
+				815ECD051AEAD7C800E93736 /* DCImagePickerPhotoViewController.m */,
+			);
+			name = DCImagePicker;
 			sourceTree = "<group>";
 		};
 		81D3D4CC1AE7FA40008F3766 /* Catagory */ = {
@@ -460,6 +499,7 @@
 				195CA3EF1ADCF5A4005EC48F /* NotoSansCJKsc-Regular.otf in Resources */,
 				1963099A1ADF23B000058851 /* gui_shrink@2x.png in Resources */,
 				196309941ADF23B000058851 /* gui_pause@2x.png in Resources */,
+				815ECD071AEAD7C800E93736 /* DCImagePicker.storyboard in Resources */,
 				1963099B1ADF23B000058851 /* gui_shrink@3x.png in Resources */,
 				196309961ADF23B000058851 /* gui_play@1x.png in Resources */,
 			);
@@ -505,7 +545,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				815ECD091AEAD7C800E93736 /* DCImagePickerController.m in Sources */,
 				1963098E1ADF23B000058851 /* GUISlider.m in Sources */,
+				815ECD0B1AEAD7C800E93736 /* DCImagePickerPhotoViewController.m in Sources */,
 				81D3D4DD1AE8180E008F3766 /* ChangePasswordViewController.m in Sources */,
 				81FA5B651AE39D0700073E05 /* MyTimeLineViewController.m in Sources */,
 				81D3D4D01AE7FCC0008F3766 /* SettingViewController.m in Sources */,
@@ -513,13 +555,19 @@
 				81D3D4E81AE90DB4008F3766 /* FollowingViewController.m in Sources */,
 				1963098D1ADF23B000058851 /* GUIPlayerView.m in Sources */,
 				81FA5B831AE41D7B00073E05 /* PublicTimeCell.m in Sources */,
+				815ECD081AEAD7C800E93736 /* DCImagePickerCameraCell.m in Sources */,
 				B65BF4761AE6512F00F755D4 /* ArticleEditingViewController.m in Sources */,
 				81D3D4E41AE836BF008F3766 /* TimeMechineViewController.m in Sources */,
 				199130541AD4EA900060AE40 /* AppDelegate.m in Sources */,
 				81D3D4D71AE817F0008F3766 /* ChangeNameViewController.m in Sources */,
 				81FA5B6A1AE3A45300073E05 /* CALayer+StoryBoardExtention.m in Sources */,
+<<<<<<< HEAD
 				9AAAE4B31AF1A30700D8452C /* UtilityViewController.m in Sources */,
+=======
+				815ECD0A1AEAD7C800E93736 /* DCImagePickerImageCell.m in Sources */,
+>>>>>>> a6a48e158566eb79e80218a31b5e3778c95cea3b
 				195CA3D71ADB9A32005EC48F /* BrowseViewController.m in Sources */,
+				815ECD061AEAD7C800E93736 /* DCAssetsContentViewController.m in Sources */,
 				199130511AD4EA900060AE40 /* main.m in Sources */,
 				81FA5B7E1AE41D6500073E05 /* OwnTimeLineCell.m in Sources */,
 				1963099F1ADF478900058851 /* NotificationViewController.m in Sources */,
