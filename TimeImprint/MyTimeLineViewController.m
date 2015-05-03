@@ -85,6 +85,12 @@ typedef NS_ENUM(NSInteger, kImagePickerTarget) {
     
 }
 
+- (BOOL)shouldAutorotate {
+    
+    return NO;
+    
+}
+
 #pragma mark - Image Picker Stuff
 
 - (void)configurePickerView {

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="IfV-Ym-GbI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="IfV-Ym-GbI">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -49,7 +49,7 @@
         <!--关注-->
         <scene sceneID="ho8-uN-wtu">
             <objects>
-                <viewController id="ZiC-ne-Lel" customClass="FollowViewController" sceneMemberID="viewController">
+                <viewController id="ZiC-ne-Lel" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="N1V-7g-Zbf"/>
                         <viewControllerLayoutGuide type="bottom" id="NKK-KN-FQa"/>
@@ -99,7 +99,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="林宇翔" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TIn-He-arK">
                                                     <rect key="frame" x="74" y="32" width="51" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" tag="1101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cR8-hF-CMR">
@@ -161,7 +161,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="1112" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="林宇翔" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rnq-ur-vAx">
                                                     <rect key="frame" x="74" y="31" width="51" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="1113" contentMode="center" image="Bitmap" translatesAutoresizingMaskIntoConstraints="NO" id="wOu-8m-Pxz">
@@ -478,7 +478,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="那个春天" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8m-Wo-xPg">
                                                     <rect key="frame" x="28" y="68" width="72" height="18"/>
                                                     <fontDescription key="fontDescription" name="NotoSansCJKsc-Regular" family="Noto Sans CJK SC" pointSize="18"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1995年·四川 成都" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olp-IK-eYa">
@@ -503,13 +503,13 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@小王" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVA-a0-i7V">
                                                     <rect key="frame" x="28" y="134" width="39" height="13"/>
                                                     <fontDescription key="fontDescription" name="NotoSansCJKsc-Regular" family="Noto Sans CJK SC" pointSize="13"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@大头" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Hi-KT-vKl">
                                                     <rect key="frame" x="533" y="129" width="39" height="13"/>
                                                     <fontDescription key="fontDescription" name="NotoSansCJKsc-Regular" family="Noto Sans CJK SC" pointSize="13"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -638,7 +638,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2289" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jUn-YO-1ae">
                                         <rect key="frame" x="62" y="14" width="39" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZOb-3T-kWu">
@@ -657,7 +657,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2289" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s8g-O5-nnG">
                                         <rect key="frame" x="192" y="14" width="39" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7p7-it-3N8">
@@ -676,7 +676,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2289" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bi4-N8-rNu">
                                         <rect key="frame" x="541" y="14" width="39" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -771,7 +771,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="790个喜欢" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b1L-pW-36a">
                                 <rect key="frame" x="258" y="18" width="84" height="18"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKsc-Regular" family="Noto Sans CJK SC" pointSize="18"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="66" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="fY4-mP-9HN">
@@ -1098,7 +1098,7 @@
         <!--录视频-->
         <scene sceneID="DHK-SO-FLo">
             <objects>
-                <viewController id="fQf-dc-u2H" sceneMemberID="viewController">
+                <viewController id="fQf-dc-u2H" customClass="RecordingViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="x4S-GK-XjD"/>
                         <viewControllerLayoutGuide type="bottom" id="PCT-jU-vTr"/>
@@ -1106,13 +1106,64 @@
                     <view key="view" contentMode="scaleToFill" id="31G-2z-gss">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8c5-Iu-8Qi" userLabel="Recording View">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iTD-xr-Sky" userLabel="Mask View">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dnK-Fu-XjR">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Frt-eo-gOU">
+                                        <rect key="frame" x="8" y="8" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="1BA-h1-FFg"/>
+                                            <constraint firstAttribute="width" constant="30" id="TzZ-FI-iBV"/>
+                                        </constraints>
+                                        <state key="normal" image="close_12">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="closeButtonTouchUpInside:" destination="fQf-dc-u2H" eventType="touchUpInside" id="DWJ-VJ-Ke6"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="dnK-Fu-XjR" firstAttribute="top" secondItem="iTD-xr-Sky" secondAttribute="top" id="0q6-so-eTK"/>
+                                    <constraint firstAttribute="trailing" secondItem="dnK-Fu-XjR" secondAttribute="trailing" id="I8u-4W-Q1n"/>
+                                    <constraint firstItem="Frt-eo-gOU" firstAttribute="top" secondItem="iTD-xr-Sky" secondAttribute="top" constant="8" id="aAs-yz-y5p"/>
+                                    <constraint firstItem="dnK-Fu-XjR" firstAttribute="leading" secondItem="iTD-xr-Sky" secondAttribute="leading" id="iGo-Qz-o2j"/>
+                                    <constraint firstAttribute="bottom" secondItem="dnK-Fu-XjR" secondAttribute="bottom" id="yiO-yJ-t0x"/>
+                                    <constraint firstItem="Frt-eo-gOU" firstAttribute="leading" secondItem="iTD-xr-Sky" secondAttribute="leading" constant="8" id="zy3-te-g6h"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8c5-Iu-8Qi" firstAttribute="leading" secondItem="31G-2z-gss" secondAttribute="leading" id="4Kj-EQ-teH"/>
+                            <constraint firstItem="iTD-xr-Sky" firstAttribute="top" secondItem="31G-2z-gss" secondAttribute="top" id="7YH-up-naz"/>
+                            <constraint firstItem="PCT-jU-vTr" firstAttribute="top" secondItem="8c5-Iu-8Qi" secondAttribute="bottom" id="9Qy-4g-7U5"/>
+                            <constraint firstAttribute="trailing" secondItem="8c5-Iu-8Qi" secondAttribute="trailing" id="KLE-Bo-Fym"/>
+                            <constraint firstAttribute="trailing" secondItem="iTD-xr-Sky" secondAttribute="trailing" id="Mj4-tU-Rpq"/>
+                            <constraint firstItem="PCT-jU-vTr" firstAttribute="top" secondItem="iTD-xr-Sky" secondAttribute="bottom" id="Q8D-lS-fkw"/>
+                            <constraint firstItem="iTD-xr-Sky" firstAttribute="leading" secondItem="31G-2z-gss" secondAttribute="leading" id="WLW-5i-W9B"/>
+                            <constraint firstItem="8c5-Iu-8Qi" firstAttribute="top" secondItem="31G-2z-gss" secondAttribute="top" id="rwM-E2-Xbn"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="录视频" image="record" id="eD2-VX-XzB"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="maskView" destination="iTD-xr-Sky" id="avg-PX-P7u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UrA-4Q-kQx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-206.25" y="-116.19718309859154"/>
+            <point key="canvasLocation" x="-199" y="-146"/>
         </scene>
         <!--探索-->
         <scene sceneID="HAj-fE-AtR">
@@ -1250,7 +1301,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="789个评论" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t30-u3-bmz">
                                 <rect key="frame" x="258" y="18" width="84" height="18"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKsc-Regular" family="Noto Sans CJK SC" pointSize="18"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3bb-ZA-GFA">
@@ -1380,7 +1431,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="789个分享" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbp-zO-YyW">
                                 <rect key="frame" x="258" y="18" width="84" height="18"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKsc-Regular" family="Noto Sans CJK SC" pointSize="18"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eBN-Yp-rUj">
@@ -1399,7 +1450,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="分享到" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cnz-2Z-zeO">
                                         <rect key="frame" x="20" y="22" width="51" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Khe-d6-5aO">

@@ -45,6 +45,7 @@
 		81D3D4EB1AE90DC2008F3766 /* FollowerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D3D4EA1AE90DC2008F3766 /* FollowerViewController.m */; };
 		81D3D4EF1AE90F6D008F3766 /* FollowingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D3D4EE1AE90F6D008F3766 /* FollowingCell.m */; };
 		81D3D4F11AE912AA008F3766 /* FollowingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81D3D4F01AE912AA008F3766 /* FollowingCell.xib */; };
+		81D964611AF5D04100F77CC6 /* RecordingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D964601AF5D04100F77CC6 /* RecordingViewController.m */; };
 		81FA5B651AE39D0700073E05 /* MyTimeLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FA5B641AE39D0700073E05 /* MyTimeLineViewController.m */; };
 		81FA5B6A1AE3A45300073E05 /* CALayer+StoryBoardExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FA5B691AE3A45300073E05 /* CALayer+StoryBoardExtention.m */; };
 		81FA5B7E1AE41D6500073E05 /* OwnTimeLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FA5B7C1AE41D6500073E05 /* OwnTimeLineCell.m */; };
@@ -116,6 +117,8 @@
 		81D3D4ED1AE90F6D008F3766 /* FollowingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowingCell.h; sourceTree = "<group>"; };
 		81D3D4EE1AE90F6D008F3766 /* FollowingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowingCell.m; sourceTree = "<group>"; };
 		81D3D4F01AE912AA008F3766 /* FollowingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowingCell.xib; sourceTree = "<group>"; };
+		81D9645F1AF5D04100F77CC6 /* RecordingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordingViewController.h; sourceTree = "<group>"; };
+		81D964601AF5D04100F77CC6 /* RecordingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordingViewController.m; sourceTree = "<group>"; };
 		81FA5B631AE39D0700073E05 /* MyTimeLineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTimeLineViewController.h; sourceTree = "<group>"; };
 		81FA5B641AE39D0700073E05 /* MyTimeLineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTimeLineViewController.m; sourceTree = "<group>"; };
 		81FA5B681AE3A45300073E05 /* CALayer+StoryBoardExtention.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+StoryBoardExtention.h"; sourceTree = "<group>"; };
@@ -235,13 +238,14 @@
 		1991304D1AD4EA900060AE40 /* TimeImprint */ = {
 			isa = PBXGroup;
 			children = (
+				199130521AD4EA900060AE40 /* AppDelegate.h */,
+				199130531AD4EA900060AE40 /* AppDelegate.m */,
+				81D9645E1AF5CE7E00F77CC6 /* Recording */,
 				81D3D4E51AE90D9E008F3766 /* Following */,
 				81D3D4E11AE83690008F3766 /* Time Mechine */,
 				81D3D4CD1AE7FCA5008F3766 /* Setting */,
 				81D3D4CC1AE7FA40008F3766 /* Catagory */,
 				1963099C1ADF23B600058851 /* VideoPlayer */,
-				199130521AD4EA900060AE40 /* AppDelegate.h */,
-				199130531AD4EA900060AE40 /* AppDelegate.m */,
 				199130581AD4EA910060AE40 /* Main.storyboard */,
 				81FA5B6D1AE4160600073E05 /* MyTimeLine */,
 				196309781ADF137500058851 /* Browse */,
@@ -335,6 +339,15 @@
 			name = Cell;
 			sourceTree = "<group>";
 		};
+		81D9645E1AF5CE7E00F77CC6 /* Recording */ = {
+			isa = PBXGroup;
+			children = (
+				81D9645F1AF5D04100F77CC6 /* RecordingViewController.h */,
+				81D964601AF5D04100F77CC6 /* RecordingViewController.m */,
+			);
+			name = Recording;
+			sourceTree = "<group>";
+		};
 		81FA5B6D1AE4160600073E05 /* MyTimeLine */ = {
 			isa = PBXGroup;
 			children = (
@@ -411,7 +424,6 @@
 				TargetAttributes = {
 					1991304A1AD4EA900060AE40 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 5A88JF7M74;
 					};
 				};
 			};
@@ -518,6 +530,7 @@
 				199130541AD4EA900060AE40 /* AppDelegate.m in Sources */,
 				81D3D4D71AE817F0008F3766 /* ChangeNameViewController.m in Sources */,
 				81FA5B6A1AE3A45300073E05 /* CALayer+StoryBoardExtention.m in Sources */,
+				81D964611AF5D04100F77CC6 /* RecordingViewController.m in Sources */,
 				9AAAE4B31AF1A30700D8452C /* UtilityViewController.m in Sources */,
 				195CA3D71ADB9A32005EC48F /* BrowseViewController.m in Sources */,
 				199130511AD4EA900060AE40 /* main.m in Sources */,
