@@ -34,6 +34,8 @@
 		1991305A1AD4EA910060AE40 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 199130581AD4EA910060AE40 /* Main.storyboard */; };
 		1991305C1AD4EA910060AE40 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1991305B1AD4EA910060AE40 /* Images.xcassets */; };
 		1991305F1AD4EA910060AE40 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1991305D1AD4EA910060AE40 /* LaunchScreen.xib */; };
+		815712811AF75EEC00B3D8F7 /* RecordingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 815712801AF75EEC00B3D8F7 /* RecordingView.m */; };
+		8182DFCB1AF7F75B0001FBDC /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8182DFCA1AF7F75B0001FBDC /* MainViewController.m */; };
 		81D3D4D01AE7FCC0008F3766 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D3D4CF1AE7FCC0008F3766 /* SettingViewController.m */; };
 		81D3D4D41AE8056D008F3766 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 81D3D4D31AE8056D008F3766 /* background.jpg */; };
 		81D3D4D71AE817F0008F3766 /* ChangeNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D3D4D61AE817F0008F3766 /* ChangeNameViewController.m */; };
@@ -97,6 +99,10 @@
 		1991306A1AD4EA910060AE40 /* Time_ImprintTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Time_ImprintTests.m; sourceTree = "<group>"; };
 		388C666FA82B58266E977A8D /* Pods-TimeImprint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeImprint.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimeImprint/Pods-TimeImprint.release.xcconfig"; sourceTree = "<group>"; };
 		7864AEC4C8041D429C0F59B8 /* Pods-TimeImprint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeImprint.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimeImprint/Pods-TimeImprint.debug.xcconfig"; sourceTree = "<group>"; };
+		8157127F1AF75EEC00B3D8F7 /* RecordingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordingView.h; sourceTree = "<group>"; };
+		815712801AF75EEC00B3D8F7 /* RecordingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordingView.m; sourceTree = "<group>"; };
+		8182DFC91AF7F75B0001FBDC /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		8182DFCA1AF7F75B0001FBDC /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		81D3D4CE1AE7FCC0008F3766 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		81D3D4CF1AE7FCC0008F3766 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		81D3D4D31AE8056D008F3766 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
@@ -240,6 +246,8 @@
 			children = (
 				199130521AD4EA900060AE40 /* AppDelegate.h */,
 				199130531AD4EA900060AE40 /* AppDelegate.m */,
+				8182DFC91AF7F75B0001FBDC /* MainViewController.h */,
+				8182DFCA1AF7F75B0001FBDC /* MainViewController.m */,
 				81D9645E1AF5CE7E00F77CC6 /* Recording */,
 				81D3D4E51AE90D9E008F3766 /* Following */,
 				81D3D4E11AE83690008F3766 /* Time Mechine */,
@@ -344,6 +352,8 @@
 			children = (
 				81D9645F1AF5D04100F77CC6 /* RecordingViewController.h */,
 				81D964601AF5D04100F77CC6 /* RecordingViewController.m */,
+				8157127F1AF75EEC00B3D8F7 /* RecordingView.h */,
+				815712801AF75EEC00B3D8F7 /* RecordingView.m */,
 			);
 			name = Recording;
 			sourceTree = "<group>";
@@ -520,6 +530,7 @@
 				1963098E1ADF23B000058851 /* GUISlider.m in Sources */,
 				81D3D4DD1AE8180E008F3766 /* ChangePasswordViewController.m in Sources */,
 				81FA5B651AE39D0700073E05 /* MyTimeLineViewController.m in Sources */,
+				8182DFCB1AF7F75B0001FBDC /* MainViewController.m in Sources */,
 				81D3D4D01AE7FCC0008F3766 /* SettingViewController.m in Sources */,
 				81D3D4EB1AE90DC2008F3766 /* FollowerViewController.m in Sources */,
 				81D3D4E81AE90DB4008F3766 /* FollowingViewController.m in Sources */,
@@ -527,6 +538,7 @@
 				81FA5B831AE41D7B00073E05 /* PublicTimeCell.m in Sources */,
 				B65BF4761AE6512F00F755D4 /* ArticleEditingViewController.m in Sources */,
 				81D3D4E41AE836BF008F3766 /* TimeMechineViewController.m in Sources */,
+				815712811AF75EEC00B3D8F7 /* RecordingView.m in Sources */,
 				199130541AD4EA900060AE40 /* AppDelegate.m in Sources */,
 				81D3D4D71AE817F0008F3766 /* ChangeNameViewController.m in Sources */,
 				81FA5B6A1AE3A45300073E05 /* CALayer+StoryBoardExtention.m in Sources */,

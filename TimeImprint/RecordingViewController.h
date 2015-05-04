@@ -7,7 +7,7 @@
 //
 
 @import UIKit;
-@import CoreMotion;
+@import AVFoundation;
 
 @interface RecordingViewController : UIViewController
 
