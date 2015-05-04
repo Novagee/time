@@ -1071,7 +1071,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="exitButtonTouchUpInside:" destination="fQf-dc-u2H" eventType="touchUpInside" id="IXZ-RA-Rya"/>
+                                            <action selector="closeButtonTouchUpInside:" destination="fQf-dc-u2H" eventType="touchUpInside" id="4cg-ME-16V"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UF9-wT-YtU" userLabel="Record Button">

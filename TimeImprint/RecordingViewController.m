@@ -56,13 +56,15 @@
     
     self.tabBarController.tabBar.hidden = YES;
     
+    _maskView.hidden = NO;
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
     
     // Hide mask view with fade animation
     //
-//    [self configureMaskView];
+    [self configureMaskView];
     
     // Add observer to device rotation
     //
@@ -230,19 +232,21 @@
 
 - (void)configureMaskView {
     
-    [UIView animateWithDuration:1 - 0.618f
-                          delay:0.618f * 10
-                        options:UIViewAnimationOptionBeginFromCurrentState
-                     animations:^{
-        
-                         _maskView.alpha = 0.0f;
-                         
-                        }
-                     completion:^(BOOL finished) {
-        
-                         _maskView.hidden = YES;
-                         
-                     }];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [UIView animateWithDuration:1 - 0.618f
+                              delay:0
+                            options:UIViewAnimationOptionBeginFromCurrentState
+                         animations:^{
+                             
+                             _maskView.alpha = 0.0f;
+                             
+                         }
+                         completion:^(BOOL finished) {
+                             
+                             _maskView.hidden = YES;
+                             
+                         }];
+    });
     
 }
 
@@ -271,10 +275,6 @@
 - (IBAction)flashLightButtonTouchUpInside:(id)sender {
 
 
-    
-}
-
-- (IBAction)exitButtonTouchUpInside:(id)sender {
     
 }
 
