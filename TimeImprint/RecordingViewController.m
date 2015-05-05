@@ -57,17 +57,14 @@
     
     [super viewWillAppear:animated];
     
-    self.tabBarController.tabBar.hidden = YES;
+    _exitRecording = NO;
+    ((MainViewController *)self.tabBarController).lockScreenRotation = NO;
     
-    _maskView.hidden = NO;
+    self.tabBarController.tabBar.hidden = YES;
     
 }
 
 - (void)viewDidAppear:(BOOL)animated {
-    
-    // Hide mask view with fade animation
-    //
-    //[self configureMaskView];
     
     // Add observer to device rotation
     //
@@ -79,7 +76,7 @@
     
     // Configure the device orientation
     //
-    [self rotateDeviceOrientation:UIInterfaceOrientationLandscapeRight];
+    //[self rotateDeviceOrientation:UIInterfaceOrientationLandscapeRight];
     
     dispatch_async(self.captureSessionQueue, ^{
         
@@ -91,6 +88,10 @@
 - (void)viewDidDisappear:(BOOL)animated {
     
     [super viewDidDisappear:animated];
+    
+    _recordingControls.hidden = YES;
+    _recordingView.hidden = YES;
+    _maskView.hidden = NO;
     
     [[UIDevice currentDevice]endGeneratingDeviceOrientationNotifications];
     [[NSNotificationCenter defaultCenter]removeObserver:self
@@ -114,10 +115,21 @@
 
 - (void)didOrientationChanged:(NSNotification *)notification {
     
-    if (! self.isExitRecording) {
-        ((MainViewController *)self.tabBarController).lockScreenRotation = YES;
+    UIDevice *currentDevice = notification.object;
+    
+    if (currentDevice.orientation == UIDeviceOrientationLandscapeLeft) {
+        _recordingView.hidden = NO;
+        _recordingControls.hidden = NO;
+        _maskView.hidden = YES;
+        
+        if (self.isExitRecording) {
+            [self rotateDeviceOrientation:UIInterfaceOrientationPortrait];
+        }
+        
     }
-
+    
+    ((MainViewController *)self.tabBarController).lockScreenRotation = !self.isExitRecording;
+    
 }
 
 - (void)rotateDeviceOrientation:(UIInterfaceOrientation)interfaceOrientation {
@@ -133,13 +145,13 @@
     
 }
 
-- (BOOL)shouldAutorotate {
+#pragma mark - Video Recording Methods
+
+- (void)configureRecordingProcessor {
     
-    return YES;
+    
     
 }
-
-#pragma mark - Video Recording Methods
 
 - (void)configureCaptureSession {
     
@@ -207,7 +219,19 @@
     
 }
 
-- (AVCaptureDevice *)captureDeviceWithMediaType:(NSString *)mediaType preferringPosition:(AVCaptureDevicePosition)devicePosition {
+- (void)configureDeviceFlashMode:(AVCaptureFlashMode)flashMode forCaptureDevice:(AVCaptureDevice *)captureDevice {
+    
+    if ([captureDevice hasFlash] && [captureDevice isFlashModeSupported:flashMode]) {
+        if ([captureDevice lockForConfiguration:nil]) {
+            captureDevice.flashMode = flashMode;
+            [captureDevice unlockForConfiguration];
+        }
+    }
+    
+}
+
+- (AVCaptureDevice *)captureDeviceWithMediaType:(NSString *)mediaType
+                             preferringPosition:(AVCaptureDevicePosition)devicePosition {
     
     NSArray *captureDevices = [AVCaptureDevice devicesWithMediaType:mediaType];
 
@@ -237,28 +261,6 @@
     
 }
 
-#pragma mark - Mask View Methods
-
-- (void)configureMaskView {
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3.0f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [UIView animateWithDuration:1 - 0.618f
-                              delay:0
-                            options:UIViewAnimationOptionBeginFromCurrentState
-                         animations:^{
-                             
-                             _maskView.alpha = 0.0f;
-                             
-                         }
-                         completion:^(BOOL finished) {
-                             
-                             _maskView.hidden = YES;
-                             
-                         }];
-    });
-    
-}
-
 #pragma mark - Control's Action
 
 - (IBAction)closeButtonTouchUpInside:(id)sender {
@@ -266,9 +268,23 @@
     // Use this special flag to handle the fucking tabBarController rotation
     //
     _exitRecording = YES;
+    _maskView.hidden = NO;
+    
+    dispatch_async(self.captureSessionQueue, ^{
+        
+        [self.captureSession stopRunning];
+        
+    });
+    
     ((MainViewController *)self.tabBarController).lockScreenRotation = NO;
     
-    [self rotateDeviceOrientation:UIInterfaceOrientationPortrait];
+    
+    if ([UIDevice currentDevice].orientation == UIDeviceOrientationPortrait) {
+        [self rotateDeviceOrientation:UIInterfaceOrientationLandscapeRight];
+    }
+    else {
+        [self rotateDeviceOrientation:UIInterfaceOrientationPortrait];
+    }
 
     self.tabBarController.tabBar.hidden = NO;
     [self.tabBarController setSelectedIndex:0];
@@ -277,13 +293,65 @@
 
 - (IBAction)switchCaptureDevicePostionButtonTouchUpInside:(id)sender {
     
-    
+    dispatch_async(self.captureSessionQueue, ^{
+        
+        // Congfigure the prefer device position
+        //
+        AVCaptureDevice *currentDevice = self.captureDeviceInput.device;
+        AVCaptureDevicePosition preferCaptureDevicePosition = AVCaptureDevicePositionUnspecified;
+        
+        if (currentDevice.position == AVCaptureDevicePositionBack) {
+            preferCaptureDevicePosition = AVCaptureDevicePositionFront;
+            
+            // If the prefer device position is front camera, disable the flash button
+            //
+            dispatch_async(dispatch_get_main_queue(), ^{
+               _flashlightButton.hidden = YES;
+            });
+            
+        }
+        else {
+            preferCaptureDevicePosition = AVCaptureDevicePositionBack;
+            
+            // If the prefer device position is back camera, enable the flash button
+            //
+            dispatch_async(dispatch_get_main_queue(), ^{
+                _flashlightButton.hidden = NO;
+            });
+            
+        }
+        
+        // Configure prefer device
+        //
+        AVCaptureDevice *preferCaptureDevice = [self captureDeviceWithMediaType:AVMediaTypeVideo preferringPosition:preferCaptureDevicePosition];
+        AVCaptureDeviceInput *preferCaptureDeviceInput = [AVCaptureDeviceInput deviceInputWithDevice:preferCaptureDevice error:nil];
+        
+        // Begin configure captureSession
+        //
+        [self.captureSession beginConfiguration];
+        
+        // Remove previous captureDeviceInput
+        //
+        [self.captureSession removeInput:self.captureDeviceInput];
+        
+        if ([self.captureSession canAddInput:preferCaptureDeviceInput]) {
+            
+            [self.captureSession addInput:preferCaptureDeviceInput];
+            [self setCaptureDeviceInput:preferCaptureDeviceInput];
+            
+        }
+        
+        // End configure captureSession
+        //
+        [self.captureSession commitConfiguration];
+        
+    });
     
 }
 
 - (IBAction)flashLightButtonTouchUpInside:(id)sender {
 
-
+    
     
 }
 

@@ -8,6 +8,8 @@
 
 #import "BrowseViewController.h"
 
+#import "MainViewController.h"
+
 @interface BrowseViewController ()
 
 @end
@@ -24,12 +26,38 @@
     // dismiss the separator line
     self.browseTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+    
+    ((MainViewController *)self.tabBarController).lockScreenRotation = YES;    
+    
+    [self rotateDeviceOrientation:UIInterfaceOrientationPortrait];
     
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Rotation Methods
+
+- (BOOL)shouldAutorotate {
+    return NO;
+}
+
+- (NSUInteger)supportedInterfaceOrientations {
+    
+    return UIInterfaceOrientationPortrait;
+    
+}
+
+- (void)rotateDeviceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    
+    [[UIDevice currentDevice]setValue:@(interfaceOrientation) forKey:@"orientation"];
+    [[UIApplication sharedApplication]setStatusBarOrientation:interfaceOrientation];
+    
 }
 
 /*

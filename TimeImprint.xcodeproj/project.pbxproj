@@ -36,6 +36,7 @@
 		1991305F1AD4EA910060AE40 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1991305D1AD4EA910060AE40 /* LaunchScreen.xib */; };
 		815712811AF75EEC00B3D8F7 /* RecordingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 815712801AF75EEC00B3D8F7 /* RecordingView.m */; };
 		8182DFCB1AF7F75B0001FBDC /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8182DFCA1AF7F75B0001FBDC /* MainViewController.m */; };
+		8182DFCF1AF8AE1A0001FBDC /* VIdeoAssetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8182DFCE1AF8AE1A0001FBDC /* VIdeoAssetsViewController.m */; };
 		81D3D4D01AE7FCC0008F3766 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D3D4CF1AE7FCC0008F3766 /* SettingViewController.m */; };
 		81D3D4D41AE8056D008F3766 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 81D3D4D31AE8056D008F3766 /* background.jpg */; };
 		81D3D4D71AE817F0008F3766 /* ChangeNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D3D4D61AE817F0008F3766 /* ChangeNameViewController.m */; };
@@ -103,6 +104,8 @@
 		815712801AF75EEC00B3D8F7 /* RecordingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordingView.m; sourceTree = "<group>"; };
 		8182DFC91AF7F75B0001FBDC /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		8182DFCA1AF7F75B0001FBDC /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		8182DFCD1AF8AE1A0001FBDC /* VIdeoAssetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIdeoAssetsViewController.h; sourceTree = "<group>"; };
+		8182DFCE1AF8AE1A0001FBDC /* VIdeoAssetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIdeoAssetsViewController.m; sourceTree = "<group>"; };
 		81D3D4CE1AE7FCC0008F3766 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		81D3D4CF1AE7FCC0008F3766 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		81D3D4D31AE8056D008F3766 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
@@ -352,6 +355,8 @@
 			children = (
 				81D9645F1AF5D04100F77CC6 /* RecordingViewController.h */,
 				81D964601AF5D04100F77CC6 /* RecordingViewController.m */,
+				8182DFCD1AF8AE1A0001FBDC /* VIdeoAssetsViewController.h */,
+				8182DFCE1AF8AE1A0001FBDC /* VIdeoAssetsViewController.m */,
 				8157127F1AF75EEC00B3D8F7 /* RecordingView.h */,
 				815712801AF75EEC00B3D8F7 /* RecordingView.m */,
 			);
@@ -528,6 +533,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1963098E1ADF23B000058851 /* GUISlider.m in Sources */,
+				8182DFCF1AF8AE1A0001FBDC /* VIdeoAssetsViewController.m in Sources */,
 				81D3D4DD1AE8180E008F3766 /* ChangePasswordViewController.m in Sources */,
 				81FA5B651AE39D0700073E05 /* MyTimeLineViewController.m in Sources */,
 				8182DFCB1AF7F75B0001FBDC /* MainViewController.m in Sources */,
