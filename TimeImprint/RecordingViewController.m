@@ -17,6 +17,9 @@
 @property (weak, nonatomic) IBOutlet UIView *maskView;
 @property (assign, nonatomic, getter = isExitRecording) BOOL exitRecording;
 
+#pragma mark - Recording Controls Properties
+
+@property (weak, nonatomic) IBOutlet UIView *recordingControls;
 @property (weak, nonatomic) IBOutlet UIButton *flashlightButton;
 @property (weak, nonatomic) IBOutlet UIButton *assetButton;
 @property (weak, nonatomic) IBOutlet UIImageView *assetButtonImage;
@@ -64,7 +67,7 @@
     
     // Hide mask view with fade animation
     //
-    [self configureMaskView];
+    //[self configureMaskView];
     
     // Add observer to device rotation
     //
@@ -102,6 +105,12 @@
 }
 
 #pragma mark - Interface Orientation Methods
+
+- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+    
+    _maskView.hidden = YES;
+    
+}
 
 - (void)didOrientationChanged:(NSNotification *)notification {
     
