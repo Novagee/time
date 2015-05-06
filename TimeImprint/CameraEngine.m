@@ -34,7 +34,6 @@ static CameraEngine* theEngine;
 
 @end
 
-
 @implementation CameraEngine
 
 + (instancetype)shareEngine {
@@ -254,7 +253,6 @@ static CameraEngine* theEngine;
 - (void)setAudioFormat:(CMFormatDescriptionRef)formatDescription
 {
     const AudioStreamBasicDescription *asbd = CMAudioFormatDescriptionGetStreamBasicDescription(formatDescription);
-    memset(&asbd, 0, sizeof(asbd));
     _sampleRate = asbd->mSampleRate;
     _channels = asbd->mChannelsPerFrame;
     
