@@ -10,7 +10,17 @@
 #import "MainViewController.h"
 #import "RecordingView.h"
 
-@interface RecordingViewController ()
+#import "CameraEngine.h"
+
+typedef NS_ENUM(NSInteger, kRecordButtonStatus) {
+    kRecordButtonStatusNormal = 0,
+    kRecordButtonStatusPause = 1,
+    kRecordButtonStatusRecording = 2
+};
+
+static void * RecordingContext = &RecordingContext;
+
+@interface RecordingViewController () <AVCaptureVideoDataOutputSampleBufferDelegate, AVCaptureAudioDataOutputSampleBufferDelegate>
 
 #pragma mark - Mask View Properties
 
@@ -32,24 +42,19 @@
 
 @property (weak, nonatomic) IBOutlet RecordingView *recordingView;
 
-@property (strong, nonatomic) AVCaptureSession *captureSession;
-@property (strong, nonatomic) AVCaptureDeviceInput *captureDeviceInput;
-@property (strong, nonatomic) AVCaptureMovieFileOutput *captureMovieFileOutput;
-
-@property (assign, nonatomic, getter=isDeviceAuthorizated) BOOL deviceAuthorization;
+@property (strong, nonatomic) NSTimer *countBackwardTimer;
+@property (strong, nonatomic) NSTimer *recordingTimer;
 
 @end
 
 @implementation RecordingViewController
 
+#pragma mark - Controller's Life Circle
+
 - (void)viewDidLoad {
     
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    // Configure video recording
-    //
-    [self configureCaptureSession];
     
 }
 
@@ -57,16 +62,16 @@
     
     [super viewWillAppear:animated];
     
+    // Configure video recording
+    //
+    [[CameraEngine shareEngine]configureEngineOnPosition:AVCaptureDevicePositionBack];
+    
     _exitRecording = NO;
     ((MainViewController *)self.tabBarController).lockScreenRotation = NO;
     
     self.tabBarController.tabBar.hidden = YES;
     
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    
-    // Add observer to device rotation
+    // Add observer for device rotation
     //
     [[UIDevice currentDevice]beginGeneratingDeviceOrientationNotifications];
     [[NSNotificationCenter defaultCenter]addObserver:self
@@ -74,15 +79,12 @@
                                                 name:UIDeviceOrientationDidChangeNotification
                                               object:nil];
     
-    // Configure the device orientation
-    //
-    //[self rotateDeviceOrientation:UIInterfaceOrientationLandscapeRight];
+}
+
+- (void)viewDidAppear:(BOOL)animated {
+
     
-    dispatch_async(self.captureSessionQueue, ^{
-        
-        [self.captureSession startRunning];
-        
-    });
+    
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -122,6 +124,11 @@
         _recordingControls.hidden = NO;
         _maskView.hidden = YES;
         
+        // Configure capture preview
+        //
+        _recordingView.captureSession = [CameraEngine shareEngine].captureSession;
+        ((AVCaptureVideoPreviewLayer *)_recordingView.layer).connection.videoOrientation = AVCaptureVideoOrientationLandscapeRight;
+        
         if (self.isExitRecording) {
             [self rotateDeviceOrientation:UIInterfaceOrientationPortrait];
         }
@@ -153,73 +160,8 @@
     
 }
 
-- (void)configureCaptureSession {
-    
-    _captureSession = [[AVCaptureSession alloc]init];
-    
-    _recordingView.captureSession = self.captureSession;
-    
-    // Let the "start recording" prepare on background, because it may block the thread if you put it in the main thread and cause
-    // the UI not response
-    //
-    _captureSessionQueue = dispatch_queue_create("SessionQueue", DISPATCH_QUEUE_SERIAL);
-    
-    dispatch_async(self.captureSessionQueue, ^{
-        
-        _backgroundRecordingID = UIBackgroundTaskInvalid;
-        
-        // Configure the video device with a back position camera
-        //
-        AVCaptureDevice *videoDevice = [self captureDeviceWithMediaType:AVMediaTypeVideo preferringPosition:AVCaptureDevicePositionBack];
-        
-        // Cofigure the camera capture input
-        //
-        NSError *errorForVideoDevice = nil;
-        
-        _captureDeviceInput = [AVCaptureDeviceInput deviceInputWithDevice:videoDevice error:&errorForVideoDevice];
-        
-        if ([self.captureSession canAddInput:self.captureDeviceInput]) {
-            [_captureSession addInput:self.captureDeviceInput];
-            
-            dispatch_async(dispatch_get_main_queue(), ^{
-                
-                ((AVCaptureVideoPreviewLayer *)self.recordingView.layer).connection.videoOrientation = AVCaptureVideoOrientationLandscapeRight;
-                
-            });
-        }
-        
-        // Configure the audio capture input
-        //
-        NSError *errorForAudioDevice = nil;
-        
-        AVCaptureDevice *audioDevice = [AVCaptureDevice devicesWithMediaType:AVMediaTypeAudio].firstObject;
-        
-        AVCaptureDeviceInput *audioDeviceInput = [AVCaptureDeviceInput deviceInputWithDevice:audioDevice error:&errorForAudioDevice];
-        
-        if ([self.captureSession canAddInput:audioDeviceInput]) {
-            [_captureSession addInput:audioDeviceInput];
-        }
-        
-        // Configure the file output
-        //
-        _captureMovieFileOutput = [[AVCaptureMovieFileOutput alloc]init];
-        
-        if ([self.captureSession canAddOutput:self.captureMovieFileOutput]) {
-            [_captureSession addOutput:self.captureMovieFileOutput];
-            
-            AVCaptureConnection *captureConnection = [self.captureMovieFileOutput connectionWithMediaType:AVMediaTypeVideo];
-            
-            if ([captureConnection isVideoStabilizationSupported]) {
-                
-            }
-            
-        }
-        
-    });
-    
-}
-
-- (void)configureDeviceFlashMode:(AVCaptureFlashMode)flashMode forCaptureDevice:(AVCaptureDevice *)captureDevice {
+- (void)configureDeviceFlashMode:(AVCaptureFlashMode)flashMode
+                forCaptureDevice:(AVCaptureDevice *)captureDevice {
     
     if ([captureDevice hasFlash] && [captureDevice isFlashModeSupported:flashMode]) {
         if ([captureDevice lockForConfiguration:nil]) {
@@ -248,18 +190,6 @@
     return nil;
 }
 
-- (void)checkDeviceAuthorization {
-    
-    [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo
-                             completionHandler:^(BOOL granted) {
-        
-                                 if (granted) {
-                                     _deviceAuthorization = YES;
-                                 }
-                                 
-                             }];
-    
-}
 
 #pragma mark - Control's Action
 
@@ -270,11 +200,8 @@
     _exitRecording = YES;
     _maskView.hidden = NO;
     
-    dispatch_async(self.captureSessionQueue, ^{
         
-        [self.captureSession stopRunning];
-        
-    });
+    [[CameraEngine shareEngine]shutdownEngine];
     
     ((MainViewController *)self.tabBarController).lockScreenRotation = NO;
     
@@ -293,6 +220,7 @@
 
 - (IBAction)switchCaptureDevicePostionButtonTouchUpInside:(id)sender {
     
+    /*
     dispatch_async(self.captureSessionQueue, ^{
         
         // Congfigure the prefer device position
@@ -311,7 +239,7 @@
             
         }
         else {
-            preferCaptureDevicePosition = AVCaptureDevicePositionBack;
+
             
             // If the prefer device position is back camera, enable the flash button
             //
@@ -346,20 +274,36 @@
         [self.captureSession commitConfiguration];
         
     });
-    
+    */
 }
 
 - (IBAction)flashLightButtonTouchUpInside:(id)sender {
 
     
-    
 }
 
 - (IBAction)recordingControlButtonTouchUpInside:(id)sender {
+
+    UIButton *button = (UIButton *)sender;
+    
+    if (button.tag == kRecordButtonStatusNormal) {
+        [[CameraEngine shareEngine] startRecording];
+        button.tag = kRecordButtonStatusRecording;
+    }
+    else if (button.tag == kRecordButtonStatusRecording){
+        [[CameraEngine shareEngine] pauseRecording];
+        button.tag = kRecordButtonStatusPause;
+    }
+    else {
+        [[CameraEngine shareEngine]resumeRecording];
+        button.tag = kRecordButtonStatusRecording;
+    }
     
 }
 
 - (IBAction)assetButtonTouchUpInside:(id)sender {
+    
+    [[CameraEngine shareEngine]endRecording];
     
 }
 

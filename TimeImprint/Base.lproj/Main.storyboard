@@ -1025,7 +1025,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tPC-AC-IyQ" userLabel="Recording Bottom">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8c5-Iu-8Qi" userLabel="Recording View" customClass="RecordingView">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8c5-Iu-8Qi" userLabel="Recording View" customClass="RecordingView">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
@@ -1159,7 +1159,7 @@
                                     <constraint firstItem="8c5-Iu-8Qi" firstAttribute="top" secondItem="tPC-AC-IyQ" secondAttribute="top" id="uj3-jH-ycd"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iTD-xr-Sky" userLabel="Mask View">
+                            <view hidden="YES" alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iTD-xr-Sky" userLabel="Mask View">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dnK-Fu-XjR">
@@ -1179,7 +1179,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="0.33333333333333331" alpha="0.90000000000000002" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="dnK-Fu-XjR" firstAttribute="top" secondItem="iTD-xr-Sky" secondAttribute="top" id="0q6-so-eTK"/>
                                     <constraint firstAttribute="trailing" secondItem="dnK-Fu-XjR" secondAttribute="trailing" id="I8u-4W-Q1n"/>
