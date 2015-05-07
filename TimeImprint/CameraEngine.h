@@ -23,6 +23,8 @@
 @property (strong, nonatomic) AVCaptureVideoPreviewLayer *captureVideoPreviewLayer;
 @property (assign, nonatomic) AVCaptureDevicePosition captureDevicePosition;
 
+@property (assign, nonatomic) NSInteger recordingTime;
+
 + (instancetype)shareEngine;
 
 - (void)configureEngineOnPosition:(AVCaptureDevicePosition)captureDevicePosition;

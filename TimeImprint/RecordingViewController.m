@@ -7,9 +7,11 @@
 //
 
 #import "RecordingViewController.h"
+#import "VideoEditViewController.h"
+#import "VIdeoAssetsViewController.h"
 #import "MainViewController.h"
-#import "RecordingView.h"
 
+#import "RecordingView.h"
 #import "CameraEngine.h"
 
 typedef NS_ENUM(NSInteger, kRecordButtonStatus) {
@@ -32,18 +34,29 @@ static void * RecordingContext = &RecordingContext;
 @property (weak, nonatomic) IBOutlet UIView *recordingControls;
 @property (weak, nonatomic) IBOutlet UIButton *flashlightButton;
 @property (weak, nonatomic) IBOutlet UIButton *assetButton;
+@property (weak, nonatomic) IBOutlet UIButton *exitButton;
 @property (weak, nonatomic) IBOutlet UIImageView *assetButtonImage;
 @property (weak, nonatomic) IBOutlet UIButton *recordButton;
+@property (weak, nonatomic) IBOutlet UIButton *recordCompleteButton;
 
 #pragma mark - Video Recording's Properties
 
-@property (nonatomic) dispatch_queue_t captureSessionQueue;
-@property (nonatomic) UIBackgroundTaskIdentifier backgroundRecordingID;
-
 @property (weak, nonatomic) IBOutlet RecordingView *recordingView;
 
+// Use this property for UI display temporary, we should use CameraEngine.isRecoding after the bug solved
+//
+@property (assign, nonatomic, getter=isRecording) BOOL recording;
+
 @property (strong, nonatomic) NSTimer *countBackwardTimer;
+@property (assign, nonatomic) NSTimeInterval countBackwardTime;
+@property (weak, nonatomic) IBOutlet UILabel *countBackwardLabel;
+
+// After the CameraEngine Fixed, we should use CameraEngine.videoTime for fetch the video's time
+//
 @property (strong, nonatomic) NSTimer *recordingTimer;
+@property (assign, nonatomic) NSTimeInterval recordingTime;
+
+@property (strong, nonatomic) CAShapeLayer *videoTimeLayer;
 
 @end
 
@@ -99,6 +112,17 @@ static void * RecordingContext = &RecordingContext;
     [[NSNotificationCenter defaultCenter]removeObserver:self
                                                    name:UIDeviceOrientationDidChangeNotification
                                                  object:nil];
+    
+    // Just for UI, it should change image better
+    //
+    _recordButton.layer.cornerRadius = 0;
+    _recordButton.tag = kRecordButtonStatusNormal;
+    
+    _recording = NO;
+    _assetButton.hidden = NO;
+    _assetButtonImage.hidden = NO;
+    _recordCompleteButton.hidden = YES;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -107,9 +131,138 @@ static void * RecordingContext = &RecordingContext;
     
 }
 
+#pragma mark - Timer Methods
+
+- (void)configureBackwardTimer {
+    
+    _countBackwardTime = 3;
+    _countBackwardLabel.hidden = NO;
+    
+    _countBackwardTimer = [NSTimer scheduledTimerWithTimeInterval:1
+                                                           target:self
+                                                         selector:@selector(handleBackwardTimer)
+                                                         userInfo:nil repeats:YES];
+    
+}
+
+- (void)handleBackwardTimer {
+    
+    if (self.countBackwardTime == 0) {
+        
+        [UIView animateWithDuration:0.0f
+                         animations:^{
+            
+                              _countBackwardLabel.alpha = 0.0f;
+                             
+                         }
+                         completion:^(BOOL finished) {
+            
+                             _countBackwardLabel.text = @"3";
+                             _countBackwardLabel.hidden = YES;
+                             
+                             // Start the camera engine here
+                             //
+                             // ......
+                             
+                             // Just for UI, it should change image better
+                             //
+                             _recordButton.layer.cornerRadius = 0;
+                             _recordButton.tag = kRecordButtonStatusRecording;
+                             
+                             _recording = YES;
+                             _assetButton.hidden = YES;
+                             _assetButtonImage.hidden = YES;
+                             _recordCompleteButton.hidden = NO;
+                             _exitButton.hidden = YES;
+                             
+                             // Ready to display the timer and the progress layer
+                             //
+                             [self configureVideoTimeLayer];
+                             [self configureRecordingTimer];
+                             
+                         }];
+    
+        [_countBackwardTimer invalidate];
+        
+        return ;
+        
+    }
+    
+    [UIView animateWithDuration:0.0f
+                     animations:^{
+                         
+                         _countBackwardLabel.text = [NSString stringWithFormat:@"%.0f", self.countBackwardTime];
+                         
+                     }];
+    
+    _countBackwardTime--;
+    
+    
+}
+
+- (void)configureRecordingTimer {
+    
+    _recordingTime = 0;
+    
+    _recordingTimer = [NSTimer scheduledTimerWithTimeInterval:0.1f
+                                                       target:self
+                                                     selector:@selector(handleRecordingTimer)
+                                                     userInfo:nil
+                                                      repeats:YES];
+    
+}
+
+- (void)handleRecordingTimer {
+    
+    if (self.recordingTime == 10.0f) {
+        
+        // End recording here
+        // ...
+        
+        
+        [_recordingTimer invalidate];
+        
+        return ;
+    }
+    
+    if (self.recordingTime == 3.0f) {
+        
+        _recordCompleteButton.backgroundColor = [UIColor redColor];
+        _recordCompleteButton.enabled = YES;
+        
+    }
+    
+    _videoTimeLayer.strokeEnd = _recordingTime/10.0f;
+    [_videoTimeLayer setNeedsDisplay];
+    
+    _recordingTime += 0.1f;
+    
+}
+
+- (void)configureVideoTimeLayer {
+    
+    _videoTimeLayer = [CAShapeLayer layer];
+    _videoTimeLayer.frame = CGRectMake(0, self.view.frame.size.height - 6,
+                                       self.view.bounds.size.width, 6);
+    _videoTimeLayer.backgroundColor = [UIColor whiteColor].CGColor;
+    _videoTimeLayer.strokeColor = [UIColor redColor].CGColor;
+    _videoTimeLayer.lineWidth = 6;
+    _videoTimeLayer.strokeEnd = 0.0f;
+    
+    UIBezierPath *path = [UIBezierPath bezierPath];
+    [path moveToPoint:CGPointMake(0, self.videoTimeLayer.frame.size.height/2)];
+    [path addLineToPoint:CGPointMake(self.videoTimeLayer.frame.size.width, self.videoTimeLayer.frame.size.height/2)];
+    
+    _videoTimeLayer.path = path.CGPath;
+    
+    [_recordingView.layer addSublayer:self.videoTimeLayer];
+    
+}
+
 #pragma mark - Interface Orientation Methods
 
-- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
+- (void)viewWillTransitionToSize:(CGSize)size
+       withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator {
     
     _maskView.hidden = YES;
     
@@ -190,7 +343,6 @@ static void * RecordingContext = &RecordingContext;
     return nil;
 }
 
-
 #pragma mark - Control's Action
 
 - (IBAction)closeButtonTouchUpInside:(id)sender {
@@ -199,7 +351,6 @@ static void * RecordingContext = &RecordingContext;
     //
     _exitRecording = YES;
     _maskView.hidden = NO;
-    
         
     [[CameraEngine shareEngine]shutdownEngine];
     
@@ -287,8 +438,9 @@ static void * RecordingContext = &RecordingContext;
     UIButton *button = (UIButton *)sender;
     
     if (button.tag == kRecordButtonStatusNormal) {
-        [[CameraEngine shareEngine] startRecording];
-        button.tag = kRecordButtonStatusRecording;
+        
+        [self configureBackwardTimer];
+        
     }
     else if (button.tag == kRecordButtonStatusRecording){
         [[CameraEngine shareEngine] pauseRecording];
@@ -305,6 +457,12 @@ static void * RecordingContext = &RecordingContext;
     
     [[CameraEngine shareEngine]endRecording];
     
+}
+
+- (IBAction)recordingCompleteButtonTouchUpInside:(id)sender {
+
+    
+
 }
 
 @end
