@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="IfV-Ym-GbI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="IfV-Ym-GbI">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -1033,13 +1033,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPO-2M-OtZ" userLabel="Switch Camera Button">
-                                                <rect key="frame" x="20" y="190" width="40" height="40"/>
+                                                <rect key="frame" x="20" y="189" width="42" height="42"/>
                                                 <color key="backgroundColor" red="0.0040246212119999999" green="0.0040246212119999999" blue="0.0040246212119999999" alpha="0.5" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="7KG-Rd-4dN"/>
-                                                    <constraint firstAttribute="width" constant="40" id="auc-oZ-HCE"/>
+                                                    <constraint firstAttribute="height" constant="42" id="7KG-Rd-4dN"/>
+                                                    <constraint firstAttribute="width" constant="42" id="auc-oZ-HCE"/>
                                                 </constraints>
-                                                <state key="normal" title="转">
+                                                <state key="normal" image="switchCam_42">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -1052,20 +1052,20 @@
                                                 </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jhw-eE-lIo" userLabel="Asset Image">
-                                                <rect key="frame" x="523" y="190" width="40" height="40"/>
+                                                <rect key="frame" x="522" y="190" width="40" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="40" id="0nI-pf-YzT"/>
                                                     <constraint firstAttribute="height" constant="40" id="Y8o-FB-SSe"/>
                                                 </constraints>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mpT-NC-1tQ" userLabel="Exit Button">
-                                                <rect key="frame" x="524" y="370" width="40" height="40"/>
+                                                <rect key="frame" x="517" y="370" width="42" height="42"/>
                                                 <color key="backgroundColor" red="0.0040246212119999999" green="0.0040246212119999999" blue="0.0040246212119999999" alpha="0.5" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="7xp-oj-ung"/>
-                                                    <constraint firstAttribute="width" constant="40" id="zST-VU-nzq"/>
+                                                    <constraint firstAttribute="height" constant="42" id="7xp-oj-ung"/>
+                                                    <constraint firstAttribute="width" constant="42" id="zST-VU-nzq"/>
                                                 </constraints>
-                                                <state key="normal" title="x">
+                                                <state key="normal" image="videoExit_42">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -1078,13 +1078,13 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UF9-wT-YtU" userLabel="Record Button">
-                                                <rect key="frame" x="514" y="270" width="60" height="60"/>
+                                                <rect key="frame" x="513" y="270" width="60" height="60"/>
                                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="60" id="QQh-lP-g1y"/>
                                                     <constraint firstAttribute="height" constant="60" id="ROp-UP-yEc"/>
                                                 </constraints>
-                                                <state key="normal">
+                                                <state key="normal" image="record_60">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -1097,11 +1097,11 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7no-gW-jkZ" userLabel="Asset Button">
-                                                <rect key="frame" x="524" y="190" width="40" height="40"/>
+                                                <rect key="frame" x="523" y="190" width="42" height="42"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="jp0-tF-ovd"/>
-                                                    <constraint firstAttribute="width" constant="40" id="mWv-by-2n8"/>
+                                                    <constraint firstAttribute="height" constant="42" id="jp0-tF-ovd"/>
+                                                    <constraint firstAttribute="width" constant="42" id="mWv-by-2n8"/>
                                                 </constraints>
                                                 <state key="normal">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -1111,16 +1111,17 @@
                                                 </connections>
                                             </button>
                                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qGc-Cn-FZP" userLabel="Recording Complete">
-                                                <rect key="frame" x="524" y="190" width="40" height="40"/>
+                                                <rect key="frame" x="513" y="189" width="42" height="42"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="HQw-G8-pkh"/>
-                                                    <constraint firstAttribute="width" constant="40" id="bFl-Dq-p1o"/>
+                                                    <constraint firstAttribute="height" constant="42" id="HQw-G8-pkh"/>
+                                                    <constraint firstAttribute="width" constant="42" id="bFl-Dq-p1o"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                                <state key="normal" title="✓">
+                                                <state key="normal" image="videoNotReady_42">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <state key="selected" image="videoReady_42"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="20"/>
@@ -1131,13 +1132,13 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="18Z-yQ-1aU" userLabel="Flashlight Button">
-                                                <rect key="frame" x="20" y="370" width="40" height="40"/>
+                                                <rect key="frame" x="20" y="370" width="42" height="42"/>
                                                 <color key="backgroundColor" red="0.0040246212119999999" green="0.0040246212119999999" blue="0.0040246212119999999" alpha="0.5" colorSpace="calibratedRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="dQ1-zk-hnx"/>
-                                                    <constraint firstAttribute="width" constant="40" id="wTE-24-L9w"/>
+                                                    <constraint firstAttribute="height" constant="42" id="dQ1-zk-hnx"/>
+                                                    <constraint firstAttribute="width" constant="42" id="wTE-24-L9w"/>
                                                 </constraints>
-                                                <state key="normal" title="闪">
+                                                <state key="normal" image="flash_42">
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
@@ -1153,19 +1154,19 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="gPO-2M-OtZ" firstAttribute="leading" secondItem="XHQ-lv-D5C" secondAttribute="leading" constant="20" id="0Jt-1y-d84"/>
-                                            <constraint firstAttribute="trailing" secondItem="UF9-wT-YtU" secondAttribute="trailing" constant="26" id="5Zo-OB-IEY"/>
-                                            <constraint firstItem="qGc-Cn-FZP" firstAttribute="centerY" secondItem="7no-gW-jkZ" secondAttribute="centerY" id="69X-2R-1Tu"/>
+                                            <constraint firstAttribute="trailing" secondItem="UF9-wT-YtU" secondAttribute="trailing" constant="27" id="5Zo-OB-IEY"/>
+                                            <constraint firstItem="qGc-Cn-FZP" firstAttribute="centerY" secondItem="7no-gW-jkZ" secondAttribute="centerY" constant="-1" id="69X-2R-1Tu"/>
                                             <constraint firstItem="18Z-yQ-1aU" firstAttribute="leading" secondItem="XHQ-lv-D5C" secondAttribute="leading" constant="20" id="EbR-q0-mAS"/>
-                                            <constraint firstItem="UF9-wT-YtU" firstAttribute="centerX" secondItem="mpT-NC-1tQ" secondAttribute="centerX" id="K9U-bn-Pyj"/>
-                                            <constraint firstItem="jhw-eE-lIo" firstAttribute="centerY" secondItem="7no-gW-jkZ" secondAttribute="centerY" id="SHO-xX-IU9"/>
-                                            <constraint firstItem="UF9-wT-YtU" firstAttribute="centerX" secondItem="7no-gW-jkZ" secondAttribute="centerX" id="T5o-av-bga"/>
-                                            <constraint firstItem="jhw-eE-lIo" firstAttribute="centerX" secondItem="7no-gW-jkZ" secondAttribute="centerX" constant="-1" id="U5n-qN-JGs"/>
+                                            <constraint firstItem="UF9-wT-YtU" firstAttribute="centerX" secondItem="mpT-NC-1tQ" secondAttribute="centerX" constant="5" id="K9U-bn-Pyj"/>
+                                            <constraint firstItem="jhw-eE-lIo" firstAttribute="centerY" secondItem="7no-gW-jkZ" secondAttribute="centerY" constant="-1" id="SHO-xX-IU9"/>
+                                            <constraint firstItem="UF9-wT-YtU" firstAttribute="centerX" secondItem="7no-gW-jkZ" secondAttribute="centerX" constant="-1" id="T5o-av-bga"/>
+                                            <constraint firstItem="jhw-eE-lIo" firstAttribute="centerX" secondItem="7no-gW-jkZ" secondAttribute="centerX" constant="-2" id="U5n-qN-JGs"/>
                                             <constraint firstItem="18Z-yQ-1aU" firstAttribute="centerY" secondItem="mpT-NC-1tQ" secondAttribute="centerY" id="cGj-87-XE3"/>
                                             <constraint firstAttribute="centerY" secondItem="UF9-wT-YtU" secondAttribute="centerY" id="d1A-uN-BoP"/>
-                                            <constraint firstItem="gPO-2M-OtZ" firstAttribute="centerY" secondItem="7no-gW-jkZ" secondAttribute="centerY" id="knF-oz-jw7"/>
+                                            <constraint firstItem="gPO-2M-OtZ" firstAttribute="centerY" secondItem="7no-gW-jkZ" secondAttribute="centerY" constant="-1" id="knF-oz-jw7"/>
                                             <constraint firstItem="mpT-NC-1tQ" firstAttribute="top" secondItem="UF9-wT-YtU" secondAttribute="bottom" constant="40" id="lMd-me-jYA"/>
-                                            <constraint firstItem="UF9-wT-YtU" firstAttribute="top" secondItem="7no-gW-jkZ" secondAttribute="bottom" constant="40" id="r6V-XI-fcf"/>
-                                            <constraint firstItem="qGc-Cn-FZP" firstAttribute="centerX" secondItem="7no-gW-jkZ" secondAttribute="centerX" id="uuV-Ko-qZD"/>
+                                            <constraint firstItem="UF9-wT-YtU" firstAttribute="top" secondItem="7no-gW-jkZ" secondAttribute="bottom" constant="38" id="r6V-XI-fcf"/>
+                                            <constraint firstItem="qGc-Cn-FZP" firstAttribute="centerX" secondItem="7no-gW-jkZ" secondAttribute="centerX" constant="-10" id="uuV-Ko-qZD"/>
                                         </constraints>
                                     </view>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u5C-g2-mDg">
@@ -3308,6 +3309,7 @@
         <image name="comment" width="30" height="24"/>
         <image name="discover" width="42" height="42"/>
         <image name="feed_but_Play" width="48" height="48"/>
+        <image name="flash_42" width="42" height="42"/>
         <image name="follorMorePeople" width="30" height="24"/>
         <image name="follow_18" width="28" height="18"/>
         <image name="like" width="30" height="24"/>
@@ -3321,9 +3323,14 @@
         <image name="qq_friend" width="30" height="24"/>
         <image name="qq_zone" width="30" height="24"/>
         <image name="record" width="42" height="42"/>
+        <image name="record_60" width="61" height="60"/>
         <image name="setting_24" width="30" height="24"/>
         <image name="share" width="30" height="24"/>
         <image name="spring" width="375" height="211"/>
+        <image name="switchCam_42" width="42" height="42"/>
+        <image name="videoExit_42" width="42" height="42"/>
+        <image name="videoNotReady_42" width="43" height="42"/>
+        <image name="videoReady_42" width="42" height="42"/>
         <image name="wechat_friend" width="30" height="24"/>
         <image name="weibo" width="30" height="24"/>
     </resources>

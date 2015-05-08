@@ -115,7 +115,6 @@ static void * RecordingContext = &RecordingContext;
     
     // Just for UI, it should change image better
     //
-    _recordButton.layer.cornerRadius = 0;
     _recordButton.tag = kRecordButtonStatusNormal;
     
     _recording = NO;
@@ -166,13 +165,13 @@ static void * RecordingContext = &RecordingContext;
                              
                              // Just for UI, it should change image better
                              //
-                             _recordButton.layer.cornerRadius = 0;
                              _recordButton.tag = kRecordButtonStatusRecording;
                              
                              _recording = YES;
                              _assetButton.hidden = YES;
                              _assetButtonImage.hidden = YES;
                              _recordCompleteButton.hidden = NO;
+                             _recordCompleteButton.enabled = YES;
                              _exitButton.hidden = YES;
                              
                              // Ready to display the timer and the progress layer
@@ -227,9 +226,6 @@ static void * RecordingContext = &RecordingContext;
     
     if (self.recordingTime == 3.0f) {
         
-        _recordCompleteButton.backgroundColor = [UIColor redColor];
-        _recordCompleteButton.enabled = YES;
-        
     }
     
     _videoTimeLayer.strokeEnd = _recordingTime/10.0f;
@@ -272,7 +268,7 @@ static void * RecordingContext = &RecordingContext;
     
     UIDevice *currentDevice = notification.object;
     
-    if (currentDevice.orientation == UIDeviceOrientationLandscapeLeft) {
+    if (currentDevice.orientation == UIDeviceOrientationLandscapeLeft || currentDevice.orientation == UIDeviceOrientationLandscapeRight) {
         _recordingView.hidden = NO;
         _recordingControls.hidden = NO;
         _maskView.hidden = YES;
