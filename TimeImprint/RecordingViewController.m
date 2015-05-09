@@ -10,6 +10,7 @@
 #import "VideoEditViewController.h"
 #import "VIdeoAssetsViewController.h"
 #import "MainViewController.h"
+#import "NewStoryViewController.h"
 
 #import "RecordingView.h"
 #import "CameraEngine.h"
@@ -452,12 +453,12 @@ static void * RecordingContext = &RecordingContext;
 - (IBAction)assetButtonTouchUpInside:(id)sender {
     
     [[CameraEngine shareEngine]endRecording];
-    
 }
 
 - (IBAction)recordingCompleteButtonTouchUpInside:(id)sender {
 
-    
+    NewStoryViewController *newStoryViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"new_story"];
+    [self.navigationController pushViewController:newStoryViewController animated:YES];
 
 }
 
