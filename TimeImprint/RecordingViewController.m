@@ -163,9 +163,11 @@ static void * RecordingContext = &RecordingContext;
                              // Start the camera engine here
                              //
                              // ......
+                             [[CameraEngine shareEngine]startRecording];
                              
                              // Just for UI, it should change image better
                              //
+                             [_recordButton setImage:[UIImage imageNamed:@"recordPause_60"] forState:UIControlStateNormal];
                              _recordButton.tag = kRecordButtonStatusRecording;
                              
                              _recording = YES;
@@ -178,7 +180,7 @@ static void * RecordingContext = &RecordingContext;
                              // Ready to display the timer and the progress layer
                              //
                              [self configureVideoTimeLayer];
-                             [self configureRecordingTimer];
+                             [self configureRecordingTimerWithTime:0];
                              
                          }];
     
@@ -200,25 +202,30 @@ static void * RecordingContext = &RecordingContext;
     
 }
 
-- (void)configureRecordingTimer {
+- (void)configureRecordingTimerWithTime:(NSInteger)time {
     
-    _recordingTime = 0;
+    _recordingTime = time;
     
     _recordingTimer = [NSTimer scheduledTimerWithTimeInterval:0.1f
                                                        target:self
                                                      selector:@selector(handleRecordingTimer)
                                                      userInfo:nil
                                                       repeats:YES];
+}
+
+- (void)stopRecordingTimer {
+    
+    [_recordingTimer invalidate];
     
 }
 
 - (void)handleRecordingTimer {
     
-    if (self.recordingTime == 10.0f) {
+    if ([CameraEngine shareEngine].recordingTime == 10.0f) {
         
         // End recording here
         // ...
-        
+        [[CameraEngine shareEngine]endRecording];
         
         [_recordingTimer invalidate];
         
@@ -229,10 +236,12 @@ static void * RecordingContext = &RecordingContext;
         
     }
     
-    _videoTimeLayer.strokeEnd = _recordingTime/10.0f;
+    _videoTimeLayer.strokeEnd = [CameraEngine shareEngine].recordingTime/10.0f;
     [_videoTimeLayer setNeedsDisplay];
     
     _recordingTime += 0.1f;
+    
+    NSLog(@"Recording time: %f", [CameraEngine shareEngine].recordingTime);
     
 }
 
@@ -368,61 +377,19 @@ static void * RecordingContext = &RecordingContext;
 
 - (IBAction)switchCaptureDevicePostionButtonTouchUpInside:(id)sender {
     
-    /*
-    dispatch_async(self.captureSessionQueue, ^{
+    [[CameraEngine shareEngine] changeCaptureDevicePosition];
+    
+    if ([CameraEngine shareEngine].captureDevicePosition == AVCaptureDevicePositionFront) {
         
-        // Congfigure the prefer device position
-        //
-        AVCaptureDevice *currentDevice = self.captureDeviceInput.device;
-        AVCaptureDevicePosition preferCaptureDevicePosition = AVCaptureDevicePositionUnspecified;
+        _flashlightButton.hidden = YES;
         
-        if (currentDevice.position == AVCaptureDevicePositionBack) {
-            preferCaptureDevicePosition = AVCaptureDevicePositionFront;
-            
-            // If the prefer device position is front camera, disable the flash button
-            //
-            dispatch_async(dispatch_get_main_queue(), ^{
-               _flashlightButton.hidden = YES;
-            });
-            
-        }
-        else {
-
-            
-            // If the prefer device position is back camera, enable the flash button
-            //
-            dispatch_async(dispatch_get_main_queue(), ^{
-                _flashlightButton.hidden = NO;
-            });
-            
-        }
+    }
+    else {
         
-        // Configure prefer device
-        //
-        AVCaptureDevice *preferCaptureDevice = [self captureDeviceWithMediaType:AVMediaTypeVideo preferringPosition:preferCaptureDevicePosition];
-        AVCaptureDeviceInput *preferCaptureDeviceInput = [AVCaptureDeviceInput deviceInputWithDevice:preferCaptureDevice error:nil];
+        _flashlightButton.hidden = NO;
         
-        // Begin configure captureSession
-        //
-        [self.captureSession beginConfiguration];
-        
-        // Remove previous captureDeviceInput
-        //
-        [self.captureSession removeInput:self.captureDeviceInput];
-        
-        if ([self.captureSession canAddInput:preferCaptureDeviceInput]) {
-            
-            [self.captureSession addInput:preferCaptureDeviceInput];
-            [self setCaptureDeviceInput:preferCaptureDeviceInput];
-            
-        }
-        
-        // End configure captureSession
-        //
-        [self.captureSession commitConfiguration];
-        
-    });
-    */
+    }
+    
 }
 
 - (IBAction)flashLightButtonTouchUpInside:(id)sender {
@@ -440,12 +407,22 @@ static void * RecordingContext = &RecordingContext;
         
     }
     else if (button.tag == kRecordButtonStatusRecording){
+        
         [[CameraEngine shareEngine] pauseRecording];
         button.tag = kRecordButtonStatusPause;
+        
+        [_recordButton setImage:[UIImage imageNamed:@"record_60"] forState:UIControlStateNormal];
+        
+        [self stopRecordingTimer];
+        
     }
     else {
         [[CameraEngine shareEngine]resumeRecording];
         button.tag = kRecordButtonStatusRecording;
+        
+        [self configureRecordingTimerWithTime:[CameraEngine shareEngine].recordingTime];
+        [_recordButton setImage:[UIImage imageNamed:@"recordPause_60"] forState:UIControlStateNormal];
+        
     }
     
 }

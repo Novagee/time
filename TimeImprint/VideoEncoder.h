@@ -19,11 +19,22 @@
 
 @property NSString* path;
 
-+ (VideoEncoder*)encoderForPath:(NSString*) path Height:(int) cy width:(int) cx channels: (int) ch samples:(Float64) rate;
++ (VideoEncoder*)encoderForPath:(NSString*)path
+                     withHeight:(int)cy
+                       andWidth:(int)cx
+                   withChannels:(int)ch
+                     andSamples:(Float64)rate;
 
-- (void)initPath:(NSString*)path Height:(int) cy width:(int) cx channels: (int) ch samples:(Float64) rate;
+- (void)initPath:(NSString*)path
+          Height:(int)cy
+           width:(int)cx
+        channels: (int)ch
+         samples:(Float64) rate;
+
 - (void)finishWithCompletionHandler:(void (^)(void))handler;
-- (BOOL)encodeFrame:(CMSampleBufferRef) sampleBuffer isVideo:(BOOL) bVideo;
+
+- (BOOL)encodeFrame:(CMSampleBufferRef)sampleBuffer
+            isVideo:(BOOL)bVideo;
 
 
 @end

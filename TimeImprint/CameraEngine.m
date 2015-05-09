@@ -32,6 +32,8 @@ static CameraEngine* theEngine;
 @property (assign, nonatomic) CMTime audioTime;
 @property (assign, nonatomic) BOOL discontinuity;
 
+@property (assign, nonatomic) NSInteger previousSecond;
+
 @end
 
 @implementation CameraEngine
@@ -170,6 +172,8 @@ static CameraEngine* theEngine;
             _discontinuity = NO;
             _timeOffset = CMTimeMake(0, 0);
             _isRecording = YES;
+            
+            _previousSecond = 0;
         }
     }
 }
@@ -189,6 +193,7 @@ static CameraEngine* theEngine;
             // serialize with audio and video capture
             //
             self.isRecording = NO;
+            
             dispatch_async(_captureSessionQueue, ^{
                 [_videoEncoder finishWithCompletionHandler:^{
                     self.isRecording = NO;
@@ -203,6 +208,9 @@ static CameraEngine* theEngine;
                 }];
             });
         }
+        
+        _recordingTime = 0;
+        
     }
 }
 
@@ -270,7 +278,7 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
         {
             return;
         }
-        if (connection != _audioCaptureConnection)
+        if (connection != _videoCaptureConnection)
         {
             ishandleVideoStuff = NO;
         }
@@ -278,9 +286,11 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
         {
             CMFormatDescriptionRef formatDescription = CMSampleBufferGetFormatDescription(sampleBuffer);
             [self setAudioFormat:formatDescription];
+            
             NSString* filename = [NSString stringWithFormat:@"capture%ld.mp4", _videoSegmentCount];
             NSString* path = [NSTemporaryDirectory() stringByAppendingPathComponent:filename];
-            _videoEncoder = [VideoEncoder encoderForPath:path Height:_videoHeight width:_videoWidth channels:_channels samples:_sampleRate];
+            
+            _videoEncoder = [VideoEncoder encoderForPath:path withHeight:(int)_videoHeight andWidth:(int)_videoWidth withChannels:_channels andSamples:_sampleRate];
         }
         if (_discontinuity)
         {
@@ -289,7 +299,9 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
                 return;
             }
             _discontinuity = NO;
+            
             // calc adjustment
+            //
             CMTime pts = CMSampleBufferGetPresentationTimeStamp(sampleBuffer);
             CMTime last = ishandleVideoStuff ? _videoTime : _audioTime;
             if (last.flags & kCMTimeFlags_Valid)
@@ -332,14 +344,26 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
         {
             pts = CMTimeAdd(pts, dur);
         }
+        
         if (ishandleVideoStuff)
         {
             _videoTime = pts;
+            
+            if (_previousSecond == 0) {
+                _previousSecond = (NSInteger)floor((int)CMTimeGetSeconds(self.videoTime)%60);
+            }
+            if ((NSInteger)floor((int)CMTimeGetSeconds(self.videoTime)%60) - self.previousSecond == 1) {
+                _previousSecond = (NSInteger)floor((int)CMTimeGetSeconds(self.videoTime)%60);
+                _recordingTime++;
+            }
+            
         }
         else
         {
             _audioTime = pts;
         }
+        
+        
     }
 
     // pass frame to encoder
@@ -359,6 +383,58 @@ didOutputSampleBuffer:(CMSampleBufferRef)sampleBuffer
     [_videoEncoder finishWithCompletionHandler:^{
         NSLog(@"Recording Completed");
     }];
+}
+
+- (void)changeCaptureDevicePosition {
+    
+    
+     dispatch_async(self.captureSessionQueue, ^{
+     
+     
+     });
+    
+    // Congfigure the prefer device position
+    //
+    AVCaptureDevice *currentDevice = self.captureDeviceInput.device;
+    _captureDevicePosition = AVCaptureDevicePositionUnspecified;
+    
+    if (currentDevice.position == AVCaptureDevicePositionBack) {
+        
+        _captureDevicePosition = AVCaptureDevicePositionFront;
+        
+    }
+    else {
+        
+        _captureDevicePosition = AVCaptureDevicePositionBack;
+        
+    }
+    
+    // Configure prefer device
+    //
+    AVCaptureDevice *preferCaptureDevice = [self captureDeviceWithMediaType:AVMediaTypeVideo
+                                                         preferringPosition:self.captureDevicePosition];
+    
+    AVCaptureDeviceInput *preferCaptureDeviceInput = [AVCaptureDeviceInput deviceInputWithDevice:preferCaptureDevice error:nil];
+    
+    // Begin configure captureSession
+    //
+    [self.captureSession beginConfiguration];
+    
+    // Remove previous captureDeviceInput
+    //
+    [self.captureSession removeInput:self.captureDeviceInput];
+    
+    if ([self.captureSession canAddInput:preferCaptureDeviceInput]) {
+        
+        [self.captureSession addInput:preferCaptureDeviceInput];
+        [self setCaptureDeviceInput:preferCaptureDeviceInput];
+        
+    }
+    
+    // End configure captureSession
+    //
+    [self.captureSession commitConfiguration];
+    
 }
 
 @end
