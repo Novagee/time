@@ -1,18 +1,18 @@
 //
-//  ArticleEditingViewController.m
+//  TimePickerViewController.m
 //  TimeImprint
 //
-//  Created by Peng Wan on 4/20/15.
+//  Created by Peng Wan on 5/9/15.
 //  Copyright (c) 2015 Timeimprint. All rights reserved.
 //
 
-#import "ArticleEditingViewController.h"
+#import "TimePickerViewController.h"
 
-@interface ArticleEditingViewController ()
+@interface TimePickerViewController ()
 
 @end
 
-@implementation ArticleEditingViewController
+@implementation TimePickerViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

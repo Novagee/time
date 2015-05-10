@@ -1,18 +1,18 @@
 //
-//  ArticleEditingViewController.m
+//  LocationPickerViewController.m
 //  TimeImprint
 //
-//  Created by Peng Wan on 4/20/15.
+//  Created by Peng Wan on 5/9/15.
 //  Copyright (c) 2015 Timeimprint. All rights reserved.
 //
 
-#import "ArticleEditingViewController.h"
+#import "LocationPickerViewController.h"
 
-@interface ArticleEditingViewController ()
+@interface LocationPickerViewController ()
 
 @end
 
-@implementation ArticleEditingViewController
+@implementation LocationPickerViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

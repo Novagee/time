@@ -1,5 +1,5 @@
 //
-//  NewStoryViewController.h
+//  TimePickerViewController.h
 //  TimeImprint
 //
 //  Created by Peng Wan on 5/9/15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NewStoryViewController : UIViewController
+@interface TimePickerViewController : UIViewController
 
 @end

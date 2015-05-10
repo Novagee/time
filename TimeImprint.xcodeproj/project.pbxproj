@@ -62,6 +62,8 @@
 		B0867327DFFF06F819591260 /* libPods-TimeImprint.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB6E933EFC2BE211799AFFC /* libPods-TimeImprint.a */; };
 		B65BF4761AE6512F00F755D4 /* ArticleEditingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B65BF4751AE6512F00F755D4 /* ArticleEditingViewController.m */; };
 		B675DCB21AFE16F3003C7768 /* NewStoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B675DCB11AFE16F3003C7768 /* NewStoryViewController.m */; };
+		B675DCB51AFEE7B3003C7768 /* LocationPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B675DCB41AFEE7B3003C7768 /* LocationPickerViewController.m */; };
+		B675DCB81AFEE7C0003C7768 /* TimePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B675DCB71AFEE7C0003C7768 /* TimePickerViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -154,6 +156,10 @@
 		B65BF4751AE6512F00F755D4 /* ArticleEditingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleEditingViewController.m; sourceTree = "<group>"; };
 		B675DCB01AFE16F3003C7768 /* NewStoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewStoryViewController.h; sourceTree = "<group>"; };
 		B675DCB11AFE16F3003C7768 /* NewStoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewStoryViewController.m; sourceTree = "<group>"; };
+		B675DCB31AFEE7B3003C7768 /* LocationPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationPickerViewController.h; sourceTree = "<group>"; };
+		B675DCB41AFEE7B3003C7768 /* LocationPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationPickerViewController.m; sourceTree = "<group>"; };
+		B675DCB61AFEE7C0003C7768 /* TimePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimePickerViewController.h; sourceTree = "<group>"; };
+		B675DCB71AFEE7C0003C7768 /* TimePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimePickerViewController.m; sourceTree = "<group>"; };
 		DEB6E933EFC2BE211799AFFC /* libPods-TimeImprint.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TimeImprint.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -376,6 +382,10 @@
 				81F857B41AFBB83400FBA7A9 /* VideoEditViewController.m */,
 				B675DCB01AFE16F3003C7768 /* NewStoryViewController.h */,
 				B675DCB11AFE16F3003C7768 /* NewStoryViewController.m */,
+				B675DCB31AFEE7B3003C7768 /* LocationPickerViewController.h */,
+				B675DCB41AFEE7B3003C7768 /* LocationPickerViewController.m */,
+				B675DCB61AFEE7C0003C7768 /* TimePickerViewController.h */,
+				B675DCB71AFEE7C0003C7768 /* TimePickerViewController.m */,
 			);
 			name = Recording;
 			sourceTree = "<group>";
@@ -561,6 +571,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1963098E1ADF23B000058851 /* GUISlider.m in Sources */,
+				B675DCB81AFEE7C0003C7768 /* TimePickerViewController.m in Sources */,
 				8182DFCF1AF8AE1A0001FBDC /* VIdeoAssetsViewController.m in Sources */,
 				81D3D4DD1AE8180E008F3766 /* ChangePasswordViewController.m in Sources */,
 				81FA5B651AE39D0700073E05 /* MyTimeLineViewController.m in Sources */,
@@ -568,6 +579,7 @@
 				8182DFCB1AF7F75B0001FBDC /* MainViewController.m in Sources */,
 				81D3D4D01AE7FCC0008F3766 /* SettingViewController.m in Sources */,
 				81D3D4EB1AE90DC2008F3766 /* FollowerViewController.m in Sources */,
+				B675DCB51AFEE7B3003C7768 /* LocationPickerViewController.m in Sources */,
 				81D3D4E81AE90DB4008F3766 /* FollowingViewController.m in Sources */,
 				1963098D1ADF23B000058851 /* GUIPlayerView.m in Sources */,
 				81FA5B831AE41D7B00073E05 /* PublicTimeCell.m in Sources */,
