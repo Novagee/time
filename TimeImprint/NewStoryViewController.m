@@ -7,6 +7,8 @@
 //
 
 #import "NewStoryViewController.h"
+#import "LocationPickerViewController.h"
+#import "TimePickerViewController.h"
 
 @interface NewStoryViewController ()
 
@@ -17,6 +19,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+}
+
+- (NSUInteger)supportedInterfaceOrientations
+{
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+- (IBAction)onClickLocation:(id)sender {
+    LocationPickerViewController *locationPickerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"location_picker"];
+    [self.navigationController pushViewController:locationPickerViewController animated:YES];
+
+}
+- (IBAction)onClickOccurTime:(id)sender {
+    TimePickerViewController *timePickerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"time_picker"];
+    [self.navigationController pushViewController:timePickerViewController animated:YES];
+}
+- (IBAction)onClickPublicTime:(id)sender {
+    TimePickerViewController *timePickerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"time_picker"];
+    timePickerViewController.title = @"发布发生时间";
+    [self.navigationController pushViewController:timePickerViewController animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

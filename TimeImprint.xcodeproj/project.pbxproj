@@ -60,6 +60,8 @@
 		81FA5B841AE41D7B00073E05 /* PublicTimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81FA5B821AE41D7B00073E05 /* PublicTimeCell.xib */; };
 		9AAAE4B31AF1A30700D8452C /* UtilityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AAAE4B21AF1A30700D8452C /* UtilityViewController.m */; };
 		B0867327DFFF06F819591260 /* libPods-TimeImprint.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB6E933EFC2BE211799AFFC /* libPods-TimeImprint.a */; };
+		B6296DBC1AFF7DEB00BE21C0 /* LocationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B6296DBA1AFF7DEB00BE21C0 /* LocationTableViewCell.m */; };
+		B6296DBD1AFF7DEB00BE21C0 /* LocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6296DBB1AFF7DEB00BE21C0 /* LocationTableViewCell.xib */; };
 		B65BF4761AE6512F00F755D4 /* ArticleEditingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B65BF4751AE6512F00F755D4 /* ArticleEditingViewController.m */; };
 		B675DCB21AFE16F3003C7768 /* NewStoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B675DCB11AFE16F3003C7768 /* NewStoryViewController.m */; };
 		B675DCB51AFEE7B3003C7768 /* LocationPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B675DCB41AFEE7B3003C7768 /* LocationPickerViewController.m */; };
@@ -152,6 +154,9 @@
 		81FA5B821AE41D7B00073E05 /* PublicTimeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PublicTimeCell.xib; sourceTree = "<group>"; };
 		9AAAE4B11AF1A30700D8452C /* UtilityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilityViewController.h; sourceTree = "<group>"; };
 		9AAAE4B21AF1A30700D8452C /* UtilityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilityViewController.m; sourceTree = "<group>"; };
+		B6296DB91AFF7DEB00BE21C0 /* LocationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationTableViewCell.h; sourceTree = "<group>"; };
+		B6296DBA1AFF7DEB00BE21C0 /* LocationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationTableViewCell.m; sourceTree = "<group>"; };
+		B6296DBB1AFF7DEB00BE21C0 /* LocationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationTableViewCell.xib; sourceTree = "<group>"; };
 		B65BF4741AE6512F00F755D4 /* ArticleEditingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArticleEditingViewController.h; sourceTree = "<group>"; };
 		B65BF4751AE6512F00F755D4 /* ArticleEditingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArticleEditingViewController.m; sourceTree = "<group>"; };
 		B675DCB01AFE16F3003C7768 /* NewStoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewStoryViewController.h; sourceTree = "<group>"; };
@@ -371,6 +376,7 @@
 		81D9645E1AF5CE7E00F77CC6 /* Recording */ = {
 			isa = PBXGroup;
 			children = (
+				B6296DB81AFF7DAD00BE21C0 /* LocationCell */,
 				81F857B21AFAAAB700FBA7A9 /* Record Engine */,
 				81D9645F1AF5D04100F77CC6 /* RecordingViewController.h */,
 				81D964601AF5D04100F77CC6 /* RecordingViewController.m */,
@@ -433,6 +439,16 @@
 				DEB6E933EFC2BE211799AFFC /* libPods-TimeImprint.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B6296DB81AFF7DAD00BE21C0 /* LocationCell */ = {
+			isa = PBXGroup;
+			children = (
+				B6296DB91AFF7DEB00BE21C0 /* LocationTableViewCell.h */,
+				B6296DBA1AFF7DEB00BE21C0 /* LocationTableViewCell.m */,
+				B6296DBB1AFF7DEB00BE21C0 /* LocationTableViewCell.xib */,
+			);
+			name = LocationCell;
 			sourceTree = "<group>";
 		};
 		C44B8FB8DA9D80BB8F0E09DF /* Pods */ = {
@@ -522,6 +538,7 @@
 				195CA3EE1ADCF5A4005EC48F /* NotoSansCJKsc-Medium.otf in Resources */,
 				196309951ADF23B000058851 /* gui_pause@3x.png in Resources */,
 				1991305C1AD4EA910060AE40 /* Images.xcassets in Resources */,
+				B6296DBD1AFF7DEB00BE21C0 /* LocationTableViewCell.xib in Resources */,
 				195CA3EF1ADCF5A4005EC48F /* NotoSansCJKsc-Regular.otf in Resources */,
 				1963099A1ADF23B000058851 /* gui_shrink@2x.png in Resources */,
 				196309941ADF23B000058851 /* gui_pause@2x.png in Resources */,
@@ -601,6 +618,7 @@
 				1963098F1ADF23B000058851 /* UIView+UpdateAutoLayoutConstraints.m in Sources */,
 				81D3D4E01AE830D4008F3766 /* SuggestionViewController.m in Sources */,
 				81D3D4EF1AE90F6D008F3766 /* FollowingCell.m in Sources */,
+				B6296DBC1AFF7DEB00BE21C0 /* LocationTableViewCell.m in Sources */,
 				81D3D4DA1AE81803008F3766 /* ChangeAccountViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

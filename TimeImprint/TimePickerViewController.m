@@ -18,6 +18,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
+- (IBAction)onClickDone:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+- (IBAction)onClickCancel:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

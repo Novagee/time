@@ -435,7 +435,9 @@ static void * RecordingContext = &RecordingContext;
 - (IBAction)recordingCompleteButtonTouchUpInside:(id)sender {
 
     NewStoryViewController *newStoryViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"new_story"];
-    [self.navigationController pushViewController:newStoryViewController animated:YES];
+    
+//    [self.navigationController pushViewController:newStoryViewController animated:YES];
+    [self presentViewController:newStoryViewController animated:YES completion:nil];
 
 }
 
