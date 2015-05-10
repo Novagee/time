@@ -12,16 +12,23 @@
 
 @synthesize path = _path;
 
-+ (VideoEncoder*) encoderForPath:(NSString*) path Height:(int) cy width:(int) cx channels: (int) ch samples:(Float64) rate;
-{
++ (VideoEncoder*)encoderForPath:(NSString*)path
+                     withHeight:(int)cy
+                       andWidth:(int)cx
+                   withChannels:(int)ch
+                     andSamples:(Float64)rate {
     VideoEncoder* enc = [VideoEncoder alloc];
     [enc initPath:path Height:cy width:cx channels:ch samples:rate];
     return enc;
 }
 
 
-- (void) initPath:(NSString*)path Height:(int) cy width:(int) cx channels: (int) ch samples:(Float64) rate;
-{
+- (void)initPath:(NSString*)path
+          Height:(int)cy
+           width:(int)cx
+        channels:(int)ch
+         samples:(Float64)rate {
+    
     self.path = path;
     
     [[NSFileManager defaultManager] removeItemAtPath:self.path error:nil];
@@ -48,13 +55,15 @@
     [_writer addInput:_audioInput];
 }
 
-- (void) finishWithCompletionHandler:(void (^)(void))handler
-{
+- (void)finishWithCompletionHandler:(void (^)(void))handler {
+    
     [_writer finishWritingWithCompletionHandler: handler];
+    
 }
 
-- (BOOL) encodeFrame:(CMSampleBufferRef) sampleBuffer isVideo:(BOOL)bVideo
-{
+- (BOOL)encodeFrame:(CMSampleBufferRef)sampleBuffer
+            isVideo:(BOOL)bVideo {
+    
     if (CMSampleBufferDataIsReady(sampleBuffer))
     {
         if (_writer.status == AVAssetWriterStatusUnknown)
