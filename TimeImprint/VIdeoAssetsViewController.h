@@ -11,6 +11,4 @@
 
 @interface VIdeoAssetsViewController : UIViewController
 
-
-
 @end

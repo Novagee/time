@@ -11,14 +11,19 @@
 #import "VIdeoAssetsViewController.h"
 #import "MainViewController.h"
 #import "NewStoryViewController.h"
+#import "VIdeoAssetsViewController.h"
 
 #import "RecordingView.h"
 #import "CameraEngine.h"
 
+
 typedef NS_ENUM(NSInteger, kRecordButtonStatus) {
+
     kRecordButtonStatusNormal = 0,
     kRecordButtonStatusPause = 1,
-    kRecordButtonStatusRecording = 2
+    kRecordButtonStatusRecording = 2,
+    kRecordButtonStatusPlayback = 3
+    
 };
 
 static void * RecordingContext = &RecordingContext;
@@ -32,12 +37,14 @@ static void * RecordingContext = &RecordingContext;
 
 #pragma mark - Recording Controls Properties
 
+@property (weak, nonatomic) IBOutlet UIButton *exitButton;
+@property (weak, nonatomic) IBOutlet UIButton *assetButton;
+@property (weak, nonatomic) IBOutlet UIButton *recordButton;
 @property (weak, nonatomic) IBOutlet UIView *recordingControls;
 @property (weak, nonatomic) IBOutlet UIButton *flashlightButton;
-@property (weak, nonatomic) IBOutlet UIButton *assetButton;
-@property (weak, nonatomic) IBOutlet UIButton *exitButton;
+@property (weak, nonatomic) IBOutlet UIButton *playBackStopButton;
+@property (weak, nonatomic) IBOutlet UIButton *playBackPlayButton;
 @property (weak, nonatomic) IBOutlet UIImageView *assetButtonImage;
-@property (weak, nonatomic) IBOutlet UIButton *recordButton;
 @property (weak, nonatomic) IBOutlet UIButton *recordCompleteButton;
 
 #pragma mark - Video Recording's Properties
@@ -118,10 +125,7 @@ static void * RecordingContext = &RecordingContext;
     //
     _recordButton.tag = kRecordButtonStatusNormal;
     
-    _recording = NO;
-    _assetButton.hidden = NO;
-    _assetButtonImage.hidden = NO;
-    _recordCompleteButton.hidden = YES;
+    [self configureControlsStatusVia:kRecordButtonStatusNormal];
     
 }
 
@@ -167,15 +171,7 @@ static void * RecordingContext = &RecordingContext;
                              
                              // Just for UI, it should change image better
                              //
-                             [_recordButton setImage:[UIImage imageNamed:@"recordPause_60"] forState:UIControlStateNormal];
-                             _recordButton.tag = kRecordButtonStatusRecording;
-                             
-                             _recording = YES;
-                             _assetButton.hidden = YES;
-                             _assetButtonImage.hidden = YES;
-                             _recordCompleteButton.hidden = NO;
-                             _recordCompleteButton.enabled = YES;
-                             _exitButton.hidden = YES;
+                             [self configureControlsStatusVia:kRecordButtonStatusRecording];
                              
                              // Ready to display the timer and the progress layer
                              //
@@ -240,8 +236,6 @@ static void * RecordingContext = &RecordingContext;
     [_videoTimeLayer setNeedsDisplay];
     
     _recordingTime += 0.1f;
-    
-    NSLog(@"Recording time: %f", [CameraEngine shareEngine].recordingTime);
     
 }
 
@@ -349,6 +343,80 @@ static void * RecordingContext = &RecordingContext;
     return nil;
 }
 
+- (void)configureControlsStatusVia:(kRecordButtonStatus)recordStatus {
+    
+    switch (recordStatus) {
+        case kRecordButtonStatusNormal:
+        {
+            _flashlightButton.hidden = NO;
+            _assetButton.hidden = NO;
+            _assetButtonImage.hidden = NO;
+            _exitButton.hidden = NO;
+            _playBackPlayButton.hidden = YES;
+            _playBackStopButton.hidden = YES;
+            
+            _recordButton.hidden = NO;
+            [_recordButton setImage:[UIImage imageNamed:@"record_60"] forState:UIControlStateNormal];
+            
+            _recordCompleteButton.hidden = YES;
+        }
+            break;
+            
+        case kRecordButtonStatusRecording:
+        {
+            _flashlightButton.hidden = YES;
+            _assetButton.hidden = YES;
+            _assetButtonImage.hidden = YES;
+            _exitButton.hidden = YES;
+            _playBackPlayButton.hidden = YES;
+            _playBackStopButton.hidden = YES;
+            
+            _recordButton.hidden = NO;
+            [_recordButton setImage:[UIImage imageNamed:@"recordPause_60"] forState:UIControlStateNormal];
+            
+            _recordCompleteButton.hidden = NO;
+            [_recordCompleteButton setImage:[UIImage imageNamed:@"videoReady_42"] forState:UIControlStateNormal];
+        }
+            break;
+        
+        case kRecordButtonStatusPause:
+        {
+            _flashlightButton.hidden = NO;
+            _assetButton.hidden = YES;
+            _assetButtonImage.hidden = YES;
+            _exitButton.hidden = NO;
+            _playBackPlayButton.hidden = NO;
+            _playBackStopButton.hidden = YES;
+            
+            _recordButton.hidden = NO;
+            [_recordButton setImage:[UIImage imageNamed:@"record_60"] forState:UIControlStateNormal];
+            
+            _recordCompleteButton.hidden = NO;
+        }
+            break;
+            
+        case kRecordButtonStatusPlayback:
+        {
+            _flashlightButton.hidden = YES;
+            _assetButton.hidden = YES;
+            _assetButtonImage.hidden = YES;
+            _exitButton.hidden = YES;
+            _playBackPlayButton.hidden = YES;
+            _playBackStopButton.hidden = NO;
+            
+            _recordButton.hidden = YES;
+            [_recordButton setImage:[UIImage imageNamed:@"record_60"] forState:UIControlStateNormal];
+            
+            _recordCompleteButton.hidden = YES;
+        }
+            break;
+            
+        default:
+            break;
+    }
+    
+}
+
 #pragma mark - Control's Action
 
 - (IBAction)closeButtonTouchUpInside:(id)sender {
@@ -404,6 +472,7 @@ static void * RecordingContext = &RecordingContext;
     if (button.tag == kRecordButtonStatusNormal) {
         
         [self configureBackwardTimer];
+        button.tag = kRecordButtonStatusRecording;
         
     }
     else if (button.tag == kRecordButtonStatusRecording){
@@ -411,17 +480,17 @@ static void * RecordingContext = &RecordingContext;
         [[CameraEngine shareEngine] pauseRecording];
         button.tag = kRecordButtonStatusPause;
         
-        [_recordButton setImage:[UIImage imageNamed:@"record_60"] forState:UIControlStateNormal];
-        
+        [self configureControlsStatusVia:kRecordButtonStatusPause];
         [self stopRecordingTimer];
         
     }
     else {
+        
         [[CameraEngine shareEngine]resumeRecording];
         button.tag = kRecordButtonStatusRecording;
         
+        [self configureControlsStatusVia:kRecordButtonStatusRecording];
         [self configureRecordingTimerWithTime:[CameraEngine shareEngine].recordingTime];
-        [_recordButton setImage:[UIImage imageNamed:@"recordPause_60"] forState:UIControlStateNormal];
         
     }
     
@@ -429,16 +498,32 @@ static void * RecordingContext = &RecordingContext;
 
 - (IBAction)assetButtonTouchUpInside:(id)sender {
     
-    [[CameraEngine shareEngine]endRecording];
+    VIdeoAssetsViewController *videoAssetsViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"videoAssetsView"];
+    [self.navigationController pushViewController:videoAssetsViewController animated:YES];
+    
 }
 
 - (IBAction)recordingCompleteButtonTouchUpInside:(id)sender {
 
+    [[CameraEngine shareEngine]endRecording];
+    
     NewStoryViewController *newStoryViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"new_story"];
     
-//    [self.navigationController pushViewController:newStoryViewController animated:YES];
-    [self presentViewController:newStoryViewController animated:YES completion:nil];
+    [self.navigationController pushViewController:newStoryViewController animated:YES];
+//    [self presentViewController:newStoryViewController animated:YES completion:nil];
 
+}
+
+- (IBAction)playBackPlayButtonTouchUpInside:(id)sender {
+    
+    [self configureControlsStatusVia:kRecordButtonStatusPlayback];
+    
+}
+
+- (IBAction)playBackStopButtonTouchUpInside:(id)sender {
+    
+    [self configureControlsStatusVia:kRecordButtonStatusPause];
+    
 }
 
 @end

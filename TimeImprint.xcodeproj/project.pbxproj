@@ -51,6 +51,7 @@
 		81D3D4EF1AE90F6D008F3766 /* FollowingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D3D4EE1AE90F6D008F3766 /* FollowingCell.m */; };
 		81D3D4F11AE912AA008F3766 /* FollowingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81D3D4F01AE912AA008F3766 /* FollowingCell.xib */; };
 		81D964611AF5D04100F77CC6 /* RecordingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D964601AF5D04100F77CC6 /* RecordingViewController.m */; };
+		81F795351B03B7CE00A9BF31 /* VideoAssetsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 81F795341B03B7CE00A9BF31 /* VideoAssetsCell.m */; };
 		81F857B51AFBB83400FBA7A9 /* VideoEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81F857B41AFBB83400FBA7A9 /* VideoEditViewController.m */; };
 		81FA5B651AE39D0700073E05 /* MyTimeLineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FA5B641AE39D0700073E05 /* MyTimeLineViewController.m */; };
 		81FA5B6A1AE3A45300073E05 /* CALayer+StoryBoardExtention.m in Sources */ = {isa = PBXBuildFile; fileRef = 81FA5B691AE3A45300073E05 /* CALayer+StoryBoardExtention.m */; };
@@ -140,6 +141,8 @@
 		81D3D4F01AE912AA008F3766 /* FollowingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FollowingCell.xib; sourceTree = "<group>"; };
 		81D9645F1AF5D04100F77CC6 /* RecordingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordingViewController.h; sourceTree = "<group>"; };
 		81D964601AF5D04100F77CC6 /* RecordingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordingViewController.m; sourceTree = "<group>"; };
+		81F795331B03B7CE00A9BF31 /* VideoAssetsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoAssetsCell.h; sourceTree = "<group>"; };
+		81F795341B03B7CE00A9BF31 /* VideoAssetsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoAssetsCell.m; sourceTree = "<group>"; };
 		81F857B31AFBB83400FBA7A9 /* VideoEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoEditViewController.h; sourceTree = "<group>"; };
 		81F857B41AFBB83400FBA7A9 /* VideoEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoEditViewController.m; sourceTree = "<group>"; };
 		81FA5B631AE39D0700073E05 /* MyTimeLineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTimeLineViewController.h; sourceTree = "<group>"; };
@@ -382,6 +385,8 @@
 				81D964601AF5D04100F77CC6 /* RecordingViewController.m */,
 				8182DFCD1AF8AE1A0001FBDC /* VIdeoAssetsViewController.h */,
 				8182DFCE1AF8AE1A0001FBDC /* VIdeoAssetsViewController.m */,
+				81F795331B03B7CE00A9BF31 /* VideoAssetsCell.h */,
+				81F795341B03B7CE00A9BF31 /* VideoAssetsCell.m */,
 				8157127F1AF75EEC00B3D8F7 /* RecordingView.h */,
 				815712801AF75EEC00B3D8F7 /* RecordingView.m */,
 				81F857B31AFBB83400FBA7A9 /* VideoEditViewController.h */,
@@ -617,6 +622,7 @@
 				1963099F1ADF478900058851 /* NotificationViewController.m in Sources */,
 				1963098F1ADF23B000058851 /* UIView+UpdateAutoLayoutConstraints.m in Sources */,
 				81D3D4E01AE830D4008F3766 /* SuggestionViewController.m in Sources */,
+				81F795351B03B7CE00A9BF31 /* VideoAssetsCell.m in Sources */,
 				81D3D4EF1AE90F6D008F3766 /* FollowingCell.m in Sources */,
 				B6296DBC1AFF7DEB00BE21C0 /* LocationTableViewCell.m in Sources */,
 				81D3D4DA1AE81803008F3766 /* ChangeAccountViewController.m in Sources */,
