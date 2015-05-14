@@ -1208,7 +1208,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iTD-xr-Sky" userLabel="Mask View">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dnK-Fu-XjR">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TurnTutorial" translatesAutoresizingMaskIntoConstraints="NO" id="dnK-Fu-XjR">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Frt-eo-gOU" userLabel="Close Button">
@@ -1224,16 +1224,6 @@
                                             <action selector="closeButtonTouchUpInside:" destination="fQf-dc-u2H" eventType="touchUpInside" id="DWJ-VJ-Ke6"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="逆时针转一下啦" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Oaw-td-S7R">
-                                        <rect key="frame" x="199" y="244" width="203" height="112"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="112" id="E9Z-DU-VY5"/>
-                                            <constraint firstAttribute="width" constant="203" id="yXg-P9-PVY"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1241,8 +1231,6 @@
                                     <constraint firstAttribute="trailing" secondItem="dnK-Fu-XjR" secondAttribute="trailing" id="I8u-4W-Q1n"/>
                                     <constraint firstItem="Frt-eo-gOU" firstAttribute="top" secondItem="iTD-xr-Sky" secondAttribute="top" constant="20" id="aAs-yz-y5p"/>
                                     <constraint firstItem="dnK-Fu-XjR" firstAttribute="leading" secondItem="iTD-xr-Sky" secondAttribute="leading" id="iGo-Qz-o2j"/>
-                                    <constraint firstAttribute="centerY" secondItem="Oaw-td-S7R" secondAttribute="centerY" id="vHx-UH-3yS"/>
-                                    <constraint firstAttribute="centerX" secondItem="Oaw-td-S7R" secondAttribute="centerX" constant="-0.5" id="xuA-5V-WK7"/>
                                     <constraint firstAttribute="bottom" secondItem="dnK-Fu-XjR" secondAttribute="bottom" id="yiO-yJ-t0x"/>
                                     <constraint firstItem="Frt-eo-gOU" firstAttribute="leading" secondItem="iTD-xr-Sky" secondAttribute="leading" constant="20" id="zy3-te-g6h"/>
                                 </constraints>
@@ -3936,6 +3924,7 @@
     </scenes>
     <resources>
         <image name="Bitmap" width="36" height="36"/>
+        <image name="TurnTutorial" width="375" height="667"/>
         <image name="back_12" width="30" height="24"/>
         <image name="back_arrow" width="30" height="24"/>
         <image name="background.jpg" width="960" height="720"/>
