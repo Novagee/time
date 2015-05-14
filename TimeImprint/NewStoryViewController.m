@@ -9,6 +9,7 @@
 #import "NewStoryViewController.h"
 #import "LocationPickerViewController.h"
 #import "TimePickerViewController.h"
+#import "MainViewController.h"
 
 @interface NewStoryViewController ()
 
@@ -19,6 +20,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    ((MainViewController *)self.tabBarController).lockScreenRotation = NO;
+    [self rotateDeviceOrientation:UIInterfaceOrientationPortrait];
+
 }
 
 - (NSUInteger)supportedInterfaceOrientations
@@ -55,5 +59,12 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)rotateDeviceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    
+    [[UIDevice currentDevice]setValue:@(interfaceOrientation) forKey:@"orientation"];
+    [[UIApplication sharedApplication]setStatusBarOrientation:interfaceOrientation];
+    
+}
 
 @end
