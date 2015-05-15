@@ -39,6 +39,14 @@
 		8182DFCF1AF8AE1A0001FBDC /* VIdeoAssetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8182DFCE1AF8AE1A0001FBDC /* VIdeoAssetsViewController.m */; };
 		818C50021AFA41A6006306E8 /* CameraEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 818C4FFF1AFA41A6006306E8 /* CameraEngine.m */; };
 		818C50031AFA41A6006306E8 /* VideoEncoder.m in Sources */ = {isa = PBXBuildFile; fileRef = 818C50011AFA41A6006306E8 /* VideoEncoder.m */; };
+		819F07ED1B0640910061B511 /* AddPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 819F07D61B0640910061B511 /* AddPhotoCollectionViewCell.m */; };
+		819F07EE1B0640910061B511 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 819F07D81B0640910061B511 /* CameraViewController.m */; };
+		819F07F21B0640910061B511 /* EditingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 819F07DD1B0640910061B511 /* EditingView.m */; };
+		819F07F31B0640910061B511 /* EditingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 819F07DF1B0640910061B511 /* EditingViewController.m */; };
+		819F07F41B0640910061B511 /* FilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 819F07E11B0640910061B511 /* FilterView.m */; };
+		819F07FC1B0640910061B511 /* UIButton+Peaches.m in Sources */ = {isa = PBXBuildFile; fileRef = 819F07EA1B0640910061B511 /* UIButton+Peaches.m */; };
+		819F07FD1B0640910061B511 /* UIFont+Peaches.m in Sources */ = {isa = PBXBuildFile; fileRef = 819F07EC1B0640910061B511 /* UIFont+Peaches.m */; };
+		819F08001B0641450061B511 /* CameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 819F07FF1B0641450061B511 /* CameraView.m */; };
 		81D3D4D01AE7FCC0008F3766 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D3D4CF1AE7FCC0008F3766 /* SettingViewController.m */; };
 		81D3D4D41AE8056D008F3766 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 81D3D4D31AE8056D008F3766 /* background.jpg */; };
 		81D3D4D71AE817F0008F3766 /* ChangeNameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D3D4D61AE817F0008F3766 /* ChangeNameViewController.m */; };
@@ -119,6 +127,22 @@
 		818C4FFF1AFA41A6006306E8 /* CameraEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraEngine.m; sourceTree = "<group>"; };
 		818C50001AFA41A6006306E8 /* VideoEncoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoEncoder.h; sourceTree = "<group>"; };
 		818C50011AFA41A6006306E8 /* VideoEncoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoEncoder.m; sourceTree = "<group>"; };
+		819F07D51B0640910061B511 /* AddPhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		819F07D61B0640910061B511 /* AddPhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		819F07D71B0640910061B511 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		819F07D81B0640910061B511 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		819F07DC1B0640910061B511 /* EditingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditingView.h; sourceTree = "<group>"; };
+		819F07DD1B0640910061B511 /* EditingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditingView.m; sourceTree = "<group>"; };
+		819F07DE1B0640910061B511 /* EditingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditingViewController.h; sourceTree = "<group>"; };
+		819F07DF1B0640910061B511 /* EditingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditingViewController.m; sourceTree = "<group>"; };
+		819F07E01B0640910061B511 /* FilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterView.h; sourceTree = "<group>"; };
+		819F07E11B0640910061B511 /* FilterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterView.m; sourceTree = "<group>"; };
+		819F07E91B0640910061B511 /* UIButton+Peaches.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Peaches.h"; sourceTree = "<group>"; };
+		819F07EA1B0640910061B511 /* UIButton+Peaches.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Peaches.m"; sourceTree = "<group>"; };
+		819F07EB1B0640910061B511 /* UIFont+Peaches.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIFont+Peaches.h"; sourceTree = "<group>"; };
+		819F07EC1B0640910061B511 /* UIFont+Peaches.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIFont+Peaches.m"; sourceTree = "<group>"; };
+		819F07FE1B0641450061B511 /* CameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraView.h; sourceTree = "<group>"; };
+		819F07FF1B0641450061B511 /* CameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraView.m; sourceTree = "<group>"; };
 		81D3D4CE1AE7FCC0008F3766 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		81D3D4CF1AE7FCC0008F3766 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		81D3D4D31AE8056D008F3766 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
@@ -319,6 +343,53 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		819F07D31B06404F0061B511 /* Old Record */ = {
+			isa = PBXGroup;
+			children = (
+				81F857B21AFAAAB700FBA7A9 /* Record Engine */,
+				81D9645F1AF5D04100F77CC6 /* RecordingViewController.h */,
+				81D964601AF5D04100F77CC6 /* RecordingViewController.m */,
+				8182DFCD1AF8AE1A0001FBDC /* VIdeoAssetsViewController.h */,
+				8182DFCE1AF8AE1A0001FBDC /* VIdeoAssetsViewController.m */,
+				81F795331B03B7CE00A9BF31 /* VideoAssetsCell.h */,
+				81F795341B03B7CE00A9BF31 /* VideoAssetsCell.m */,
+				8157127F1AF75EEC00B3D8F7 /* RecordingView.h */,
+				815712801AF75EEC00B3D8F7 /* RecordingView.m */,
+				81F857B31AFBB83400FBA7A9 /* VideoEditViewController.h */,
+				81F857B41AFBB83400FBA7A9 /* VideoEditViewController.m */,
+				B675DCB01AFE16F3003C7768 /* NewStoryViewController.h */,
+				B675DCB11AFE16F3003C7768 /* NewStoryViewController.m */,
+				B675DCB31AFEE7B3003C7768 /* LocationPickerViewController.h */,
+				B675DCB41AFEE7B3003C7768 /* LocationPickerViewController.m */,
+				B675DCB61AFEE7C0003C7768 /* TimePickerViewController.h */,
+				B675DCB71AFEE7C0003C7768 /* TimePickerViewController.m */,
+			);
+			name = "Old Record";
+			sourceTree = "<group>";
+		};
+		819F07D41B0640620061B511 /* New Record */ = {
+			isa = PBXGroup;
+			children = (
+				819F07FE1B0641450061B511 /* CameraView.h */,
+				819F07FF1B0641450061B511 /* CameraView.m */,
+				819F07D51B0640910061B511 /* AddPhotoCollectionViewCell.h */,
+				819F07D61B0640910061B511 /* AddPhotoCollectionViewCell.m */,
+				819F07D71B0640910061B511 /* CameraViewController.h */,
+				819F07D81B0640910061B511 /* CameraViewController.m */,
+				819F07DC1B0640910061B511 /* EditingView.h */,
+				819F07DD1B0640910061B511 /* EditingView.m */,
+				819F07DE1B0640910061B511 /* EditingViewController.h */,
+				819F07DF1B0640910061B511 /* EditingViewController.m */,
+				819F07E01B0640910061B511 /* FilterView.h */,
+				819F07E11B0640910061B511 /* FilterView.m */,
+				819F07E91B0640910061B511 /* UIButton+Peaches.h */,
+				819F07EA1B0640910061B511 /* UIButton+Peaches.m */,
+				819F07EB1B0640910061B511 /* UIFont+Peaches.h */,
+				819F07EC1B0640910061B511 /* UIFont+Peaches.m */,
+			);
+			name = "New Record";
+			sourceTree = "<group>";
+		};
 		81D3D4CC1AE7FA40008F3766 /* Catagory */ = {
 			isa = PBXGroup;
 			children = (
@@ -379,24 +450,9 @@
 		81D9645E1AF5CE7E00F77CC6 /* Recording */ = {
 			isa = PBXGroup;
 			children = (
+				819F07D41B0640620061B511 /* New Record */,
+				819F07D31B06404F0061B511 /* Old Record */,
 				B6296DB81AFF7DAD00BE21C0 /* LocationCell */,
-				81F857B21AFAAAB700FBA7A9 /* Record Engine */,
-				81D9645F1AF5D04100F77CC6 /* RecordingViewController.h */,
-				81D964601AF5D04100F77CC6 /* RecordingViewController.m */,
-				8182DFCD1AF8AE1A0001FBDC /* VIdeoAssetsViewController.h */,
-				8182DFCE1AF8AE1A0001FBDC /* VIdeoAssetsViewController.m */,
-				81F795331B03B7CE00A9BF31 /* VideoAssetsCell.h */,
-				81F795341B03B7CE00A9BF31 /* VideoAssetsCell.m */,
-				8157127F1AF75EEC00B3D8F7 /* RecordingView.h */,
-				815712801AF75EEC00B3D8F7 /* RecordingView.m */,
-				81F857B31AFBB83400FBA7A9 /* VideoEditViewController.h */,
-				81F857B41AFBB83400FBA7A9 /* VideoEditViewController.m */,
-				B675DCB01AFE16F3003C7768 /* NewStoryViewController.h */,
-				B675DCB11AFE16F3003C7768 /* NewStoryViewController.m */,
-				B675DCB31AFEE7B3003C7768 /* LocationPickerViewController.h */,
-				B675DCB41AFEE7B3003C7768 /* LocationPickerViewController.m */,
-				B675DCB61AFEE7C0003C7768 /* TimePickerViewController.h */,
-				B675DCB71AFEE7C0003C7768 /* TimePickerViewController.m */,
 			);
 			name = Recording;
 			sourceTree = "<group>";
@@ -599,10 +655,13 @@
 				81FA5B651AE39D0700073E05 /* MyTimeLineViewController.m in Sources */,
 				818C50021AFA41A6006306E8 /* CameraEngine.m in Sources */,
 				8182DFCB1AF7F75B0001FBDC /* MainViewController.m in Sources */,
+				819F07ED1B0640910061B511 /* AddPhotoCollectionViewCell.m in Sources */,
 				81D3D4D01AE7FCC0008F3766 /* SettingViewController.m in Sources */,
 				81D3D4EB1AE90DC2008F3766 /* FollowerViewController.m in Sources */,
 				B675DCB51AFEE7B3003C7768 /* LocationPickerViewController.m in Sources */,
+				819F07FC1B0640910061B511 /* UIButton+Peaches.m in Sources */,
 				81D3D4E81AE90DB4008F3766 /* FollowingViewController.m in Sources */,
+				819F07F21B0640910061B511 /* EditingView.m in Sources */,
 				1963098D1ADF23B000058851 /* GUIPlayerView.m in Sources */,
 				81FA5B831AE41D7B00073E05 /* PublicTimeCell.m in Sources */,
 				B65BF4761AE6512F00F755D4 /* ArticleEditingViewController.m in Sources */,
@@ -612,7 +671,11 @@
 				81F857B51AFBB83400FBA7A9 /* VideoEditViewController.m in Sources */,
 				815712811AF75EEC00B3D8F7 /* RecordingView.m in Sources */,
 				199130541AD4EA900060AE40 /* AppDelegate.m in Sources */,
+				819F08001B0641450061B511 /* CameraView.m in Sources */,
+				819F07F41B0640910061B511 /* FilterView.m in Sources */,
 				81D3D4D71AE817F0008F3766 /* ChangeNameViewController.m in Sources */,
+				819F07FD1B0640910061B511 /* UIFont+Peaches.m in Sources */,
+				819F07F31B0640910061B511 /* EditingViewController.m in Sources */,
 				81FA5B6A1AE3A45300073E05 /* CALayer+StoryBoardExtention.m in Sources */,
 				81D964611AF5D04100F77CC6 /* RecordingViewController.m in Sources */,
 				9AAAE4B31AF1A30700D8452C /* UtilityViewController.m in Sources */,
@@ -624,6 +687,7 @@
 				81D3D4E01AE830D4008F3766 /* SuggestionViewController.m in Sources */,
 				81F795351B03B7CE00A9BF31 /* VideoAssetsCell.m in Sources */,
 				81D3D4EF1AE90F6D008F3766 /* FollowingCell.m in Sources */,
+				819F07EE1B0640910061B511 /* CameraViewController.m in Sources */,
 				B6296DBC1AFF7DEB00BE21C0 /* LocationTableViewCell.m in Sources */,
 				81D3D4DA1AE81803008F3766 /* ChangeAccountViewController.m in Sources */,
 			);
