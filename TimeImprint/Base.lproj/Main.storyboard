@@ -3914,12 +3914,31 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="fQf-dc-u2H" kind="relationship" relationship="rootViewController" id="1ft-F1-fXO"/>
+                        <segue destination="Ds6-3i-XVs" kind="relationship" relationship="rootViewController" id="WGd-eX-oa4"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JUZ-tR-3oc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-207" y="-91"/>
+            <point key="canvasLocation" x="645" y="-331"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="BVw-GJ-WMI">
+            <objects>
+                <viewController id="Ds6-3i-XVs" customClass="CameraViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rBd-2P-Ynj"/>
+                        <viewControllerLayoutGuide type="bottom" id="SmX-Us-Vir"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KSS-WX-zAq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="EAe-Q0-URU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7cK-7z-Vh7" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1305" y="-331"/>
         </scene>
     </scenes>
     <resources>
