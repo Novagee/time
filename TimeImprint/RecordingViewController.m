@@ -202,7 +202,7 @@ static void * RecordingContext = &RecordingContext;
     
     _recordingTime = time;
     
-    _recordingTimer = [NSTimer scheduledTimerWithTimeInterval:0.1f
+    _recordingTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f
                                                        target:self
                                                      selector:@selector(handleRecordingTimer)
                                                      userInfo:nil
@@ -235,7 +235,7 @@ static void * RecordingContext = &RecordingContext;
     _videoTimeLayer.strokeEnd = [CameraEngine shareEngine].recordingTime/10.0f;
     [_videoTimeLayer setNeedsDisplay];
     
-    _recordingTime += 0.1f;
+    [CameraEngine shareEngine].recordingTime += 1.0f;
     
 }
 
