@@ -83,7 +83,18 @@
 //    [self closeBtnPressed];
     
     EditingViewController *vc = [[EditingViewController alloc]init];
+    
+    [self rotateDeviceOrientation:UIInterfaceOrientationPortrait];
+    ((MainViewController *)self.tabBarController).lockScreenRotation = YES;
+
     [self presentViewController:vc animated:YES completion:nil];
+}
+
+- (void)rotateDeviceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    
+    [[UIDevice currentDevice]setValue:@(interfaceOrientation) forKey:@"orientation"];
+    [[UIApplication sharedApplication]setStatusBarOrientation:interfaceOrientation];
+    
 }
 
 -(void)closeBtnPressed {
@@ -105,11 +116,25 @@
 
 -(void)didRotateDeviceChangeNotification:(NSNotification *)notification
 {
-    if (viewRotated == YES) {
-        shadowView.hidden = YES;
+    switch ([UIDevice currentDevice].orientation)
+    {
+        case UIDeviceOrientationLandscapeLeft:
+            shadowView.hidden = YES;
+            break;
+            
+        case UIDeviceOrientationLandscapeRight:
+            shadowView.hidden = YES;
+            break;
+
+            default:
+            break;
     }
-    
-    viewRotated = YES;
+
+//    if (viewRotated == YES) {
+//        shadowView.hidden = YES;
+//    }
+//    
+//    viewRotated = YES;
 }
 
 -(void)openCameraRoll {
