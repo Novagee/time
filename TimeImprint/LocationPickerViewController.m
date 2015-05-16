@@ -46,7 +46,7 @@
     
 }
 - (IBAction)onClickCancel:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:self completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {

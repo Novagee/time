@@ -10,10 +10,15 @@
 #import "SVProgressHUD.h"
 #import "LocationPickerViewController.h"
 #import "TimePickerViewController.h"
+#import "MainViewController.h"
 
 static int count=0;
 
 @implementation EditingViewController
+
+- (void) viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -503,17 +508,21 @@ static int count=0;
 -(void)tappedOnLocation:(UITapGestureRecognizer *)sender {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     LocationPickerViewController *locationPickerViewController = [storyboard instantiateViewControllerWithIdentifier:@"location_picker"];
-    [self.navigationController pushViewController:locationPickerViewController animated:YES];
+    locationPickerViewController.title = @"事件发生位置";
+    [self presentViewController:locationPickerViewController animated:YES completion:nil];
     
 }
 -(void)tappedOnOccurTime:(UITapGestureRecognizer *)sender {
-    TimePickerViewController *timePickerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"time_picker"];
-    [self.navigationController pushViewController:timePickerViewController animated:YES];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    TimePickerViewController *time_picker = [storyboard instantiateViewControllerWithIdentifier:@"time_picker"];
+    time_picker.title = @"事件发生位置";
+    [self presentViewController:time_picker animated:YES completion:nil];
 }
 -(void)tappedOnPublishTime:(UITapGestureRecognizer *)sender {
-    TimePickerViewController *timePickerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"time_picker"];
-    timePickerViewController.title = @"发布发生时间";
-    [self.navigationController pushViewController:timePickerViewController animated:YES];
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    TimePickerViewController *time_picker = [storyboard instantiateViewControllerWithIdentifier:@"time_picker"];
+    time_picker.title = @"事件发生位置";
+    [self presentViewController:time_picker animated:YES completion:nil];
 }
 
 @end

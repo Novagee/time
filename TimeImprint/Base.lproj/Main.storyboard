@@ -1576,7 +1576,7 @@
             </objects>
             <point key="canvasLocation" x="1314" y="1317"/>
         </scene>
-        <!--事件发生位置-->
+        <!--Location Picker View Controller-->
         <scene sceneID="CFs-fm-IX2">
             <objects>
                 <viewController storyboardIdentifier="location_picker" useStoryboardIdentifierAsRestorationIdentifier="YES" id="uue-Ho-Rc7" customClass="LocationPickerViewController" sceneMemberID="viewController">
@@ -1632,23 +1632,37 @@
                                     <constraint firstItem="MNB-x6-Ghd" firstAttribute="top" secondItem="vzI-Ia-8me" secondAttribute="top" id="qmv-dj-VEC"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hqS-D8-LHs">
+                                <rect key="frame" x="10" y="20" width="46" height="44"/>
+                                <state key="normal" title="取消">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClickCancel:" destination="uue-Ho-Rc7" eventType="touchUpInside" id="23x-ON-EnA"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="事件发生位置" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rmg-wR-DeC">
+                                <rect key="frame" x="249" y="20" width="102" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P01-A4-s1A">
+                                <rect key="frame" x="0.0" y="64" width="600" height="1"/>
+                                <color key="backgroundColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="vzI-Ia-8me" firstAttribute="leading" secondItem="uHh-ta-cRQ" secondAttribute="leading" id="2O2-AE-WJO"/>
                             <constraint firstAttribute="trailing" secondItem="vzI-Ia-8me" secondAttribute="trailing" id="76V-r3-nBL"/>
-                            <constraint firstItem="vzI-Ia-8me" firstAttribute="top" secondItem="Hcf-GQ-EV2" secondAttribute="bottom" id="9bc-Wu-gmj"/>
+                            <constraint firstItem="vzI-Ia-8me" firstAttribute="top" secondItem="Hcf-GQ-EV2" secondAttribute="bottom" constant="60" id="9bc-Wu-gmj"/>
+                            <constraint firstAttribute="centerX" secondItem="Rmg-wR-DeC" secondAttribute="centerX" id="bJN-M7-3Re"/>
+                            <constraint firstAttribute="centerX" secondItem="P01-A4-s1A" secondAttribute="centerX" id="c0X-h9-vBC"/>
                             <constraint firstItem="SGH-pZ-bjq" firstAttribute="top" secondItem="vzI-Ia-8me" secondAttribute="bottom" id="oJ5-lJ-A9q"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="事件发生位置" id="lKd-db-RNi">
-                        <barButtonItem key="leftBarButtonItem" title="取消" id="ATT-1c-ZV4">
-                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="onClickCancel:" destination="uue-Ho-Rc7" id="uYg-tG-c7I"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
                     <connections>
                         <outlet property="tableview" destination="MNB-x6-Ghd" id="Wd8-sr-sls"/>
                     </connections>
@@ -1657,7 +1671,7 @@
             </objects>
             <point key="canvasLocation" x="2014" y="8"/>
         </scene>
-        <!--事件发生时间-->
+        <!--Time Picker View Controller-->
         <scene sceneID="XKT-tc-ETJ">
             <objects>
                 <viewController storyboardIdentifier="time_picker" useStoryboardIdentifierAsRestorationIdentifier="YES" id="27U-Jx-xmN" customClass="TimePickerViewController" sceneMemberID="viewController">
@@ -1689,7 +1703,7 @@
                                         </constraints>
                                     </view>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="n78-6a-IDq">
-                                        <rect key="frame" x="0.0" y="198" width="600" height="216"/>
+                                        <rect key="frame" x="0.0" y="198.5" width="600" height="216"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="n78-6a-IDq" secondAttribute="height" multiplier="32:25" id="FRG-ey-DW0"/>
                                         </constraints>
@@ -1711,35 +1725,66 @@
                                     <constraint firstItem="n78-6a-IDq" firstAttribute="top" secondItem="df2-Re-t0z" secondAttribute="bottom" id="yUX-pc-30a"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="syD-E7-VhV">
+                                <rect key="frame" x="10" y="20" width="46" height="44"/>
+                                <state key="normal" title="取消">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClickCancel:" destination="27U-Jx-xmN" eventType="touchUpInside" id="QIt-J7-XJB"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="事件发生时间" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PGS-C9-lDM">
+                                <rect key="frame" x="249" y="20" width="102" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="psz-OK-SuC">
+                                <rect key="frame" x="538" y="20" width="46" height="44"/>
+                                <state key="normal" title="完成">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onClickCancel:" destination="27U-Jx-xmN" eventType="touchUpInside" id="EJD-nX-2vR"/>
+                                    <action selector="onClickDone:" destination="27U-Jx-xmN" eventType="touchUpInside" id="Eq1-d0-1qU"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JsT-WJ-krc">
+                                <rect key="frame" x="-16" y="64" width="600" height="1"/>
+                                <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="7zR-eg-bO3" firstAttribute="top" secondItem="8Kq-CW-IqM" secondAttribute="bottom" id="RJN-VV-ON2"/>
+                            <constraint firstItem="PGS-C9-lDM" firstAttribute="top" secondItem="8Kq-CW-IqM" secondAttribute="bottom" constant="15" id="1gd-4R-84l"/>
+                            <constraint firstAttribute="centerX" secondItem="PGS-C9-lDM" secondAttribute="centerX" id="GSz-wg-oSS"/>
+                            <constraint firstItem="psz-OK-SuC" firstAttribute="top" secondItem="8Kq-CW-IqM" secondAttribute="bottom" constant="20" id="Ory-hW-HzV"/>
+                            <constraint firstItem="syD-E7-VhV" firstAttribute="leading" secondItem="3PL-6s-ezJ" secondAttribute="leadingMargin" id="PU5-Go-ksC"/>
+                            <constraint firstItem="7zR-eg-bO3" firstAttribute="top" secondItem="8Kq-CW-IqM" secondAttribute="bottom" constant="60" id="RJN-VV-ON2"/>
+                            <constraint firstItem="JsT-WJ-krc" firstAttribute="top" secondItem="psz-OK-SuC" secondAttribute="bottom" constant="44" id="X7v-cT-OPh"/>
+                            <constraint firstItem="psz-OK-SuC" firstAttribute="trailing" secondItem="3PL-6s-ezJ" secondAttribute="trailingMargin" id="YSX-4E-F0o"/>
+                            <constraint firstItem="PGS-C9-lDM" firstAttribute="top" secondItem="8Kq-CW-IqM" secondAttribute="bottom" constant="20" id="ZbF-mX-7wf"/>
+                            <constraint firstItem="syD-E7-VhV" firstAttribute="top" secondItem="8Kq-CW-IqM" secondAttribute="bottom" constant="20" id="aZf-67-5Ol"/>
+                            <constraint firstItem="syD-E7-VhV" firstAttribute="top" secondItem="8Kq-CW-IqM" secondAttribute="bottom" constant="10" id="h35-n4-8yY"/>
                             <constraint firstItem="7zR-eg-bO3" firstAttribute="leading" secondItem="3PL-6s-ezJ" secondAttribute="leading" id="lps-4e-TpW"/>
                             <constraint firstAttribute="trailing" secondItem="7zR-eg-bO3" secondAttribute="trailing" id="mGO-Wf-MIg"/>
                             <constraint firstItem="ts6-Hu-rIN" firstAttribute="top" secondItem="7zR-eg-bO3" secondAttribute="bottom" id="mxA-e5-3GR"/>
                             <constraint firstItem="ts6-Hu-rIN" firstAttribute="top" secondItem="7zR-eg-bO3" secondAttribute="bottom" id="obl-bo-wq8"/>
+                            <constraint firstItem="psz-OK-SuC" firstAttribute="top" secondItem="8Kq-CW-IqM" secondAttribute="bottom" constant="10" id="vff-8w-z1q"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="aZf-67-5Ol"/>
+                                <exclude reference="X7v-cT-OPh"/>
+                                <exclude reference="ZbF-mX-7wf"/>
+                                <exclude reference="Ory-hW-HzV"/>
                                 <exclude reference="mxA-e5-3GR"/>
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="事件发生时间" id="wL8-Mv-isf">
-                        <barButtonItem key="leftBarButtonItem" title="取消" id="dgY-Vh-fpW">
-                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="onClickCancel:" destination="27U-Jx-xmN" id="YrO-Cu-vDk"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="完成" id="dX7-PF-K92">
-                            <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <action selector="onClickDone:" destination="27U-Jx-xmN" id="fjg-ez-USn"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IMG-Za-AAZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
