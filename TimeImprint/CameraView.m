@@ -91,7 +91,7 @@
     
     UILabel *countDownLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.frame.size.width/2-100, self.frame.size.height/2-100, 200, 200)];
     countDownLabel.text = @"3";
-    countDownLabel.font = [UIFont fontWithName:@"Gillsans-Light" size:130];
+    countDownLabel.font = [UIFont fontWithName:@"American Typewriter" size:130];
     countDownLabel.textColor = [UIColor whiteColor];
     countDownLabel.textAlignment = NSTextAlignmentCenter;
     [countDownBackground addSubview:countDownLabel];
@@ -148,7 +148,7 @@
     [self addSubview:btnOverView];
     
     timerLabel = [[UILabel alloc]initWithFrame:CGRectMake(5, 30, 40, 20)];
-    timerLabel.text = @"0:00";
+    timerLabel.text = @"0秒";
     timerLabel.textAlignment = NSTextAlignmentCenter;
     timerLabel.textColor = [UIColor whiteColor];
     timerLabel.transform = CGAffineTransformMakeRotation((90.0f * M_PI) / 180.0f);
@@ -209,7 +209,7 @@
     
     self.recordingIsOkayBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     self.recordingIsOkayBtn.frame = CGRectMake(0, 0, 50, 50);
-    [self.recordingIsOkayBtn setImage:[UIImage imageNamed:@"checkMore3@2x.png"] forState:UIControlStateNormal];
+    [self.recordingIsOkayBtn setImage:[UIImage imageNamed:@"videoReady_42"] forState:UIControlStateNormal];
     self.recordingIsOkayBtn.transform = CGAffineTransformMakeRotation((90.0f * M_PI) / 180.0f);
     [self.recordingIsOkayBtnBackground addSubview:self.recordingIsOkayBtn];
     
@@ -332,12 +332,12 @@
 -(void)increaseProgressView {
     
     CGFloat currentProgress = _videoProgressView.frame.size.height;
-    CGFloat labelProgress = currentProgress/self.frame.size.height*12;
+    CGFloat labelProgress = currentProgress/self.frame.size.height*11;
     if ((int)labelProgress<10) {
-        timerLabel.text = [NSString stringWithFormat:@"0:0%i", (int)labelProgress];
+        timerLabel.text = [NSString stringWithFormat:@"%i秒", (int)labelProgress];
     }
     else {
-        timerLabel.text = [NSString stringWithFormat:@"0:%i", (int)labelProgress];
+        timerLabel.text = [NSString stringWithFormat:@"%i秒", (int)labelProgress];
     }
     
     

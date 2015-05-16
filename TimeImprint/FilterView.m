@@ -19,7 +19,7 @@
         
         y = 30;
         
-        UIScrollView *filterScroll = [[UIScrollView alloc]initWithFrame:CGRectMake(self.frame.size.width/2-45, -105, 90, self.frame.size.width)];
+        UIScrollView *filterScroll = [[UIScrollView alloc]initWithFrame:CGRectMake(self.frame.size.width/2-45, -145, 90, self.frame.size.width)];
         filterScroll.contentSize = CGSizeMake(90, (90)*9+30);
         [self addSubview:filterScroll];
         

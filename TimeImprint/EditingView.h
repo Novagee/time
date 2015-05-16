@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface EditingView : UIView <UITextFieldDelegate, UITextViewDelegate, UIScrollViewDelegate>
 {
     UIScrollView *backgroundScrollView;
     CGFloat y;
 }
 
+@property (nonatomic, strong) UIImageView *videoImage;
 @property (nonatomic, strong) UIImageView *photoImageOne;
 @property (nonatomic, strong) UIImageView *photoImageTwo;
 @property (nonatomic, strong) UIImageView *photoImageThree;

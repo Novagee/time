@@ -9,7 +9,10 @@
 #import "EditingView.h"
 #import "CameraView.h"
 
+
 @implementation EditingView
+
+@synthesize videoImage;
 @synthesize photoImageOne;
 @synthesize photoImageTwo;
 @synthesize photoImageThree;
@@ -52,22 +55,24 @@
 }
 
 -(void)addVideoImage {
-    UIImageView *videoImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, y, self.frame.size.width, 160)];
-    videoImage.contentMode = UIViewContentModeScaleAspectFill;
-    videoImage.clipsToBounds = YES;
+    self.videoImage = [[UIImageView alloc]initWithFrame:CGRectMake(0, y, self.frame.size.width, self.frame.size.width*9/16)];
+    self.videoImage.contentMode = UIViewContentModeScaleAspectFill;
+    self.videoImage.clipsToBounds = YES;
     UIImage *rotatedImage = [[UIImage alloc]initWithCGImage:[CameraView shared].camRollThumbNail.CGImage scale:1.0 orientation:UIImageOrientationLeft];
-    videoImage.image = rotatedImage;
-    [backgroundScrollView addSubview:videoImage];
+    self.videoImage.image = rotatedImage;
+    [backgroundScrollView addSubview:self.videoImage];
     
-    UITextField *photoTitle = [[UITextField alloc]initWithFrame:CGRectMake(20, y + 100, 160, 40)];
+    
+    UITextField *photoTitle = [[UITextField alloc]initWithFrame:CGRectMake((self.videoImage.bounds.size.width-220)/2, self.videoImage.bounds.size.height/2-40/2+60, 220, 40)];
     photoTitle.text = @" 加标题";
+    photoTitle.textAlignment = NSTextAlignmentCenter;
     photoTitle.textColor = [UIColor whiteColor];
     photoTitle.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
     photoTitle.delegate = self;
     
     [backgroundScrollView addSubview:photoTitle];
     
-    y = y + 160;
+    y = y + self.frame.size.width*9/16 + 5;//10 is spacing
 }
 
 -(void)addFourPhotoImages {
@@ -128,10 +133,13 @@
 //    [backgroundScrollView addSubview:titleLabel];
     y = y + 5;
     
-    UIView *boxView = [[UIView alloc]initWithFrame:CGRectMake(5, y, self.frame.size.width-10, 160)];
-    boxView.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    boxView.layer.borderWidth = 1;
-    boxView.layer.cornerRadius = 5;
+    double height = self.frame.size.height - 60 - self.videoImage.bounds.size.height - 5 - self.photoImageOne.bounds.size.height - 5 - 5 - 5 - 30 - 60;
+    
+    
+    UIView *boxView = [[UIView alloc]initWithFrame:CGRectMake(5, y, self.frame.size.width-10, height)];
+//    boxView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+//    boxView.layer.borderWidth = 1;
+//    boxView.layer.cornerRadius = 5;
     [backgroundScrollView addSubview:boxView];
     
     UIButton *aboutBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -143,31 +151,36 @@
     aboutBox.delegate = self;
     [backgroundScrollView addSubview:aboutBox];
     
-    UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(0, 120, self.frame.size.width-10, 1)];
-    lineView.backgroundColor = [UIColor lightGrayColor];
-    [boxView addSubview:lineView];
+    y = y + height;
     
     UIButton *locationBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    locationBtn.frame = CGRectMake(15, 130, 20, 20);
+    locationBtn.frame = CGRectMake(15, height - 20, 20, 20);
     [locationBtn setImage:[UIImage imageNamed:@"location_24"] forState:UIControlStateNormal];
+    [locationBtn addTarget:self action:@selector(tappedOnLocation:) forControlEvents:UIControlEventTouchUpInside];
     [boxView addSubview:locationBtn];
     
     UIButton *EventOccuredBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    EventOccuredBtn.frame = CGRectMake(50, 130, 20, 20);
+    EventOccuredBtn.frame = CGRectMake(50, height - 20, 20, 20);
     [EventOccuredBtn setImage:[UIImage imageNamed:@"eventTime_24"] forState:UIControlStateNormal];
+    [EventOccuredBtn addTarget:self action:@selector(tappedOnOccurTime:) forControlEvents:UIControlEventTouchUpInside];
     [boxView addSubview:EventOccuredBtn];
     
     UIButton *EventPostingBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    EventPostingBtn.frame = CGRectMake(90, 130, 20, 20);
+    EventPostingBtn.frame = CGRectMake(90, height - 20, 20, 20);
     [EventPostingBtn setImage:[UIImage imageNamed:@"publish_24"] forState:UIControlStateNormal];
+    [EventPostingBtn addTarget:self action:@selector(tappedOnPublishTime:) forControlEvents:UIControlEventTouchUpInside];
     [boxView addSubview:EventPostingBtn];
     
     UIButton *privacyBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    privacyBtn.frame = CGRectMake(boxView.frame.size.width-35, 130, 20, 20);
+    privacyBtn.frame = CGRectMake(boxView.frame.size.width-35, height - 20, 20, 20);
     [privacyBtn setImage:[UIImage imageNamed:@"privacy_24"] forState:UIControlStateNormal];
     [boxView addSubview:privacyBtn];
     
-    y = y + 180;
+    UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(0, height - 20 + 40 , self.frame.size.width-10, 1)];
+    lineView.backgroundColor = [UIColor lightGrayColor];
+    [boxView addSubview:lineView];
+    
+    y = y + 40;
 }
 
 -(void)addLocationBox {
@@ -252,29 +265,31 @@
     titleLabel.text = @"分享到";
     titleLabel.textColor = [UIColor grayColor];
     [backgroundScrollView addSubview:titleLabel];
+    double x = self.frame.size.width -  60 - 10 - 5*50;
     
+    x += 5 + 60;
     UIButton *wechatBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    wechatBtn.frame = CGRectMake(80, y+5, 32, 24);
+    wechatBtn.frame = CGRectMake(x, y+5, 32, 24);
     [wechatBtn setImage:[UIImage imageNamed:@"wechat_friend"] forState:UIControlStateNormal];
     [backgroundScrollView addSubview:wechatBtn];
-    
+    x += 50;
     UIButton *wechatMomentBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    wechatMomentBtn.frame = CGRectMake(130, y+5, 32, 24);
-    [wechatMomentBtn setImage:[UIImage imageNamed:@"Moment_a"] forState:UIControlStateNormal];
+    wechatMomentBtn.frame = CGRectMake(x, y+5, 32, 24);
+    [wechatMomentBtn setImage:[UIImage imageNamed:@"moment"] forState:UIControlStateNormal];
     [backgroundScrollView addSubview:wechatMomentBtn];
-    
+    x += 50;
     UIButton *weiboBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    weiboBtn.frame = CGRectMake(180, y+5, 32, 24);
+    weiboBtn.frame = CGRectMake(x, y+5, 32, 24);
     [weiboBtn setImage:[UIImage imageNamed:@"weibo"] forState:UIControlStateNormal];
     [backgroundScrollView addSubview:weiboBtn];
-    
+    x += 50;
     UIButton *qq_friendBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    qq_friendBtn.frame = CGRectMake(230, y+5, 32, 24);
+    qq_friendBtn.frame = CGRectMake(x, y+5, 32, 24);
     [qq_friendBtn setImage:[UIImage imageNamed:@"qq_friend"] forState:UIControlStateNormal];
     [backgroundScrollView addSubview:qq_friendBtn];
-    
+    x += 50;
     UIButton *qq_zoneBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    qq_zoneBtn.frame = CGRectMake(280, y+5, 32, 24);
+    qq_zoneBtn.frame = CGRectMake(x, y+5, 32, 24);
     [qq_zoneBtn setImage:[UIImage imageNamed:@"qq_zone"] forState:UIControlStateNormal];
     [backgroundScrollView addSubview:qq_zoneBtn];
 }
@@ -330,4 +345,16 @@
     [[NSUserDefaults standardUserDefaults]synchronize];
     [[NSNotificationCenter defaultCenter]postNotificationName:@"openCameraRollForPhoto" object:nil];
 }
+
+-(void)tappedOnLocation:(UIButton *)sender {
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"tappedOnLocation" object:nil];
+}
+-(void)tappedOnOccurTime:(UIButton *)sender {
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"tappedOnOccurTime" object:nil];
+}
+-(void)tappedOnPublishTime:(UIButton *)sender {
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"tappedOnPublishTime" object:nil];
+}
+
+
 @end

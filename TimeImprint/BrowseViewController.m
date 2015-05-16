@@ -16,6 +16,7 @@
 
 @implementation BrowseViewController
 
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -26,6 +27,7 @@
     // dismiss the separator line
     self.browseTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -33,6 +35,8 @@
     ((MainViewController *)self.tabBarController).lockScreenRotation = YES;    
     
     [self rotateDeviceOrientation:UIInterfaceOrientationPortrait];
+    
+    self.tabBarController.tabBar.hidden = NO;
     
 }
 

@@ -8,6 +8,7 @@
 
 #import "CameraViewController.h"
 #import "MainViewController.h"
+#import "BrowseViewController.h"
 
 @interface CameraViewController ()
 
@@ -102,12 +103,15 @@
     if (cameraViewIsPresent == YES) {
         cameraViewIsPresent = NO;
         [UIView animateWithDuration:0.3 animations:^{
-            cameraView.frame = CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, self.view.frame.size.height);
+            BrowseViewController *browseViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"browseViewController"];
+            
+            [self presentViewController:browseViewController animated:YES completion:nil];
         } completion:^(BOOL finished) {
             
         }];
     }
     else {
+        
         cameraView = [[CameraView alloc]initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
         [self.view addSubview:cameraView];
         cameraViewIsPresent = YES;

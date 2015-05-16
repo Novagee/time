@@ -8,6 +8,8 @@
 
 #import "EditingViewController.h"
 #import "SVProgressHUD.h"
+#import "LocationPickerViewController.h"
+#import "TimePickerViewController.h"
 
 static int count=0;
 
@@ -28,8 +30,12 @@ static int count=0;
     [self.view addSubview:editingView];
     
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(openCameraRollForPhoto) name:@"openCameraRollForPhoto" object:nil];
-    
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(tappedOnLocation:) name:@"tappedOnLocation" object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(tappedOnOccurTime:) name:@"tappedOnOccurTime" object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(tappedOnPublishTime:) name:@"tappedOnPublishTime" object:nil];
     [self getPictureCount];
+    
+
 }
 
 -(void)openCameraRoll {
@@ -492,6 +498,22 @@ static int count=0;
     
     self.tabBarController.selectedIndex = 0;
     
+}
+
+-(void)tappedOnLocation:(UITapGestureRecognizer *)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    LocationPickerViewController *locationPickerViewController = [storyboard instantiateViewControllerWithIdentifier:@"location_picker"];
+    [self.navigationController pushViewController:locationPickerViewController animated:YES];
+    
+}
+-(void)tappedOnOccurTime:(UITapGestureRecognizer *)sender {
+    TimePickerViewController *timePickerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"time_picker"];
+    [self.navigationController pushViewController:timePickerViewController animated:YES];
+}
+-(void)tappedOnPublishTime:(UITapGestureRecognizer *)sender {
+    TimePickerViewController *timePickerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"time_picker"];
+    timePickerViewController.title = @"发布发生时间";
+    [self.navigationController pushViewController:timePickerViewController animated:YES];
 }
 
 @end
