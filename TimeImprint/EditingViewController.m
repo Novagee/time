@@ -11,7 +11,7 @@
 #import "LocationPickerViewController.h"
 #import "TimePickerViewController.h"
 #import "MainViewController.h"
-
+#import "StoryAPIManager.h"
 static int count=0;
 
 @implementation EditingViewController
@@ -38,6 +38,7 @@ static int count=0;
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(tappedOnLocation:) name:@"tappedOnLocation" object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(tappedOnOccurTime:) name:@"tappedOnOccurTime" object:nil];
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(tappedOnPublishTime:) name:@"tappedOnPublishTime" object:nil];
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(tappedOnPublish:) name:@"tappedOnPublish" object:nil];
     [self getPictureCount];
     
 
@@ -498,11 +499,8 @@ static int count=0;
 
 -(void)publishBtnPressed {
 //    [editingView removeFromSuperview];
-    
     [self dismissViewControllerAnimated:YES completion:nil];
-    
     self.tabBarController.selectedIndex = 0;
-    
 }
 
 -(void)tappedOnLocation:(UITapGestureRecognizer *)sender {
@@ -510,19 +508,30 @@ static int count=0;
     LocationPickerViewController *locationPickerViewController = [storyboard instantiateViewControllerWithIdentifier:@"location_picker"];
     locationPickerViewController.title = @"事件发生位置";
     [self presentViewController:locationPickerViewController animated:YES completion:nil];
-    
 }
+
 -(void)tappedOnOccurTime:(UITapGestureRecognizer *)sender {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     TimePickerViewController *time_picker = [storyboard instantiateViewControllerWithIdentifier:@"time_picker"];
     time_picker.title = @"事件发生位置";
     [self presentViewController:time_picker animated:YES completion:nil];
 }
+
 -(void)tappedOnPublishTime:(UITapGestureRecognizer *)sender {
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     TimePickerViewController *time_picker = [storyboard instantiateViewControllerWithIdentifier:@"time_picker"];
     time_picker.title = @"事件发生位置";
     [self presentViewController:time_picker animated:YES completion:nil];
+}
+
+-(void)tappedOnPublish:(UITapGestureRecognizer *)sender {
+    NSDictionary *params = @{};
+    StoryAPIManager *api = [StoryAPIManager sharedInstance];
+    [api create:params success:^(id successResponse) {
+        NSLog(@"%@", successResponse);
+    } failure:^(id failureResponse, NSError *error) {
+        NSLog(@"%@", failureResponse);
+    }];
 }
 
 @end

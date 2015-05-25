@@ -301,6 +301,7 @@
     [publishBtn setTitle:@"发布" forState:UIControlStateNormal];
     publishBtn.backgroundColor = [UIColor clearColor];
     publishBtn.tintColor = [UIColor darkTextColor];
+    [publishBtn addTarget:self action:@selector(tappedOnPublish:) forControlEvents:UIControlEventTouchUpInside];
     [backgroundScrollView addSubview:publishBtn];
     [backgroundScrollView setContentSize:CGSizeMake(self.frame.size.width, self.frame.size.height-19)];
 }
@@ -355,6 +356,8 @@
 -(void)tappedOnPublishTime:(UIButton *)sender {
     [[NSNotificationCenter defaultCenter]postNotificationName:@"tappedOnPublishTime" object:nil];
 }
-
+-(void)tappedOnPublish:(UIButton *)sender {
+    [[NSNotificationCenter defaultCenter]postNotificationName:@"tappedOnPublish" object:nil];
+}
 
 @end

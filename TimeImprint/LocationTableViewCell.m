@@ -2,7 +2,7 @@
 //  LocationTableViewCell.m
 //  TimeImprint
 //
-//  Created by Kelvin Lam on 5/10/15.
+//  Created by Peng Wan on 5/10/15.
 //  Copyright (c) 2015 Timeimprint. All rights reserved.
 //
 

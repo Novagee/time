@@ -149,12 +149,16 @@
 		9A2AC3B81B065ECE00CFD653 /* weibo_a@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9A2AC3A61B065ECE00CFD653 /* weibo_a@3x.png */; };
 		9AAAE4B31AF1A30700D8452C /* UtilityViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AAAE4B21AF1A30700D8452C /* UtilityViewController.m */; };
 		B0867327DFFF06F819591260 /* libPods-TimeImprint.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB6E933EFC2BE211799AFFC /* libPods-TimeImprint.a */; };
+		B61DEB6D1B12BA5E00FCFDD0 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B61DEB6C1B12BA5E00FCFDD0 /* APIManager.m */; };
+		B61DEB701B12C29100FCFDD0 /* StoryAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B61DEB6F1B12C29100FCFDD0 /* StoryAPIManager.m */; };
+		B61DEB751B12C2F800FCFDD0 /* UserAPIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B61DEB741B12C2F800FCFDD0 /* UserAPIManager.m */; };
 		B6296DBC1AFF7DEB00BE21C0 /* LocationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B6296DBA1AFF7DEB00BE21C0 /* LocationTableViewCell.m */; };
 		B6296DBD1AFF7DEB00BE21C0 /* LocationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B6296DBB1AFF7DEB00BE21C0 /* LocationTableViewCell.xib */; };
 		B65BF4761AE6512F00F755D4 /* ArticleEditingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B65BF4751AE6512F00F755D4 /* ArticleEditingViewController.m */; };
 		B675DCB21AFE16F3003C7768 /* NewStoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B675DCB11AFE16F3003C7768 /* NewStoryViewController.m */; };
 		B675DCB51AFEE7B3003C7768 /* LocationPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B675DCB41AFEE7B3003C7768 /* LocationPickerViewController.m */; };
 		B675DCB81AFEE7C0003C7768 /* TimePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B675DCB71AFEE7C0003C7768 /* TimePickerViewController.m */; };
+		B6BA8DAB1B12ADF200CE7C85 /* APIConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B6BA8DAA1B12ADF200CE7C85 /* APIConstants.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -341,6 +345,12 @@
 		9A2AC3A61B065ECE00CFD653 /* weibo_a@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "weibo_a@3x.png"; sourceTree = "<group>"; };
 		9AAAE4B11AF1A30700D8452C /* UtilityViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UtilityViewController.h; sourceTree = "<group>"; };
 		9AAAE4B21AF1A30700D8452C /* UtilityViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UtilityViewController.m; sourceTree = "<group>"; };
+		B61DEB6B1B12BA5E00FCFDD0 /* APIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
+		B61DEB6C1B12BA5E00FCFDD0 /* APIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
+		B61DEB6E1B12C29100FCFDD0 /* StoryAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryAPIManager.h; sourceTree = "<group>"; };
+		B61DEB6F1B12C29100FCFDD0 /* StoryAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryAPIManager.m; sourceTree = "<group>"; };
+		B61DEB731B12C2F800FCFDD0 /* UserAPIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAPIManager.h; sourceTree = "<group>"; };
+		B61DEB741B12C2F800FCFDD0 /* UserAPIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAPIManager.m; sourceTree = "<group>"; };
 		B6296DB91AFF7DEB00BE21C0 /* LocationTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationTableViewCell.h; sourceTree = "<group>"; };
 		B6296DBA1AFF7DEB00BE21C0 /* LocationTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationTableViewCell.m; sourceTree = "<group>"; };
 		B6296DBB1AFF7DEB00BE21C0 /* LocationTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LocationTableViewCell.xib; sourceTree = "<group>"; };
@@ -352,6 +362,8 @@
 		B675DCB41AFEE7B3003C7768 /* LocationPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationPickerViewController.m; sourceTree = "<group>"; };
 		B675DCB61AFEE7C0003C7768 /* TimePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimePickerViewController.h; sourceTree = "<group>"; };
 		B675DCB71AFEE7C0003C7768 /* TimePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimePickerViewController.m; sourceTree = "<group>"; };
+		B6BA8DA91B12ADF200CE7C85 /* APIConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APIConstants.h; sourceTree = "<group>"; };
+		B6BA8DAA1B12ADF200CE7C85 /* APIConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APIConstants.m; sourceTree = "<group>"; };
 		DEB6E933EFC2BE211799AFFC /* libPods-TimeImprint.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TimeImprint.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -461,6 +473,7 @@
 				199130531AD4EA900060AE40 /* AppDelegate.m */,
 				8182DFC91AF7F75B0001FBDC /* MainViewController.h */,
 				8182DFCA1AF7F75B0001FBDC /* MainViewController.m */,
+				B61DEB721B12C2D500FCFDD0 /* API */,
 				81D9645E1AF5CE7E00F77CC6 /* Recording */,
 				81D3D4E51AE90D9E008F3766 /* Following */,
 				81D3D4E11AE83690008F3766 /* Time Mechine */,
@@ -774,6 +787,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B61DEB721B12C2D500FCFDD0 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				B6BA8DA91B12ADF200CE7C85 /* APIConstants.h */,
+				B6BA8DAA1B12ADF200CE7C85 /* APIConstants.m */,
+				B61DEB6B1B12BA5E00FCFDD0 /* APIManager.h */,
+				B61DEB6C1B12BA5E00FCFDD0 /* APIManager.m */,
+				B61DEB731B12C2F800FCFDD0 /* UserAPIManager.h */,
+				B61DEB741B12C2F800FCFDD0 /* UserAPIManager.m */,
+				B61DEB6E1B12C29100FCFDD0 /* StoryAPIManager.h */,
+				B61DEB6F1B12C29100FCFDD0 /* StoryAPIManager.m */,
+			);
+			name = API;
+			sourceTree = "<group>";
+		};
 		B6296DB81AFF7DAD00BE21C0 /* LocationCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1009,6 +1037,8 @@
 				8182DFCB1AF7F75B0001FBDC /* MainViewController.m in Sources */,
 				819F07ED1B0640910061B511 /* AddPhotoCollectionViewCell.m in Sources */,
 				81D3D4D01AE7FCC0008F3766 /* SettingViewController.m in Sources */,
+				B6BA8DAB1B12ADF200CE7C85 /* APIConstants.m in Sources */,
+				B61DEB701B12C29100FCFDD0 /* StoryAPIManager.m in Sources */,
 				81D3D4EB1AE90DC2008F3766 /* FollowerViewController.m in Sources */,
 				B675DCB51AFEE7B3003C7768 /* LocationPickerViewController.m in Sources */,
 				819F07FC1B0640910061B511 /* UIButton+Peaches.m in Sources */,
@@ -1019,6 +1049,7 @@
 				B65BF4761AE6512F00F755D4 /* ArticleEditingViewController.m in Sources */,
 				818C50031AFA41A6006306E8 /* VideoEncoder.m in Sources */,
 				B675DCB21AFE16F3003C7768 /* NewStoryViewController.m in Sources */,
+				B61DEB751B12C2F800FCFDD0 /* UserAPIManager.m in Sources */,
 				81D3D4E41AE836BF008F3766 /* TimeMechineViewController.m in Sources */,
 				81F857B51AFBB83400FBA7A9 /* VideoEditViewController.m in Sources */,
 				815712811AF75EEC00B3D8F7 /* RecordingView.m in Sources */,
@@ -1031,6 +1062,7 @@
 				81FA5B6A1AE3A45300073E05 /* CALayer+StoryBoardExtention.m in Sources */,
 				81D964611AF5D04100F77CC6 /* RecordingViewController.m in Sources */,
 				9AAAE4B31AF1A30700D8452C /* UtilityViewController.m in Sources */,
+				B61DEB6D1B12BA5E00FCFDD0 /* APIManager.m in Sources */,
 				195CA3D71ADB9A32005EC48F /* BrowseViewController.m in Sources */,
 				199130511AD4EA900060AE40 /* main.m in Sources */,
 				81FA5B7E1AE41D6500073E05 /* OwnTimeLineCell.m in Sources */,
