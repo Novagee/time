@@ -8,7 +8,8 @@
 
 #import "APIConstants.h"
 
-NSString *const TEST_TOKEN              =@"";
+NSString *const TEST_TOKEN              =@"";   //GET FROM STORAGE
+NSString *const TEST_USER_ID              =@""; //GET FROM STORAGE
 
 NSString *const BASE_URL                = @"https://ec2-54-186-3-104.us-west-2.compute.amazonaws.com";
 

@@ -13,17 +13,31 @@
 
 +(instancetype)sharedInstance;
 
--(void)signInWithEmail:(NSString *)email
-              password:(NSString *)password
-                device:(NSString *)device
-               success:(APISuccessBlock)success
-               failure:(APIFailureBlock)failure;
+-(void)signInWithUsername:(NSString *)email
+                 password:(NSString *)password
+                   device:(NSString *)device
+                  success:(APISuccessBlock)success
+                  failure:(APIFailureBlock)failure;
 
--(void)signUpWithEmail:(NSString *)email
-              password:(NSString *)password
-                gender:(NSString *)gender
-                avatar:(NSString *)avatar
-               success:(APISuccessBlock)success
-               failure:(APIFailureBlock)failure;
+-(void)signUpWithUsername:(NSString *)email
+                 password:(NSString *)password
+                   gender:(NSString *)gender
+                   avatar:(NSString *)avatar
+                  success:(APISuccessBlock)success
+                  failure:(APIFailureBlock)failure;
+
+-(void)viewProfileWithID:(NSString *)userId
+                 success:(APISuccessBlock)success
+                 failure:(APIFailureBlock)failure;
+
+-(void)updateProfileWithID:(NSString *)userId
+                 firstName:(NSString *)firstName
+                  lastName:(NSString *)lastName
+                    gender:(NSString *)gender
+                       bio:(NSString *)bio
+                    avatar:(NSString *)avatar
+                profilePic:(NSString *)profilePic
+                   success:(APISuccessBlock)success
+                   failure:(APIFailureBlock)failure;
 
 @end

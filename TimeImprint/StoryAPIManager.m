@@ -24,7 +24,7 @@
 -(void)create:(NSDictionary *)params
                success:(APISuccessBlock)success
                failure:(APIFailureBlock)failure {
-    
+#warning todo validation on fields
     [APIManager postToPath:USER_SIGNUP
                       body:params
                    success:^(id successResponse) {

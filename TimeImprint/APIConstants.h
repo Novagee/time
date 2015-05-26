@@ -2,6 +2,7 @@
 #import <Foundation/Foundation.h>
 
 extern NSString *const TEST_TOKEN;
+extern NSString *const TEST_USER_ID;
 
 extern NSString *const BASE_URL;
 
