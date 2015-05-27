@@ -41,7 +41,7 @@ NSString *const TOPIC_LATEST            = @"topic/latest";
 NSString *const TOPIC_CREATE            = @"topic/create";
 
 NSString *const QUESTION_ASK            = @"question/ask";
-NSString *const QUESTION_BY             = @"question/by_user_id";
-NSString *const QUESTION_TO             = @"question/to_user_id​";
+NSString *const QUESTION_OUTBOUNDS      = @"question/by_user_id";
+NSString *const QUESTION_INBOUNDS         = @"question/to_user_id​";
 NSString *const QUESTION_READ           = @"question/read/​";      //question/read/​[question_id]
 NSString *const QUESTION_DELETE         = @"question/delete/​";    //question/delete/​[question_id]

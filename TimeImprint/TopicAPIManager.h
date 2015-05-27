@@ -7,7 +7,25 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "APIConstants.h"
 
 @interface TopicAPIManager : NSObject
+
++(instancetype)sharedInstance;
+
+-(void)getHottest:(NSString *)start
+            limit:(NSString *)limit
+          success:(APISuccessBlock)success
+          failure:(APIFailureBlock)failure;
+
+-(void)getLatest:(NSString *)start
+            limit:(NSString *)limit
+          success:(APISuccessBlock)success
+          failure:(APIFailureBlock)failure;
+
+-(void)create:(NSString *)start
+ topicContent:(NSString *)topicContent
+      success:(APISuccessBlock)success
+      failure:(APIFailureBlock)failure;
 
 @end

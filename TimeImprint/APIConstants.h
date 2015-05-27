@@ -34,8 +34,8 @@ extern NSString *const TOPIC_LATEST;
 extern NSString *const TOPIC_CREATE;
 
 extern NSString *const QUESTION_ASK;
-extern NSString *const QUESTION_BY;
-extern NSString *const QUESTION_TO;
+extern NSString *const QUESTION_OUTBOUNDS;
+extern NSString *const QUESTION_INBOUNDS;
 extern NSString *const QUESTION_READ;
 extern NSString *const QUESTION_DELETE;
 
