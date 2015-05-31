@@ -14,4 +14,5 @@
 
 + (void) setupSegmentedControl: (UISegmentedControl *) segCtrl;
 
++ (UIImage *)changeImage:(UIImage *)img withColor:(UIColor *)color;
 @end

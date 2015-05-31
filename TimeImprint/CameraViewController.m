@@ -103,7 +103,7 @@
     if (cameraViewIsPresent == YES) {
         cameraViewIsPresent = NO;
         [UIView animateWithDuration:0.3 animations:^{
-            BrowseViewController *browseViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"browseViewController"];
+            BrowseViewController *browseViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"mainViewController"];
             
             [self presentViewController:browseViewController animated:YES completion:nil];
         } completion:^(BOOL finished) {

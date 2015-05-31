@@ -8,6 +8,13 @@
 
 #import <UIKit/UIKit.h>
 
+typedef NS_ENUM(NSUInteger, TimeType) {
+    HappenTime = 1,
+    PublishTime = 2,
+};
+
 @interface TimePickerViewController : UIViewController
+
+@property (nonatomic, assign) TimeType happenedTime;
 
 @end

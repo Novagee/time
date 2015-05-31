@@ -10,6 +10,8 @@
 
 @interface TimePickerViewController ()
 
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @end
 
 @implementation TimePickerViewController
@@ -17,9 +19,26 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    if (self.happenedTime == PublishTime) {
+        self.titleLabel.text = @"发布发生时间";
+    } else
+    {
+        self.titleLabel.text = @"事件发生时间";
+    }
 }
+
 - (IBAction)onClickDone:(id)sender {
     [self dismissViewControllerAnimated:self completion:nil];
+    
+    if (self.happenedTime == HappenTime) {
+        [[NSNotificationCenter defaultCenter]
+         postNotificationName:@"TimeDidFinishSetting" object:@{@"type":@0, @"date":self.datePicker.date}];
+    } else {
+        [[NSNotificationCenter defaultCenter]
+         postNotificationName:@"TimeDidFinishSetting" object:@{@"type":@1, @"date":self.datePicker.date}];
+
+    }
 }
 - (IBAction)onClickCancel:(id)sender {
     [self dismissViewControllerAnimated:self completion:nil];

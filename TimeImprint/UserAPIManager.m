@@ -21,36 +21,36 @@
 }
 
 -(void)signInWithUsername:(NSString *)email
-              password:(NSString *)password
-                device:(NSString *)device
-               success:(APISuccessBlock)success
-               failure:(APIFailureBlock)failure {
+                 password:(NSString *)password
+                   device:(NSString *)device
+                  success:(APISuccessBlock)success
+                  failure:(APIFailureBlock)failure {
     [APIManager postToPath:USER_SIGNIN
-                             body:@{@"email":email, @"password":password, @"device_info":device}
-                          success:^(id successResponse) {
-                              
-                              if ([successResponse isKindOfClass:[NSDictionary class]]) {
-                                  success(successResponse);
-                              } else {
-                                  NSDictionary *detail = @{NSLocalizedDescriptionKey:kResponseNotDictoryError};
-                                  NSError *e = [NSError errorWithDomain:@"InvalidArgumentErrorDomain"
-                                                                   code:422
-                                                               userInfo:detail];
-                                  failure(nil, e);
-                              }
-                          }
-                          failure:^(id failureResponse, NSError *error) {
-                              failure(failureResponse, error);
-                          }
+                      body:@{@"email":email, @"password":password, @"device_info":device}
+                   success:^(id successResponse) {
+                       
+                       if ([successResponse isKindOfClass:[NSDictionary class]]) {
+                           success(successResponse);
+                       } else {
+                           NSDictionary *detail = @{NSLocalizedDescriptionKey:kResponseNotDictoryError};
+                           NSError *e = [NSError errorWithDomain:@"InvalidArgumentErrorDomain"
+                                                            code:422
+                                                        userInfo:detail];
+                           failure(nil, e);
+                       }
+                   }
+                   failure:^(id failureResponse, NSError *error) {
+                       failure(failureResponse, error);
+                   }
      ];
 }
 
 -(void)signUpWithUsername:(NSString *)email
-              password:(NSString *)password
-                gender:(NSString *)gender
-                avatar:(NSString *)avatar
-               success:(APISuccessBlock)success
-               failure:(APIFailureBlock)failure {
+                 password:(NSString *)password
+                   gender:(NSString *)gender
+                   avatar:(NSString *)avatar
+                  success:(APISuccessBlock)success
+                  failure:(APIFailureBlock)failure {
     [APIManager postToPath:USER_SIGNUP
                       body:@{@"email":email, @"password":password, @"gender":gender, @"avatar":avatar}
                    success:^(id successResponse) {

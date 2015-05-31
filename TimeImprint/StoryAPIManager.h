@@ -13,38 +13,22 @@
 
 +(instancetype)sharedInstance;
 
--(void)viewWithStoryId:(NSString *)storyId
-               success:(APISuccessBlock)success
-               failure:(APIFailureBlock)failure;
-
--(void)create:(NSDictionary *)params
-      success:(APISuccessBlock)success
-      failure:(APIFailureBlock)failure;
-
--(void)deleteWithStoryId:(NSString *)storyId
-                 success:(APISuccessBlock)success
-                 failure:(APIFailureBlock)failure;
-
--(void)like:(NSString *)storyId
-    success:(APISuccessBlock)success
-    failure:(APIFailureBlock)failure;
-
--(void)unlike:(NSString *)storyId
-      success:(APISuccessBlock)success
-      failure:(APIFailureBlock)failure;
-
--(void)comment:(NSString *)storyId
-       content:(NSString *)content
-     replyToId:(NSString *)replyToId
-       success:(APISuccessBlock)success
-       failure:(APIFailureBlock)failure;
-
--(void)ack:(NSString *)storyId
-  actionId:(NSString *)actionId
-  accessId:(NSString *)accessId
- accessKey:(NSString *)accessKey
-       url:(NSString *)url
-   success:(APISuccessBlock)success
-   failure:(APIFailureBlock)failure;
+-(void)createWithQuestionID:(NSInteger)questionID
+                publishTime:(NSInteger)publishTime
+                 happenTime:(NSInteger)happenTime
+                      title:(NSString *)title
+                   location:(NSString *)location
+         question_timestamp:(NSInteger)questionTime
+              questioner_id:(NSInteger)questionerId
+                    content:(NSString *)content
+                     public:(BOOL)idPublic
+                  has_video:(BOOL)hasVideo
+      has_video_preview_pic:(BOOL)hasVideoPreview
+                 has_photo1:(BOOL)hasPhoto1
+                 has_photo2:(BOOL)hasPhoto2
+                 has_photo3:(BOOL)hasPhoto3
+                 has_photo4:(BOOL)hasPhoto4
+                    success:(APISuccessBlock)success
+                    failure:(APIFailureBlock)failure;
 
 @end

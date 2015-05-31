@@ -9,6 +9,8 @@
 #import "EditingView.h"
 #import "CameraView.h"
 
+@interface EditingView ()
+@end
 
 @implementation EditingView
 
@@ -28,16 +30,16 @@
         backgroundScrollView.delegate = self;
         backgroundScrollView.bounces = NO;
         [self addSubview:backgroundScrollView];
-        
+        self.isPublic = YES;
         y = 0;
         [self addTitle];
         [self addVideoImage];
         [self addFourPhotoImages];
         [self addAboutBox];
-//        [self addLocationBox];
-//        [self addEventOccuredTimeBox];
-//        [self addEventPostingTimeBox];
-//        [self addPrivacyToggle];
+        //        [self addLocationBox];
+        //        [self addEventOccuredTimeBox];
+        //        [self addEventPostingTimeBox];
+        //        [self addPrivacyToggle];
         [self addShareToBtns];
         [self addPublishBtn];
     }
@@ -63,14 +65,14 @@
     [backgroundScrollView addSubview:self.videoImage];
     
     
-    UITextField *photoTitle = [[UITextField alloc]initWithFrame:CGRectMake((self.videoImage.bounds.size.width-220)/2, self.videoImage.bounds.size.height/2-40/2+60, 220, 40)];
-    photoTitle.text = @" 加标题";
-    photoTitle.textAlignment = NSTextAlignmentCenter;
-    photoTitle.textColor = [UIColor whiteColor];
-    photoTitle.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
-    photoTitle.delegate = self;
+    self.titleTextfield = [[UITextField alloc]initWithFrame:CGRectMake((self.videoImage.bounds.size.width-220)/2, self.videoImage.bounds.size.height/2-40/2+60, 220, 40)];
+    self.titleTextfield.text = @"加标题";
+    self.titleTextfield.textAlignment = NSTextAlignmentCenter;
+    self.titleTextfield.textColor = [UIColor whiteColor];
+    self.titleTextfield.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.6];
+    self.titleTextfield.delegate = self;
     
-    [backgroundScrollView addSubview:photoTitle];
+    [backgroundScrollView addSubview:self.titleTextfield];
     
     y = y + self.frame.size.width*9/16 + 5;//10 is spacing
 }
@@ -83,7 +85,7 @@
     photoImageOne.contentMode = UIViewContentModeScaleAspectFill;
     photoImageOne.clipsToBounds = YES;
     photoImageOne.image = [UIImage imageNamed:@"photo_ph01"];
-//    photoImageOne.backgroundColor = [UIColor redColor];
+    //    photoImageOne.backgroundColor = [UIColor redColor];
     [backgroundScrollView addSubview:photoImageOne];
     
     photoImageOne.userInteractionEnabled = YES;
@@ -127,19 +129,19 @@
 }
 
 -(void)addAboutBox {
-//    UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(20, y, self.frame.size.width-40, 30)];
-//    titleLabel.text = @"内容";
-//    titleLabel.textColor = [UIColor grayColor];
-//    [backgroundScrollView addSubview:titleLabel];
+    //    UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(20, y, self.frame.size.width-40, 30)];
+    //    titleLabel.text = @"内容";
+    //    titleLabel.textColor = [UIColor grayColor];
+    //    [backgroundScrollView addSubview:titleLabel];
     y = y + 5;
     
     double height = self.frame.size.height - 60 - self.videoImage.bounds.size.height - 5 - self.photoImageOne.bounds.size.height - 5 - 5 - 5 - 30 - 60;
     
     
     UIView *boxView = [[UIView alloc]initWithFrame:CGRectMake(5, y, self.frame.size.width-10, height)];
-//    boxView.layer.borderColor = [UIColor lightGrayColor].CGColor;
-//    boxView.layer.borderWidth = 1;
-//    boxView.layer.cornerRadius = 5;
+    //    boxView.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    //    boxView.layer.borderWidth = 1;
+    //    boxView.layer.cornerRadius = 5;
     [backgroundScrollView addSubview:boxView];
     
     UIButton *aboutBtn = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -147,9 +149,9 @@
     [aboutBtn setImage:[UIImage imageNamed:@"write_24"] forState:UIControlStateNormal];
     [boxView addSubview:aboutBtn];
     
-    UITextView *aboutBox = [[UITextView alloc]initWithFrame:CGRectMake(6, y+30, self.frame.size.width-12, 90)];
-    aboutBox.delegate = self;
-    [backgroundScrollView addSubview:aboutBox];
+    self.aboutBox = [[UITextView alloc]initWithFrame:CGRectMake(6, y+30, self.frame.size.width-12, 90)];
+    self.aboutBox.delegate = self;
+    [backgroundScrollView addSubview:self.aboutBox];
     
     y = y + height;
     
@@ -171,16 +173,29 @@
     [EventPostingBtn addTarget:self action:@selector(tappedOnPublishTime:) forControlEvents:UIControlEventTouchUpInside];
     [boxView addSubview:EventPostingBtn];
     
-    UIButton *privacyBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    privacyBtn.frame = CGRectMake(boxView.frame.size.width-35, height - 20, 20, 20);
-    [privacyBtn setImage:[UIImage imageNamed:@"privacy_24"] forState:UIControlStateNormal];
-    [boxView addSubview:privacyBtn];
+    self.privacyBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.privacyBtn.frame = CGRectMake(boxView.frame.size.width-35, height - 20, 20, 20);
+    [self.privacyBtn setImage:[UIImage imageNamed:@"privacy_24"] forState:UIControlStateNormal];
+    [self.privacyBtn setImage:[UIImage imageNamed:@"privacy_24_act"] forState:UIControlStateSelected];
+    [self.privacyBtn addTarget: self action:@selector(privacyButtonSelected:) forControlEvents: UIControlEventTouchUpInside];
+
+    [boxView addSubview:self.privacyBtn];
     
     UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(0, height - 20 + 40 , self.frame.size.width-10, 1)];
     lineView.backgroundColor = [UIColor lightGrayColor];
     [boxView addSubview:lineView];
     
     y = y + 40;
+}
+
+-(void)privacyButtonSelected:(UIButton *)sender
+{
+    sender.selected = !sender.selected;
+    if (!sender.selected) {
+        [self.privacyBtn setImage:[UIImage imageNamed:@"privacy_24"] forState:UIControlStateNormal];
+    } else {
+        [self.privacyBtn setImage:[UIImage imageNamed:@"privacy_24_act"] forState:UIControlStateNormal];
+    }
 }
 
 -(void)addLocationBox {
@@ -247,10 +262,10 @@
     publicLabel.textColor = [UIColor grayColor];
     [backgroundScrollView addSubview:publicLabel];
     
-    UISwitch *pricacyToggle = [[UISwitch alloc]initWithFrame:CGRectMake(160, y+5, 70, 30)];
-//    pricacyToggle.tintColor = [UIColor redColor];
-    pricacyToggle.onTintColor = [UIColor redColor];
-    [backgroundScrollView addSubview:pricacyToggle];
+    self.pricacyToggle = [[UISwitch alloc]initWithFrame:CGRectMake(160, y+5, 70, 30)];
+    //    pricacyToggle.tintColor = [UIColor redColor];
+    self.pricacyToggle.onTintColor = [UIColor redColor];
+    [backgroundScrollView addSubview:self.pricacyToggle];
     
     UILabel *privateLabel = [[UILabel alloc]initWithFrame:CGRectMake(230, y+5, 40, 30)];
     privateLabel.text = @"私密";
@@ -277,21 +292,6 @@
     wechatMomentBtn.frame = CGRectMake(x, y+5, 32, 24);
     [wechatMomentBtn setImage:[UIImage imageNamed:@"moment"] forState:UIControlStateNormal];
     [backgroundScrollView addSubview:wechatMomentBtn];
-    x += 50;
-    UIButton *weiboBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    weiboBtn.frame = CGRectMake(x, y+5, 32, 24);
-    [weiboBtn setImage:[UIImage imageNamed:@"weibo"] forState:UIControlStateNormal];
-    [backgroundScrollView addSubview:weiboBtn];
-    x += 50;
-    UIButton *qq_friendBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    qq_friendBtn.frame = CGRectMake(x, y+5, 32, 24);
-    [qq_friendBtn setImage:[UIImage imageNamed:@"qq_friend"] forState:UIControlStateNormal];
-    [backgroundScrollView addSubview:qq_friendBtn];
-    x += 50;
-    UIButton *qq_zoneBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    qq_zoneBtn.frame = CGRectMake(x, y+5, 32, 24);
-    [qq_zoneBtn setImage:[UIImage imageNamed:@"qq_zone"] forState:UIControlStateNormal];
-    [backgroundScrollView addSubview:qq_zoneBtn];
 }
 
 -(void)addPublishBtn {

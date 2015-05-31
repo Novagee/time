@@ -21,4 +21,10 @@
 @property (nonatomic, strong) UIImageView *photoImageThree;
 @property (nonatomic, strong) UIImageView *photoImageFour;
 @property (nonatomic, strong) UIButton *publishBtn;
+@property (nonatomic, strong) UITextField *titleTextfield;
+@property (nonatomic, strong) UISwitch *pricacyToggle;
+@property (nonatomic, strong) UIButton *privacyBtn;
+@property (nonatomic, assign) BOOL isPublic;
+@property (nonatomic, strong) UITextView *aboutBox;
+
 @end

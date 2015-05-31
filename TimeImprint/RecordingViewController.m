@@ -507,9 +507,9 @@ static void * RecordingContext = &RecordingContext;
 
     [[CameraEngine shareEngine]endRecording];
     
-    NewStoryViewController *newStoryViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"new_story"];
-    
-    [self.navigationController pushViewController:newStoryViewController animated:YES];
+//    NewStoryViewController *newStoryViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"new_story"];
+//    
+//    [self.navigationController pushViewController:newStoryViewController animated:YES];
 //    [self presentViewController:newStoryViewController animated:YES completion:nil];
 
 }

@@ -24,7 +24,7 @@
                                                                                      error:NULL];
     NSString *header = [NSString stringWithFormat:@"%@", TEST_TOKEN];
     if (header) {
-        [request setValue:header forHTTPHeaderField:@"Authorization"];
+        [request setValue:header forHTTPHeaderField:@"auth_key"];
     }
     AFHTTPRequestOperation *operation =
     [manager HTTPRequestOperationWithRequest:request
@@ -49,7 +49,7 @@
                                                                                      error:NULL];
     NSString *header = [NSString stringWithFormat:@"%@", TEST_TOKEN];
     if (header) {
-        [request setValue:header forHTTPHeaderField:@"Authorization"];
+        [request setValue:header forHTTPHeaderField:@"auth_key"];
     }
     AFHTTPRequestOperation *operation =
     [manager HTTPRequestOperationWithRequest:request
@@ -75,7 +75,7 @@
                                                                                      error:NULL];
     NSString *header = [NSString stringWithFormat:@"%@", TEST_TOKEN];
     if (header) {
-        [request setValue:header forHTTPHeaderField:@"Authorization"];
+        [request setValue:header forHTTPHeaderField:@"auth_key"];
     }
     AFHTTPRequestOperation *operation =
     [manager HTTPRequestOperationWithRequest:request
@@ -100,7 +100,7 @@
                                                                                      error:NULL];
     NSString *header = [NSString stringWithFormat:@"%@", TEST_TOKEN];
     if (header) {
-        [request setValue:header forHTTPHeaderField:@"Authorization"];
+        [request setValue:header forHTTPHeaderField:@"auth_key"];
     }
     AFHTTPRequestOperation *operation =
     [manager HTTPRequestOperationWithRequest:request
