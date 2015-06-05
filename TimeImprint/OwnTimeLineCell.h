@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Story.h"
 
 @interface OwnTimeLineCell : UITableViewCell
 
 @property(assign, nonatomic) BOOL liked;
 
 + (NSString *)reuseIdentifier;
+
+- (void)initStory:(Story *)story;
 
 @end

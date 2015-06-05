@@ -171,6 +171,7 @@
 		B675DCB21AFE16F3003C7768 /* NewStoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B675DCB11AFE16F3003C7768 /* NewStoryViewController.m */; };
 		B675DCB51AFEE7B3003C7768 /* LocationPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B675DCB41AFEE7B3003C7768 /* LocationPickerViewController.m */; };
 		B675DCB81AFEE7C0003C7768 /* TimePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B675DCB71AFEE7C0003C7768 /* TimePickerViewController.m */; };
+		B68DFD911B2185E000132A24 /* Story.m in Sources */ = {isa = PBXBuildFile; fileRef = B68DFD901B2185E000132A24 /* Story.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -400,6 +401,8 @@
 		B675DCB41AFEE7B3003C7768 /* LocationPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationPickerViewController.m; sourceTree = "<group>"; };
 		B675DCB61AFEE7C0003C7768 /* TimePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimePickerViewController.h; sourceTree = "<group>"; };
 		B675DCB71AFEE7C0003C7768 /* TimePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimePickerViewController.m; sourceTree = "<group>"; };
+		B68DFD8F1B2185E000132A24 /* Story.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Story.h; path = TimeImprint/Story.h; sourceTree = "<group>"; };
+		B68DFD901B2185E000132A24 /* Story.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Story.m; path = TimeImprint/Story.m; sourceTree = "<group>"; };
 		DEB6E933EFC2BE211799AFFC /* libPods-TimeImprint.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TimeImprint.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -514,6 +517,7 @@
 		199130421AD4EA900060AE40 = {
 			isa = PBXGroup;
 			children = (
+				B68DFD921B2185E900132A24 /* Model */,
 				195CA3F11ADCF5B0005EC48F /* Font */,
 				1991304D1AD4EA900060AE40 /* TimeImprint */,
 				199130671AD4EA910060AE40 /* TimeImprintTests */,
@@ -889,6 +893,15 @@
 			name = LocationCell;
 			sourceTree = "<group>";
 		};
+		B68DFD921B2185E900132A24 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B68DFD8F1B2185E000132A24 /* Story.h */,
+				B68DFD901B2185E000132A24 /* Story.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		C44B8FB8DA9D80BB8F0E09DF /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -1159,6 +1172,7 @@
 				193F745E1B196FC8002104D8 /* BrowseDetailViewController.m in Sources */,
 				193F74631B1975C9002104D8 /* BrowseFollowViewController.m in Sources */,
 				9ADFB2161B166FAE00CC75DA /* QuestionAPIManager.m in Sources */,
+				B68DFD911B2185E000132A24 /* Story.m in Sources */,
 				193F74671B1975FA002104D8 /* AskWhoViewController.m in Sources */,
 				819F07EE1B0640910061B511 /* CameraViewController.m in Sources */,
 				B6296DBC1AFF7DEB00BE21C0 /* LocationTableViewCell.m in Sources */,
@@ -1205,8 +1219,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: peng wan (F3Y65Q55CJ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: peng wan (F3Y65Q55CJ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Peng Wan (Y2ME5V8WLA)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Peng Wan (Y2ME5V8WLA)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -1226,7 +1240,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "955f9d77-69d9-447a-95d3-b258070e6bf4";
+				PROVISIONING_PROFILE = "ee3097d4-c137-4d88-a3ad-e14fd51a9330";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -1248,7 +1262,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Peng Wan (Y2ME5V8WLA)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Peng Wan (Y2ME5V8WLA)";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -1261,7 +1276,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "955f9d77-69d9-447a-95d3-b258070e6bf4";
+				PROVISIONING_PROFILE = "ee3097d4-c137-4d88-a3ad-e14fd51a9330";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1272,13 +1287,13 @@
 			baseConfigurationReference = 7864AEC4C8041D429C0F59B8 /* Pods-TimeImprint.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: peng wan (F3Y65Q55CJ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: peng wan (F3Y65Q55CJ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Peng Wan (Y2ME5V8WLA)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Peng Wan (Y2ME5V8WLA)";
 				INFOPLIST_FILE = "$(SRCROOT)/TimeImprint/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = TimeImprint;
-				PROVISIONING_PROFILE = "955f9d77-69d9-447a-95d3-b258070e6bf4";
+				PROVISIONING_PROFILE = "ee3097d4-c137-4d88-a3ad-e14fd51a9330";
 			};
 			name = Debug;
 		};
@@ -1287,13 +1302,13 @@
 			baseConfigurationReference = 388C666FA82B58266E977A8D /* Pods-TimeImprint.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: IDesign Network Inc (L6KJJBU3D3)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Peng Wan (Y2ME5V8WLA)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Peng Wan (Y2ME5V8WLA)";
 				INFOPLIST_FILE = "$(SRCROOT)/TimeImprint/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = TimeImprint;
-				PROVISIONING_PROFILE = "955f9d77-69d9-447a-95d3-b258070e6bf4";
+				PROVISIONING_PROFILE = "ee3097d4-c137-4d88-a3ad-e14fd51a9330";
 			};
 			name = Release;
 		};

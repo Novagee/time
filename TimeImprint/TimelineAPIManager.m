@@ -27,8 +27,8 @@
                    success:(APISuccessBlock)success
                    failure:(APIFailureBlock)failure{
     [APIManager getFromPath:[NSString stringWithFormat:@"%@/%@",TIMELINE_BY_USER,userId] body:@{@"from_story_id":storyId ,@"limit":limit } success:^(id successResponse) {
-        if ([successResponse isKindOfClass:[NSArray class]]) {
-            success(successResponse);
+        if ([successResponse isKindOfClass:[NSDictionary class]]) {
+            success(successResponse[@"stories"]);
         } else {
             NSDictionary *detail = @{NSLocalizedDescriptionKey:kResponseNotDictoryError};
             NSError *e = [NSError errorWithDomain:@"InvalidArgumentErrorDomain"

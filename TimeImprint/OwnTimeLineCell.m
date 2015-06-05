@@ -13,13 +13,17 @@
 @interface OwnTimeLineCell ()
 
 @property (weak, nonatomic) IBOutlet UILabel *postTitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *postDescriptionLabel;
 @property (weak, nonatomic) IBOutlet UILabel *postLocationLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *postImage;
 @property (weak, nonatomic) IBOutlet UIButton *optionButton;
 
 @property (weak, nonatomic) IBOutlet UIImageView *likeButtonImageView;
 @property (weak, nonatomic) IBOutlet UILabel *likeButtonLabel;
 
 @property (weak, nonatomic) IBOutlet UIImageView *commentButtonLabel;
+
+@property (weak, nonatomic) NSString *story_id;
 
 @property FPPopoverController *popover;
 
@@ -61,6 +65,17 @@
 + (NSString *)reuseIdentifier {
     
     return @"OwnTimeLineCell";
+    
+}
+
+- (void)initStory:(Story *)story{
+    self.story_id = story.story_id;
+    self.postTitleLabel.text = story.title;
+    self.postDescriptionLabel.text = story.content;
+    self.postLocationLabel.text = story.location;
+    //todo: load story image, download from storage
+//    self.postImage.image =
+    //missing: like count, review count
     
 }
 

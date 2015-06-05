@@ -9,6 +9,7 @@ pod 'PBJVideoPlayer'
 pod 'GPUImage'
 pod 'AFNetworking'
 pod 'SVProgressHUD'
+pod 'MJExtension'
 
 end
 

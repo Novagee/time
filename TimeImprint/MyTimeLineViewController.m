@@ -15,6 +15,10 @@
 
 #import "OwnTimeLineCell.h"
 
+#import "TimelineAPIManager.h"
+#import "NSObject+MJKeyValue.h"
+#import "Story.h"
+
 typedef NS_ENUM(NSInteger, kImagePickerTarget) {
     
     kImagePickerTargetAvatar = 0,
@@ -32,6 +36,7 @@ typedef NS_ENUM(NSInteger, kImagePickerTarget) {
 #pragma Self Size Cell
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSArray *stories;
 @property (strong, nonatomic) UIImagePickerController *imagePickerController;
 
 #pragma mark - Table View Header
@@ -57,6 +62,22 @@ typedef NS_ENUM(NSInteger, kImagePickerTarget) {
     
     [self configurePickerView];
     
+    //todo: load user details: background image, avater, name, followees, followers
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    TimelineAPIManager *api = [TimelineAPIManager sharedInstance];
+    [api getTimelineWithUser:TEST_USER_ID storyId:@"" limit:[NSNumber numberWithInt:10] success:^(id successResponse) {
+        NSLog(@"resp:%@",successResponse);
+        if ([successResponse isKindOfClass:[NSArray class]]) {
+            self.stories = [Story objectArrayWithKeyValuesArray:successResponse];
+            [self.tableView reloadData];
+        }
+    } failure:^(id failureResponse, NSError *error) {
+        NSLog(@"resp:%@",failureResponse);
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -135,7 +156,8 @@ typedef NS_ENUM(NSInteger, kImagePickerTarget) {
 #pragma mark - Table View Data Source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 4;
+    NSLog(@"story count:%lu",(unsigned long)self.stories.count);
+    return self.stories.count;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -147,9 +169,11 @@ typedef NS_ENUM(NSInteger, kImagePickerTarget) {
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     OwnTimeLineCell *cell = [self.tableView dequeueReusableCellWithIdentifier:[OwnTimeLineCell reuseIdentifier] forIndexPath:indexPath];
-        
+    
+    Story* story = [self.stories objectAtIndex:indexPath.row];
+    [cell initStory:story];
+    
     // Handle comments button
-    //
     UIButton *comments = (UIButton *)[cell viewWithTag:1002];
     [comments addTarget:self action:@selector(commentsButtonTappedWithCell:) forControlEvents:UIControlEventTouchUpInside];
     

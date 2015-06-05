@@ -20,7 +20,7 @@
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bcs-cq-TJw" userLabel="Video Shot View">
                                 <rect key="frame" x="0.0" y="71" width="320" height="180"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spring" translatesAutoresizingMaskIntoConstraints="NO" id="s8l-yP-yKt">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s8l-yP-yKt">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="背包旅行" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5R-Dd-s9R">
@@ -274,8 +274,10 @@
                 <outlet property="likeButtonImageView" destination="ZFo-va-fe3" id="9AI-vc-YdW"/>
                 <outlet property="likeButtonLabel" destination="hhu-Ke-w14" id="63U-WQ-syb"/>
                 <outlet property="optionButton" destination="cFB-wn-Nb8" id="YHg-wX-6vo"/>
+                <outlet property="postDescriptionLabel" destination="i5R-Dd-s9R" id="pne-RQ-XXQ"/>
+                <outlet property="postImage" destination="s8l-yP-yKt" id="9Lo-Cy-CUC"/>
                 <outlet property="postLocationLabel" destination="bHe-Ky-yru" id="FiG-nG-sBt"/>
-                <outlet property="postTitleLabel" destination="i5R-Dd-s9R" id="6tF-W4-XIE"/>
+                <outlet property="postTitleLabel" destination="Szm-Cg-TZY" id="31q-1b-VzJ"/>
             </connections>
             <point key="canvasLocation" x="274" y="140.5"/>
         </tableViewCell>
@@ -284,7 +286,6 @@
         <image name="comment" width="30" height="24"/>
         <image name="feed_but_Play" width="48" height="48"/>
         <image name="like" width="30" height="24"/>
-        <image name="spring" width="375" height="211"/>
         <image name="story_options_24" width="30" height="24"/>
     </resources>
 </document>
