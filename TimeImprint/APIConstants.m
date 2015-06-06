@@ -15,7 +15,7 @@ NSString *const BASE_URL                = @"http://ec2-52-25-185-187.us-west-2.c
 
 NSString *const USER_SIGNIN             = @"user/​signin";
 NSString *const USER_SIGNUP             = @"user/​signup";
-NSString *const USER_PROFILE            = @"user/​";               //user/​[user_id]
+NSString *const USER_PROFILE            = @"user";               //user/​[user_id]
 
 NSString *const GRAPH_FOLLOW            = @"graph/follow";
 NSString *const GRAPH_UNFOLLOW          = @"graph/unfollow";

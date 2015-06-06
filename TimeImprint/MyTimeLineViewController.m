@@ -15,9 +15,11 @@
 
 #import "OwnTimeLineCell.h"
 
+#import "UserAPIManager.h"
 #import "TimelineAPIManager.h"
 #import "NSObject+MJKeyValue.h"
 #import "Story.h"
+#import "Profile.h"
 
 typedef NS_ENUM(NSInteger, kImagePickerTarget) {
     
@@ -63,20 +65,31 @@ typedef NS_ENUM(NSInteger, kImagePickerTarget) {
     [self configurePickerView];
     
     //todo: load user details: background image, avater, name, followees, followers
-    
+    UserAPIManager *api = [UserAPIManager sharedInstance];
+    [api viewProfileWithID:TEST_USER_ID success:^(id successResponse) {
+        Profile *profile = [Profile objectWithKeyValues:successResponse];
+        //todo: load image, place holder
+//        self.backgroundImageView.image =
+//        self.avatarImageView.image =
+        self.userNameTextField.text = profile.user_name;
+        self.followerLabel.text = [NSString stringWithFormat:@"关注 %i",profile.followers] ;
+        self.followingLabel.text = [NSString stringWithFormat:@"粉丝 %i",profile.following];
+    } failure:^(id failureResponse, NSError *error) {
+        NSLog(@"err:%@",failureResponse);
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     TimelineAPIManager *api = [TimelineAPIManager sharedInstance];
     [api getTimelineWithUser:TEST_USER_ID storyId:@"" limit:[NSNumber numberWithInt:10] success:^(id successResponse) {
-        NSLog(@"resp:%@",successResponse);
+//        NSLog(@"resp:%@",successResponse);
         if ([successResponse isKindOfClass:[NSArray class]]) {
             self.stories = [Story objectArrayWithKeyValuesArray:successResponse];
             [self.tableView reloadData];
         }
     } failure:^(id failureResponse, NSError *error) {
-        NSLog(@"resp:%@",failureResponse);
+        NSLog(@"err:%@",failureResponse);
     }];
 }
 

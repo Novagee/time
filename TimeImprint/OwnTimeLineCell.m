@@ -21,7 +21,10 @@
 @property (weak, nonatomic) IBOutlet UIImageView *likeButtonImageView;
 @property (weak, nonatomic) IBOutlet UILabel *likeButtonLabel;
 
-@property (weak, nonatomic) IBOutlet UIImageView *commentButtonLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *commentButtonImageView;
+@property (weak, nonatomic) IBOutlet UILabel *commentButtonLabel;
+@property (weak, nonatomic) IBOutlet UILabel *yearLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dayLabel;
 
 @property (weak, nonatomic) NSString *story_id;
 
@@ -76,7 +79,19 @@
     //todo: load story image, download from storage
 //    self.postImage.image =
     //missing: like count, review count
-    
+    self.likeButtonLabel.text = [NSString stringWithFormat:@"%i",story.like_count];
+    self.commentButtonLabel.text = [NSString stringWithFormat:@"%i",story.comment_count];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"EEE, dd, LLL yyyy HH:mm:ss zzz"];
+    NSDate *date = [dateFormatter dateFromString:story.shown_at];
+    self.yearLabel.text = [self formatDate:date toFormat:@"yyyy年"];
+    self.dayLabel.text =[self formatDate:date toFormat:@"M月dd日"];
+}
+
+- (NSString *) formatDate:(NSDate*)date toFormat:(NSString*)format{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:format];
+    return [dateFormatter stringFromDate:date];
 }
 
 - (void)setLiked:(BOOL)liked {

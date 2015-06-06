@@ -90,15 +90,31 @@
 }
 
 -(void)updateProfileWithID:(NSString *)userId
-                 firstName:(NSString *)firstName
-                  lastName:(NSString *)lastName
+                 username:(NSString *)username
                     gender:(NSString *)gender
                        bio:(NSString *)bio
                     avatar:(NSString *)avatar
                 profilePic:(NSString *)profilePic
                    success:(APISuccessBlock)success
                    failure:(APIFailureBlock)failure{
-    [APIManager putToPath:[NSString stringWithFormat:@"%@/%@",USER_PROFILE,userId] body:@{@"first_name":firstName,@"last_name":lastName,@"gender":gender,@"bio":bio,@"avatar":avatar,@"profile_pic":profilePic} success:^(id successResponse) {
+    NSMutableDictionary *param = [[NSMutableDictionary alloc]init];
+    if (username) {
+        [param setValue:username forKeyPath:@"user_name"];
+    }
+    if (gender) {
+        [param setValue:gender forKey:@"gender"];
+    }
+    if (bio) {
+        [param setValue:bio forKey:@"bio"];
+    }
+    if (avatar) {
+        [param setValue:avatar forKey:@"avatar"];
+    }
+    if (profilePic) {
+        [param setValue:profilePic forKey:@"profile_pic"];
+    }    
+    
+    [APIManager putToPath:[NSString stringWithFormat:@"%@/%@",USER_PROFILE,userId] body:param success:^(id successResponse) {
         if ([successResponse isKindOfClass:[NSDictionary class]]) {
             success(successResponse);
         } else {

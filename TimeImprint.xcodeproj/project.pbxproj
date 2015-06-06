@@ -172,6 +172,7 @@
 		B675DCB51AFEE7B3003C7768 /* LocationPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B675DCB41AFEE7B3003C7768 /* LocationPickerViewController.m */; };
 		B675DCB81AFEE7C0003C7768 /* TimePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B675DCB71AFEE7C0003C7768 /* TimePickerViewController.m */; };
 		B68DFD911B2185E000132A24 /* Story.m in Sources */ = {isa = PBXBuildFile; fileRef = B68DFD901B2185E000132A24 /* Story.m */; };
+		B68DFDA71B22F83700132A24 /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = B68DFDA61B22F83700132A24 /* Profile.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -403,6 +404,8 @@
 		B675DCB71AFEE7C0003C7768 /* TimePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimePickerViewController.m; sourceTree = "<group>"; };
 		B68DFD8F1B2185E000132A24 /* Story.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Story.h; path = TimeImprint/Story.h; sourceTree = "<group>"; };
 		B68DFD901B2185E000132A24 /* Story.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Story.m; path = TimeImprint/Story.m; sourceTree = "<group>"; };
+		B68DFDA51B22F83700132A24 /* Profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Profile.h; sourceTree = "<group>"; };
+		B68DFDA61B22F83700132A24 /* Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profile.m; sourceTree = "<group>"; };
 		DEB6E933EFC2BE211799AFFC /* libPods-TimeImprint.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TimeImprint.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -898,6 +901,8 @@
 			children = (
 				B68DFD8F1B2185E000132A24 /* Story.h */,
 				B68DFD901B2185E000132A24 /* Story.m */,
+				B68DFDA51B22F83700132A24 /* Profile.h */,
+				B68DFDA61B22F83700132A24 /* Profile.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -1139,6 +1144,7 @@
 				81D3D4E81AE90DB4008F3766 /* FollowingViewController.m in Sources */,
 				819F07F21B0640910061B511 /* EditingView.m in Sources */,
 				1963098D1ADF23B000058851 /* GUIPlayerView.m in Sources */,
+				B68DFDA71B22F83700132A24 /* Profile.m in Sources */,
 				9ADFB2131B166F7800CC75DA /* GraphAPIManager.m in Sources */,
 				81FA5B831AE41D7B00073E05 /* PublicTimeCell.m in Sources */,
 				B65BF4761AE6512F00F755D4 /* ArticleEditingViewController.m in Sources */,

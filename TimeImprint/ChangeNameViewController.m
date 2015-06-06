@@ -7,6 +7,7 @@
 //
 
 #import "ChangeNameViewController.h"
+#import "UserAPIManager.h"
 
 @interface ChangeNameViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *nameField;
@@ -20,6 +21,9 @@
     // Do any additional setup after loading the view.
     
     [_nameField becomeFirstResponder];
+    
+    //todo load user info from storage
+    //todo no update password api
     
 }
 
@@ -45,6 +49,22 @@
 }
 
 - (IBAction)saveButtonTouchUpInside:(id)sender {
+    UserAPIManager *api = [UserAPIManager sharedInstance];
+    [api updateProfileWithID:TEST_USER_ID username:self.nameField.text gender:nil bio:nil avatar:nil profilePic:nil success:^(id successResponse) {
+        UIAlertView *theAlert = [[UIAlertView alloc] initWithTitle:@"Success"
+                                                           message:@"Your username has been successfully updated."
+                                                          delegate:self
+                                                 cancelButtonTitle:@"OK"
+                                                 otherButtonTitles:nil];
+        [theAlert show];
+    } failure:^(id failureResponse, NSError *error) {
+        UIAlertView *theAlert = [[UIAlertView alloc] initWithTitle:@"Fail"
+                                                           message:@"."
+                                                          delegate:self
+                                                 cancelButtonTitle:@"OK"
+                                                 otherButtonTitles:nil];
+        [theAlert show];
+    }];
 }
 
 @end

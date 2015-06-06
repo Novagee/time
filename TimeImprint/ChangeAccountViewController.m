@@ -7,6 +7,7 @@
 //
 
 #import "ChangeAccountViewController.h"
+#import "UserAPIManager.h"
 
 @interface ChangeAccountViewController ()
 
@@ -20,7 +21,8 @@
     // Do any additional setup after loading the view.
     
     [_accountField becomeFirstResponder];
-    
+    //todo load email from storage
+    //todo no api for this? change email?
 }
 
 - (void)didReceiveMemoryWarning {

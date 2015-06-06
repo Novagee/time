@@ -2,7 +2,7 @@
 //  Story.m
 //  TimeImprint
 //
-//  Created by Kelvin Lam on 6/4/15.
+//  Created by Peng Wan on 6/4/15.
 //  Copyright (c) 2015 Timeimprint. All rights reserved.
 //
 

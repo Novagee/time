@@ -80,16 +80,6 @@
                                     <constraint firstAttribute="width" constant="22" id="lGa-70-Bke"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015年" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ih8-Bb-09K">
-                                <rect key="frame" x="61" y="17" width="80" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="1Uc-Nb-riC"/>
-                                    <constraint firstAttribute="height" constant="20" id="xPX-qi-yA5"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2月14日" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="huk-jd-Wup">
                                 <rect key="frame" x="179" y="17" width="80" height="20"/>
                                 <constraints>
@@ -176,7 +166,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IGV-Jq-qoK" userLabel="Like View">
                                 <rect key="frame" x="15" y="260" width="64" height="24"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhu-Ke-w14" userLabel="Label ">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhu-Ke-w14" userLabel="Label">
                                         <rect key="frame" x="30" y="0.0" width="34" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="34" id="GNv-78-dO8"/>
@@ -230,6 +220,16 @@
                                     <constraint firstItem="hhu-Ke-w14" firstAttribute="top" secondItem="IGV-Jq-qoK" secondAttribute="top" id="kvw-ab-wke"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2015年" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ih8-Bb-09K">
+                                <rect key="frame" x="61" y="17" width="80" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="1Uc-Nb-riC"/>
+                                    <constraint firstAttribute="height" constant="20" id="xPX-qi-yA5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -270,7 +270,9 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="commentButtonLabel" destination="PD5-cZ-acc" id="1eC-9Q-ApB"/>
+                <outlet property="commentButtonImageView" destination="PD5-cZ-acc" id="k6Q-MP-hOt"/>
+                <outlet property="commentButtonLabel" destination="prg-bo-geD" id="NSA-Qn-UuM"/>
+                <outlet property="dayLabel" destination="huk-jd-Wup" id="zyb-jt-IJK"/>
                 <outlet property="likeButtonImageView" destination="ZFo-va-fe3" id="9AI-vc-YdW"/>
                 <outlet property="likeButtonLabel" destination="hhu-Ke-w14" id="63U-WQ-syb"/>
                 <outlet property="optionButton" destination="cFB-wn-Nb8" id="YHg-wX-6vo"/>
@@ -278,6 +280,7 @@
                 <outlet property="postImage" destination="s8l-yP-yKt" id="9Lo-Cy-CUC"/>
                 <outlet property="postLocationLabel" destination="bHe-Ky-yru" id="FiG-nG-sBt"/>
                 <outlet property="postTitleLabel" destination="Szm-Cg-TZY" id="31q-1b-VzJ"/>
+                <outlet property="yearLabel" destination="Ih8-Bb-09K" id="W8L-Uz-feK"/>
             </connections>
             <point key="canvasLocation" x="274" y="140.5"/>
         </tableViewCell>

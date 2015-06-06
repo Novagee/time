@@ -31,8 +31,7 @@
                  failure:(APIFailureBlock)failure;
 
 -(void)updateProfileWithID:(NSString *)userId
-                 firstName:(NSString *)firstName
-                  lastName:(NSString *)lastName
+                 username:(NSString *)firstName
                     gender:(NSString *)gender
                        bio:(NSString *)bio
                     avatar:(NSString *)avatar
