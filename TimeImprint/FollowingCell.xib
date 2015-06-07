@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -35,15 +37,38 @@
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <button opaque="NO" tag="1001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgd-w5-Imc">
-                        <rect key="frame" x="535" y="16" width="46" height="30"/>
+                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dgd-w5-Imc" userLabel="follow">
+                        <rect key="frame" x="553" y="21" width="28" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="4KN-p0-swA"/>
                             <constraint firstAttribute="width" constant="46" id="9JV-Yv-2bo"/>
                         </constraints>
                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                        <state key="normal" title="Add">
+                        <state key="normal" image="follow_18_button">
                             <color key="titleColor" red="1" green="0.36470588240000001" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="8"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="layer.layerBorderColor">
+                                <color key="value" red="1" green="0.36470588240000001" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                <integer key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </button>
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SZK-Fz-xeN" userLabel="unfollow">
+                        <rect key="frame" x="553" y="21" width="28" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="c39-Vb-zsy"/>
+                            <constraint firstAttribute="width" constant="46" id="mCE-Sk-Fvp"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                        <state key="normal" image="close_12">
+                            <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                         <userDefinedRuntimeAttributes>
@@ -60,9 +85,12 @@
                     </button>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="dgd-w5-Imc" firstAttribute="centerX" secondItem="SZK-Fz-xeN" secondAttribute="centerX" id="7FK-vR-16V"/>
                     <constraint firstItem="Nhd-T8-nNp" firstAttribute="top" secondItem="fJK-w1-vjs" secondAttribute="topMargin" constant="12" id="DGh-TM-k8z"/>
                     <constraint firstItem="Nhd-T8-nNp" firstAttribute="leading" secondItem="I1q-Zq-bcr" secondAttribute="trailing" constant="8" id="Fri-6f-QBX"/>
                     <constraint firstItem="I1q-Zq-bcr" firstAttribute="top" secondItem="fJK-w1-vjs" secondAttribute="topMargin" constant="-2" id="Mu2-eb-PMy"/>
+                    <constraint firstItem="SZK-Fz-xeN" firstAttribute="baseline" secondItem="Nhd-T8-nNp" secondAttribute="firstBaseline" id="N6R-20-pkY"/>
+                    <constraint firstItem="SZK-Fz-xeN" firstAttribute="top" secondItem="Nhd-T8-nNp" secondAttribute="top" id="Ok0-NZ-scg"/>
                     <constraint firstItem="I1q-Zq-bcr" firstAttribute="leading" secondItem="fJK-w1-vjs" secondAttribute="leadingMargin" constant="15" id="cER-n1-jJI"/>
                     <constraint firstAttribute="trailingMargin" secondItem="dgd-w5-Imc" secondAttribute="trailing" constant="11" id="jQf-Qw-YFe"/>
                     <constraint firstAttribute="centerY" secondItem="dgd-w5-Imc" secondAttribute="centerY" constant="0.5" id="v1t-de-Ut8"/>
@@ -70,11 +98,15 @@
             </tableViewCellContentView>
             <connections>
                 <outlet property="avatarView" destination="I1q-Zq-bcr" id="Bo5-Af-g3n"/>
+                <outlet property="followButton" destination="dgd-w5-Imc" id="zXb-H9-D93"/>
                 <outlet property="nameField" destination="Nhd-T8-nNp" id="KCc-53-sud"/>
+                <outlet property="unfollowButton" destination="SZK-Fz-xeN" id="tjm-zQ-teA"/>
             </connections>
         </tableViewCell>
     </objects>
     <resources>
         <image name="Bitmap" width="36" height="36"/>
+        <image name="close_12" width="12" height="12"/>
+        <image name="follow_18_button" width="53" height="30"/>
     </resources>
 </document>

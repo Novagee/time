@@ -7,6 +7,7 @@
 //
 
 #import "FollowingCell.h"
+#import "Profile.h"
 
 @interface FollowingCell ()
 
@@ -30,6 +31,11 @@
     
     return @"FollowingCell";
     
+}
+
+- (void)initFollowing:(Profile *)profile{
+    self.nameField.text = profile.user_name;
+    //todo: get avatar done
 }
 
 @end

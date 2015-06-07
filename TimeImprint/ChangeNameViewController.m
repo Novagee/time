@@ -59,7 +59,7 @@
         [theAlert show];
     } failure:^(id failureResponse, NSError *error) {
         UIAlertView *theAlert = [[UIAlertView alloc] initWithTitle:@"Fail"
-                                                           message:@"."
+                                                           message:failureResponse
                                                           delegate:self
                                                  cancelButtonTitle:@"OK"
                                                  otherButtonTitles:nil];

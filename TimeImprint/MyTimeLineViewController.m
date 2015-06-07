@@ -10,7 +10,7 @@
 #import "SettingViewController.h"
 #import "TimeMechineViewController.h"
 
-#import "FollowingViewController.h"
+#import "FolloweeViewController.h"
 #import "FollowerViewController.h"
 
 #import "OwnTimeLineCell.h"
@@ -241,14 +241,16 @@ typedef NS_ENUM(NSInteger, kImagePickerTarget) {
 - (IBAction)followerButtonTouchUpInside:(id)sender {
     
     FollowerViewController *followerViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"followerView"];
-    [self presentViewController:followerViewController animated:YES completion:nil];
+    [self.navigationController pushViewController:followerViewController animated:YES];
+//    [self presentViewController:followerViewController animated:YES completion:nil];
     
 }
 
 - (IBAction)followingButtonTouchUpInside:(id)sender {
     
-    FollowingViewController *followingViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"followingView"];
-    [self presentViewController:followingViewController animated:YES completion:nil];
+    FolloweeViewController *followeeViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"followeeView"];
+        [self.navigationController pushViewController:followeeViewController animated:YES];
+//    [self presentViewController:followeeViewController animated:YES completion:nil];
     
 }
 

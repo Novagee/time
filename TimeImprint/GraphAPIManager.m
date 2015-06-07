@@ -24,7 +24,7 @@
 -(void)followUser:(NSString *)userId
           success:(APISuccessBlock)success
           failure:(APIFailureBlock)failure{
-    [APIManager putToPath:GRAPH_FOLLOW body:@{@"follower_id":userId,@"followee_id":TEST_USER_ID} success:^(id successResponse) {
+    [APIManager postToPath:GRAPH_FOLLOW body:@{@"follower_id":userId,@"followee_id":TEST_USER_ID} success:^(id successResponse) {
         if ([successResponse isKindOfClass:[NSDictionary class]]) {
             success(successResponse);
         } else {
@@ -43,7 +43,7 @@
 -(void)unfollowUser:(NSString *)userId
             success:(APISuccessBlock)success
             failure:(APIFailureBlock)failure{
-    [APIManager putToPath:GRAPH_UNFOLLOW body:@{@"follower_id":userId,@"followee_id":TEST_USER_ID} success:^(id successResponse) {
+    [APIManager postToPath:GRAPH_UNFOLLOW body:@{@"follower_id":userId,@"followee_id":TEST_USER_ID} success:^(id successResponse) {
         if ([successResponse isKindOfClass:[NSDictionary class]]) {
             success(successResponse);
         } else {
@@ -64,8 +64,8 @@
             success:(APISuccessBlock)success
             failure:(APIFailureBlock)failure{
     [APIManager getFromPath:[NSString stringWithFormat:@"%@/%@",GRAPH_FOLLOWERS,userId] body:@{@"start":start ,@"limit":limit } success:^(id successResponse) {
-        if ([successResponse isKindOfClass:[NSArray class]]) {
-            success(successResponse);
+        if ([successResponse isKindOfClass:[NSDictionary class]]) {
+            success(successResponse[@"followers"]);
         } else {
             NSDictionary *detail = @{NSLocalizedDescriptionKey:kResponseNotDictoryError};
             NSError *e = [NSError errorWithDomain:@"InvalidArgumentErrorDomain"
@@ -84,8 +84,8 @@
             success:(APISuccessBlock)success
             failure:(APIFailureBlock)failure{
     [APIManager getFromPath:[NSString stringWithFormat:@"%@/%@",GRAPH_FOLLOWEES,userId] body:@{@"start":start ,@"limit":limit } success:^(id successResponse) {
-        if ([successResponse isKindOfClass:[NSArray class]]) {
-            success(successResponse);
+        if ([successResponse isKindOfClass:[NSDictionary class]]) {
+            success(successResponse[@"followees"]);
         } else {
             NSDictionary *detail = @{NSLocalizedDescriptionKey:kResponseNotDictoryError};
             NSError *e = [NSError errorWithDomain:@"InvalidArgumentErrorDomain"

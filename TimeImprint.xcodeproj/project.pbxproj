@@ -62,7 +62,7 @@
 		81D3D4DD1AE8180E008F3766 /* ChangePasswordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D3D4DC1AE8180E008F3766 /* ChangePasswordViewController.m */; };
 		81D3D4E01AE830D4008F3766 /* SuggestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D3D4DF1AE830D4008F3766 /* SuggestionViewController.m */; };
 		81D3D4E41AE836BF008F3766 /* TimeMechineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D3D4E31AE836BF008F3766 /* TimeMechineViewController.m */; };
-		81D3D4E81AE90DB4008F3766 /* FollowingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D3D4E71AE90DB4008F3766 /* FollowingViewController.m */; };
+		81D3D4E81AE90DB4008F3766 /* FolloweeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D3D4E71AE90DB4008F3766 /* FolloweeViewController.m */; };
 		81D3D4EB1AE90DC2008F3766 /* FollowerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D3D4EA1AE90DC2008F3766 /* FollowerViewController.m */; };
 		81D3D4EF1AE90F6D008F3766 /* FollowingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 81D3D4EE1AE90F6D008F3766 /* FollowingCell.m */; };
 		81D3D4F11AE912AA008F3766 /* FollowingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81D3D4F01AE912AA008F3766 /* FollowingCell.xib */; };
@@ -270,8 +270,8 @@
 		81D3D4DF1AE830D4008F3766 /* SuggestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuggestionViewController.m; sourceTree = "<group>"; };
 		81D3D4E21AE836BF008F3766 /* TimeMechineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeMechineViewController.h; sourceTree = "<group>"; };
 		81D3D4E31AE836BF008F3766 /* TimeMechineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeMechineViewController.m; sourceTree = "<group>"; };
-		81D3D4E61AE90DB4008F3766 /* FollowingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowingViewController.h; sourceTree = "<group>"; };
-		81D3D4E71AE90DB4008F3766 /* FollowingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowingViewController.m; sourceTree = "<group>"; };
+		81D3D4E61AE90DB4008F3766 /* FolloweeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FolloweeViewController.h; sourceTree = "<group>"; };
+		81D3D4E71AE90DB4008F3766 /* FolloweeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FolloweeViewController.m; sourceTree = "<group>"; };
 		81D3D4E91AE90DC2008F3766 /* FollowerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowerViewController.h; sourceTree = "<group>"; };
 		81D3D4EA1AE90DC2008F3766 /* FollowerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FollowerViewController.m; sourceTree = "<group>"; };
 		81D3D4ED1AE90F6D008F3766 /* FollowingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FollowingCell.h; sourceTree = "<group>"; };
@@ -675,8 +675,8 @@
 			isa = PBXGroup;
 			children = (
 				81D3D4EC1AE90F48008F3766 /* Cell */,
-				81D3D4E61AE90DB4008F3766 /* FollowingViewController.h */,
-				81D3D4E71AE90DB4008F3766 /* FollowingViewController.m */,
+				81D3D4E61AE90DB4008F3766 /* FolloweeViewController.h */,
+				81D3D4E71AE90DB4008F3766 /* FolloweeViewController.m */,
 				81D3D4E91AE90DC2008F3766 /* FollowerViewController.h */,
 				81D3D4EA1AE90DC2008F3766 /* FollowerViewController.m */,
 			);
@@ -1141,7 +1141,7 @@
 				B675DCB51AFEE7B3003C7768 /* LocationPickerViewController.m in Sources */,
 				819F07FC1B0640910061B511 /* UIButton+Peaches.m in Sources */,
 				9ADFB1F61B13BD3400CC75DA /* StoryAPIManager.m in Sources */,
-				81D3D4E81AE90DB4008F3766 /* FollowingViewController.m in Sources */,
+				81D3D4E81AE90DB4008F3766 /* FolloweeViewController.m in Sources */,
 				819F07F21B0640910061B511 /* EditingView.m in Sources */,
 				1963098D1ADF23B000058851 /* GUIPlayerView.m in Sources */,
 				B68DFDA71B22F83700132A24 /* Profile.m in Sources */,
