@@ -12,6 +12,8 @@
 // Constants
 static CGFloat const JDFPeekabooCoordinatorNavigationBarHorizontalHeightDifferential = 20.0f; // This is the difference between the size of the navigation bar when it is in portrait and landscape. This should probably be handled more elegantly.
 
+
+
 @interface JDFPeekabooCoordinator() <UIScrollViewDelegate>
 
 // Real delegate
@@ -34,11 +36,10 @@ static CGFloat const JDFPeekabooCoordinatorNavigationBarHorizontalHeightDifferen
 
 - (UIView *)containingView
 {
-//    if (!_containingView) {
-//        return _scrollView;
-//    }
-//    return _containingView;
-    return [UIApplication sharedApplication].keyWindow;
+    if (!_containingView) {
+        return _scrollView;
+    }
+    return _containingView;
 }
 
 - (CGFloat)topViewDefaultY
@@ -56,7 +57,7 @@ static CGFloat const JDFPeekabooCoordinatorNavigationBarHorizontalHeightDifferen
 
 - (CGFloat)bottomBarDefaultHeight
 {
-    return self.bottomView.bounds.size.height;
+    return self.bottomView.frame.size.height;
 }
 
 
@@ -79,7 +80,7 @@ static CGFloat const JDFPeekabooCoordinatorNavigationBarHorizontalHeightDifferen
 - (void)setBottomView:(UIView *)bottomBar
 {
     _bottomView = bottomBar;
-    self.bottomBarDefaultHeight = bottomBar.frame.size.height;
+    self.bottomBarDefaultHeight = bottomBar.bounds.size.height;
     [self fullyExpandViews];
     if (self.scrollView) {
         [self scrollViewDidScroll:self.scrollView];
@@ -89,7 +90,7 @@ static CGFloat const JDFPeekabooCoordinatorNavigationBarHorizontalHeightDifferen
 - (void)setTopView:(UIView *)topBar
 {
     _topView = topBar;
-    self.topViewDefaultY = topBar.frame.origin.y - 20;
+    self.topViewDefaultY = topBar.frame.origin.y;
 }
 
 
@@ -99,7 +100,7 @@ static CGFloat const JDFPeekabooCoordinatorNavigationBarHorizontalHeightDifferen
 {
     self = [super init];
     if (self) {
-        self.topViewMinimisedHeight = 0.0f;
+        self.topViewMinimisedHeight = 20.0f;
         self.scrollingCoordinatorEnabled = YES;
     }
     return self;
